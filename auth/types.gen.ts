@@ -12,6 +12,20 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type SignInUserInfo = {
+    access_token: string;
+    refresh_token: string;
+    id_token: string;
+    user_info: UserInfo;
+};
+
+export type UserInfo = {
+    email?: (string | null);
+    first_name?: (string | null);
+    last_name?: (string | null);
+    phone_number?: (string | null);
+};
+
 export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer';
 
 export type UserSignin = {
@@ -47,7 +61,7 @@ export type SignupUserApiV1AuthSignupPostData = {
     body: UserSignup;
 };
 
-export type SignupUserApiV1AuthSignupPostResponse = (unknown);
+export type SignupUserApiV1AuthSignupPostResponse = (SignInUserInfo);
 
 export type SignupUserApiV1AuthSignupPostError = (HTTPValidationError);
 
@@ -55,7 +69,7 @@ export type SigninUserApiV1AuthSigninPostData = {
     body: UserSignin;
 };
 
-export type SigninUserApiV1AuthSigninPostResponse = (unknown);
+export type SigninUserApiV1AuthSigninPostResponse = (SignInUserInfo);
 
 export type SigninUserApiV1AuthSigninPostError = (HTTPValidationError);
 
@@ -67,7 +81,7 @@ export type ChangeMeApiV1AuthChangePatchResponse = (unknown);
 
 export type ChangeMeApiV1AuthChangePatchError = (HTTPValidationError);
 
-export type GetMeApiV1AuthMeGetResponse = (unknown);
+export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 
 export type GetMeApiV1AuthMeGetError = unknown;
 
@@ -78,7 +92,7 @@ export type ChangeUserApiV1AuthChangeUserIdPatchData = {
     };
 };
 
-export type ChangeUserApiV1AuthChangeUserIdPatchResponse = (unknown);
+export type ChangeUserApiV1AuthChangeUserIdPatchResponse = (UserInfo);
 
 export type ChangeUserApiV1AuthChangeUserIdPatchError = (HTTPValidationError);
 

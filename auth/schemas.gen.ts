@@ -76,6 +76,81 @@ export const HTTPValidationErrorSchema = {
     title: 'HTTPValidationError'
 } as const;
 
+export const SignInUserInfoSchema = {
+    properties: {
+        access_token: {
+            type: 'string',
+            title: 'Access Token'
+        },
+        refresh_token: {
+            type: 'string',
+            title: 'Refresh Token'
+        },
+        id_token: {
+            type: 'string',
+            title: 'Id Token'
+        },
+        user_info: {
+            '$ref': '#/components/schemas/UserInfo'
+        }
+    },
+    type: 'object',
+    required: ['access_token', 'refresh_token', 'id_token', 'user_info'],
+    title: 'SignInUserInfo'
+} as const;
+
+export const UserInfoSchema = {
+    properties: {
+        email: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'email'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Email'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
+        },
+        phone_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone Number'
+        }
+    },
+    type: 'object',
+    title: 'UserInfo'
+} as const;
+
 export const UserRoleSchema = {
     type: 'string',
     enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer'],
