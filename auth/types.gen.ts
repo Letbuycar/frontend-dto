@@ -69,7 +69,7 @@ export type SigninUserApiV1AuthSigninPostData = {
     body: UserSignin;
 };
 
-export type SigninUserApiV1AuthSigninPostResponse = (SignInUserInfo);
+export type SigninUserApiV1AuthSigninPostResponse = (unknown);
 
 export type SigninUserApiV1AuthSigninPostError = (HTTPValidationError);
 
@@ -90,15 +90,24 @@ export type ChangeUserApiV1AuthChangeUserIdPatchData = {
     path: {
         user_id: string;
     };
+    query: {
+        role: UserRole;
+    };
 };
 
 export type ChangeUserApiV1AuthChangeUserIdPatchResponse = (UserInfo);
 
 export type ChangeUserApiV1AuthChangeUserIdPatchError = (HTTPValidationError);
 
+export type CheckUserRoleApiV1AuthCheckRoleUserIdGetData = {
+    query: {
+        role: UserRole;
+    };
+};
+
 export type CheckUserRoleApiV1AuthCheckRoleUserIdGetResponse = (unknown);
 
-export type CheckUserRoleApiV1AuthCheckRoleUserIdGetError = unknown;
+export type CheckUserRoleApiV1AuthCheckRoleUserIdGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
