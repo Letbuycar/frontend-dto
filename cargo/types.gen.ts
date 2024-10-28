@@ -169,6 +169,13 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type PaginationSchema_BodyType_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<BodyType>;
+};
+
 export type PortFrom = {
     title: string;
     address?: (string | null);
@@ -352,9 +359,12 @@ export type ReadBodyTypesApiV1BodyTypesGetData = {
     headers?: {
         'content-language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
-export type ReadBodyTypesApiV1BodyTypesGetResponse = (Array<BodyType>);
+export type ReadBodyTypesApiV1BodyTypesGetResponse = (PaginationSchema_BodyType_);
 
 export type ReadBodyTypesApiV1BodyTypesGetError = (HTTPValidationError);
 
