@@ -257,6 +257,9 @@ export type ReadAuctionsApiV1AuctionsGetError = (HTTPValidationError);
 
 export type CreateNewAuctionApiV1AuctionsPostData = {
     body: AuctionCreate;
+    headers?: {
+        Authorization?: string;
+    };
 };
 
 export type CreateNewAuctionApiV1AuctionsPostResponse = (Auction);
@@ -275,6 +278,9 @@ export type ReadAuctionApiV1AuctionsAuctionIdGetError = (HTTPValidationError);
 
 export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutData = {
     body: AuctionUpdate;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         auction_id: number;
     };
@@ -285,6 +291,9 @@ export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutResponse = (Auction);
 export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutError = (HTTPValidationError);
 
 export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         auction_id: number;
     };
@@ -296,7 +305,7 @@ export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteError = (HTTPValida
 
 export type ReadBoatTypesApiV1BoatTypesGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -307,7 +316,8 @@ export type ReadBoatTypesApiV1BoatTypesGetError = (HTTPValidationError);
 export type CreateBoatTypeApiV1BoatTypesPostData = {
     body: BoatTypeCreate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -317,7 +327,7 @@ export type CreateBoatTypeApiV1BoatTypesPostError = (HTTPValidationError);
 
 export type ReadBoatTypeApiV1BoatTypesBodyTypeIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -331,7 +341,8 @@ export type ReadBoatTypeApiV1BoatTypesBodyTypeIdGetError = (HTTPValidationError)
 export type UpdateBoatTypeApiV1BoatTypesBodyTypeIdPutData = {
     body: BoatTypeUpdate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -344,7 +355,8 @@ export type UpdateBoatTypeApiV1BoatTypesBodyTypeIdPutError = (HTTPValidationErro
 
 export type DeleteBoatTypeApiV1BoatTypesBodyTypeIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -357,7 +369,7 @@ export type DeleteBoatTypeApiV1BoatTypesBodyTypeIdDeleteError = (HTTPValidationE
 
 export type ReadBodyTypesApiV1BodyTypesGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     query?: {
         page?: number;
@@ -371,7 +383,8 @@ export type ReadBodyTypesApiV1BodyTypesGetError = (HTTPValidationError);
 export type CreateBodyTypeApiV1BodyTypesPostData = {
     body: BodyTypeCreate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -381,7 +394,7 @@ export type CreateBodyTypeApiV1BodyTypesPostError = (HTTPValidationError);
 
 export type ReadBodyTypeApiV1BodyTypesBodyTypeIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -395,7 +408,8 @@ export type ReadBodyTypeApiV1BodyTypesBodyTypeIdGetError = (HTTPValidationError)
 export type UpdateBodyTypeApiV1BodyTypesBodyTypeIdPutData = {
     body: BodyTypeUpdate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -408,7 +422,8 @@ export type UpdateBodyTypeApiV1BodyTypesBodyTypeIdPutError = (HTTPValidationErro
 
 export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         body_type_id: number;
@@ -431,6 +446,9 @@ export type ReadCarBrandsApiV1CarBrandsGetError = (HTTPValidationError);
 
 export type CreateNewCarBrandApiV1CarBrandsPostData = {
     body: CarBrandCreate;
+    headers?: {
+        Authorization?: string;
+    };
 };
 
 export type CreateNewCarBrandApiV1CarBrandsPostResponse = (CarBrand);
@@ -449,6 +467,9 @@ export type ReadCarBrandApiV1CarBrandsCarBrandIdGetError = (HTTPValidationError)
 
 export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutData = {
     body: CarBrandUpdate;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         car_brand_id: number;
     };
@@ -459,6 +480,9 @@ export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutResponse = (CarBran
 export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutError = (HTTPValidationError);
 
 export type DeleteExistingCarBrandApiV1CarBrandsCarBrandIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         car_brand_id: number;
     };
@@ -480,6 +504,9 @@ export type ReadCarModelsApiV1CarModelsGetError = (HTTPValidationError);
 
 export type CreateNewCarModelApiV1CarModelsPostData = {
     body: CarModelCreate;
+    headers?: {
+        Authorization?: string;
+    };
 };
 
 export type CreateNewCarModelApiV1CarModelsPostResponse = (CarModel);
@@ -498,6 +525,9 @@ export type ReadCarModelApiV1CarModelsCarModelIdGetError = (HTTPValidationError)
 
 export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutData = {
     body: CarModelUpdate;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         car_model_id: number;
     };
@@ -508,6 +538,9 @@ export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutResponse = (CarMode
 export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutError = (HTTPValidationError);
 
 export type DeleteExistingCarModelApiV1CarModelsCarModelIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         car_model_id: number;
     };
@@ -529,6 +562,9 @@ export type ReadEngineVolumesApiV1EngineVolumesGetError = (HTTPValidationError);
 
 export type CreateNewEngineVolumeApiV1EngineVolumesPostData = {
     body: EngineVolumeCreate;
+    headers?: {
+        Authorization?: string;
+    };
 };
 
 export type CreateNewEngineVolumeApiV1EngineVolumesPostResponse = (EngineVolume);
@@ -547,6 +583,9 @@ export type ReadEngineVolumeApiV1EngineVolumesEngineVolumeIdGetError = (HTTPVali
 
 export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutData = {
     body: EngineVolumeUpdate;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         engine_volume_id: number;
     };
@@ -557,6 +596,9 @@ export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutRespons
 export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutError = (HTTPValidationError);
 
 export type DeleteExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         engine_volume_id: number;
     };
@@ -568,7 +610,7 @@ export type DeleteExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdDeleteErro
 
 export type ReadFuelTypesApiV1FuelTypesGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -579,7 +621,8 @@ export type ReadFuelTypesApiV1FuelTypesGetError = (HTTPValidationError);
 export type CreateFuelTypeApiV1FuelTypesPostData = {
     body: FuelTypeCreate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -589,7 +632,7 @@ export type CreateFuelTypeApiV1FuelTypesPostError = (HTTPValidationError);
 
 export type ReadFuelTypeApiV1FuelTypesFuelTypeIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         fuel_type_id: number;
@@ -603,7 +646,8 @@ export type ReadFuelTypeApiV1FuelTypesFuelTypeIdGetError = (HTTPValidationError)
 export type UpdateFuelTypeApiV1FuelTypesFuelTypeIdPutData = {
     body: FuelTypeUpdate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         fuel_type_id: number;
@@ -616,7 +660,8 @@ export type UpdateFuelTypeApiV1FuelTypesFuelTypeIdPutError = (HTTPValidationErro
 
 export type DeleteFuelTypeApiV1FuelTypesFuelTypeIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         fuel_type_id: number;
@@ -629,7 +674,7 @@ export type DeleteFuelTypeApiV1FuelTypesFuelTypeIdDeleteError = (HTTPValidationE
 
 export type ReadTransmissionsApiV1TransmissionsTransmissionsGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -639,7 +684,7 @@ export type ReadTransmissionsApiV1TransmissionsTransmissionsGetError = (HTTPVali
 
 export type ReadTransmissionApiV1TransmissionsTransmissionsTransmissionIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         transmission_id: number;
@@ -653,7 +698,8 @@ export type ReadTransmissionApiV1TransmissionsTransmissionsTransmissionIdGetErro
 export type CreateTransmissionApiV1TransmissionsPostData = {
     body: TransmissionCreate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -664,7 +710,8 @@ export type CreateTransmissionApiV1TransmissionsPostError = (HTTPValidationError
 export type UpdateTransmissionApiV1TransmissionsTransmissionIdPutData = {
     body: TransmissionUpdate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         transmission_id: number;
@@ -677,7 +724,8 @@ export type UpdateTransmissionApiV1TransmissionsTransmissionIdPutError = (HTTPVa
 
 export type DeleteTransmissionApiV1TransmissionsTransmissionIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         transmission_id: number;
@@ -690,7 +738,7 @@ export type DeleteTransmissionApiV1TransmissionsTransmissionIdDeleteError = (HTT
 
 export type ReadCitiesApiV1CitiesGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -701,7 +749,7 @@ export type ReadCitiesApiV1CitiesGetError = (HTTPValidationError);
 export type CreateСityApiV1CitiesPostData = {
     body: CityCreate;
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -711,7 +759,7 @@ export type CreateСityApiV1CitiesPostError = (HTTPValidationError);
 
 export type ReadСityApiV1CitiesСityIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         сity_id: number;
@@ -725,7 +773,7 @@ export type ReadСityApiV1CitiesСityIdGetError = (HTTPValidationError);
 export type UpdateСityApiV1CitiesСityIdPutData = {
     body: CityUpdate;
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         сity_id: number;
@@ -738,7 +786,7 @@ export type UpdateСityApiV1CitiesСityIdPutError = (HTTPValidationError);
 
 export type DeleteСityApiV1CitiesСityIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         сity_id: number;
@@ -751,7 +799,7 @@ export type DeleteСityApiV1CitiesСityIdDeleteError = (HTTPValidationError);
 
 export type ReadCountriesApiV1CountriesGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -762,7 +810,8 @@ export type ReadCountriesApiV1CountriesGetError = (HTTPValidationError);
 export type CreateCountryApiV1CountriesPostData = {
     body: CountryCreate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -772,7 +821,7 @@ export type CreateCountryApiV1CountriesPostError = (HTTPValidationError);
 
 export type ReadCountryApiV1CountriesCountryIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         country_id: number;
@@ -786,7 +835,8 @@ export type ReadCountryApiV1CountriesCountryIdGetError = (HTTPValidationError);
 export type UpdateCountryApiV1CountriesCountryIdPutData = {
     body: CountryUpdate;
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         country_id: number;
@@ -799,7 +849,8 @@ export type UpdateCountryApiV1CountriesCountryIdPutError = (HTTPValidationError)
 
 export type DeleteCountryApiV1CountriesCountryIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        Authorization?: string;
+        'Content-Language'?: string;
     };
     path: {
         country_id: number;
@@ -822,6 +873,9 @@ export type ReadPortsFromApiV1PortFromGetError = (HTTPValidationError);
 
 export type CreateNewPortFromApiV1PortFromPostData = {
     body: PortFromCreate;
+    headers?: {
+        Authorization?: string;
+    };
 };
 
 export type CreateNewPortFromApiV1PortFromPostResponse = (PortFrom);
@@ -840,6 +894,9 @@ export type ReadPortFromApiV1PortFromPortFromIdGetError = (HTTPValidationError);
 
 export type UpdateExistingPortFromApiV1PortFromPortFromIdPutData = {
     body: PortFromUpdate;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         port_from_id: number;
     };
@@ -850,6 +907,9 @@ export type UpdateExistingPortFromApiV1PortFromPortFromIdPutResponse = (PortFrom
 export type UpdateExistingPortFromApiV1PortFromPortFromIdPutError = (HTTPValidationError);
 
 export type DeleteExistingPortFromApiV1PortFromPortFromIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         port_from_id: number;
     };
@@ -861,7 +921,7 @@ export type DeleteExistingPortFromApiV1PortFromPortFromIdDeleteError = (HTTPVali
 
 export type ReadPortsToApiV1PortToGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -872,7 +932,7 @@ export type ReadPortsToApiV1PortToGetError = (HTTPValidationError);
 export type CreatePortToApiV1PortToPostData = {
     body: PortToCreate;
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
 };
 
@@ -882,7 +942,7 @@ export type CreatePortToApiV1PortToPostError = (HTTPValidationError);
 
 export type ReadPortToApiV1PortToPortToIdGetData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         port_to_id: number;
@@ -896,7 +956,7 @@ export type ReadPortToApiV1PortToPortToIdGetError = (HTTPValidationError);
 export type UpdatePortToApiV1PortToPortToIdPutData = {
     body: PortToUpdate;
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         port_to_id: number;
@@ -909,7 +969,7 @@ export type UpdatePortToApiV1PortToPortToIdPutError = (HTTPValidationError);
 
 export type DeletePortToApiV1PortToPortToIdDeleteData = {
     headers?: {
-        'content-language'?: string;
+        'Content-Language'?: string;
     };
     path: {
         port_to_id: number;
