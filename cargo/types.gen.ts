@@ -176,6 +176,41 @@ export type PaginationSchema_BodyType_ = {
     items: Array<BodyType>;
 };
 
+export type PaginationSchema_CarBrand_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<CarBrand>;
+};
+
+export type PaginationSchema_CarModel_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<CarModel>;
+};
+
+export type PaginationSchema_EngineVolume_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<EngineVolume>;
+};
+
+export type PaginationSchema_FuelType_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<FuelType>;
+};
+
+export type PaginationSchema_Transmission_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Transmission>;
+};
+
 export type PortFrom = {
     title: string;
     address?: (string | null);
@@ -430,7 +465,7 @@ export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteData = {
     };
 };
 
-export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteResponse = (BodyType);
+export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteResponse = (boolean);
 
 export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteError = (HTTPValidationError);
 
@@ -440,7 +475,7 @@ export type ReadCarBrandsApiV1CarBrandsGetData = {
     };
 };
 
-export type ReadCarBrandsApiV1CarBrandsGetResponse = (Array<CarBrand>);
+export type ReadCarBrandsApiV1CarBrandsGetResponse = (PaginationSchema_CarBrand_);
 
 export type ReadCarBrandsApiV1CarBrandsGetError = (HTTPValidationError);
 
@@ -494,11 +529,12 @@ export type DeleteExistingCarBrandApiV1CarBrandsCarBrandIdDeleteError = (HTTPVal
 
 export type ReadCarModelsApiV1CarModelsGetData = {
     query?: {
+        car_brand_id?: number;
         page?: number;
     };
 };
 
-export type ReadCarModelsApiV1CarModelsGetResponse = (Array<CarModel>);
+export type ReadCarModelsApiV1CarModelsGetResponse = (PaginationSchema_CarModel_);
 
 export type ReadCarModelsApiV1CarModelsGetError = (HTTPValidationError);
 
@@ -556,7 +592,7 @@ export type ReadEngineVolumesApiV1EngineVolumesGetData = {
     };
 };
 
-export type ReadEngineVolumesApiV1EngineVolumesGetResponse = (Array<EngineVolume>);
+export type ReadEngineVolumesApiV1EngineVolumesGetResponse = (PaginationSchema_EngineVolume_);
 
 export type ReadEngineVolumesApiV1EngineVolumesGetError = (HTTPValidationError);
 
@@ -612,9 +648,12 @@ export type ReadFuelTypesApiV1FuelTypesGetData = {
     headers?: {
         'Content-Language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
-export type ReadFuelTypesApiV1FuelTypesGetResponse = (Array<FuelType>);
+export type ReadFuelTypesApiV1FuelTypesGetResponse = (PaginationSchema_FuelType_);
 
 export type ReadFuelTypesApiV1FuelTypesGetError = (HTTPValidationError);
 
@@ -676,9 +715,12 @@ export type ReadTransmissionsApiV1TransmissionsTransmissionsGetData = {
     headers?: {
         'Content-Language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
-export type ReadTransmissionsApiV1TransmissionsTransmissionsGetResponse = (Array<Transmission>);
+export type ReadTransmissionsApiV1TransmissionsTransmissionsGetResponse = (PaginationSchema_Transmission_);
 
 export type ReadTransmissionsApiV1TransmissionsTransmissionsGetError = (HTTPValidationError);
 

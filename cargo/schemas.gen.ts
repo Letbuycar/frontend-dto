@@ -811,6 +811,141 @@ export const PaginationSchema_BodyType_Schema = {
     title: 'PaginationSchema[BodyType]'
 } as const;
 
+export const PaginationSchema_CarBrand_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/CarBrand'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[CarBrand]'
+} as const;
+
+export const PaginationSchema_CarModel_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/CarModel'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[CarModel]'
+} as const;
+
+export const PaginationSchema_EngineVolume_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/EngineVolume'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[EngineVolume]'
+} as const;
+
+export const PaginationSchema_FuelType_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/FuelType'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[FuelType]'
+} as const;
+
+export const PaginationSchema_Transmission_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/Transmission'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[Transmission]'
+} as const;
+
 export const PortFromSchema = {
     properties: {
         title: {
