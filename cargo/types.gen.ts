@@ -819,7 +819,7 @@ export type ReadCitiesApiV1CitiesGetResponse = (PaginationSchema_City_);
 
 export type ReadCitiesApiV1CitiesGetError = (HTTPValidationError);
 
-export type CreateСityApiV1CitiesPostData = {
+export type CreateCityApiV1CitiesPostData = {
     body: CityCreate;
     headers?: {
         Authorization?: string;
@@ -827,51 +827,51 @@ export type CreateСityApiV1CitiesPostData = {
     };
 };
 
-export type CreateСityApiV1CitiesPostResponse = (City);
+export type CreateCityApiV1CitiesPostResponse = (City);
 
-export type CreateСityApiV1CitiesPostError = (HTTPValidationError);
+export type CreateCityApiV1CitiesPostError = (HTTPValidationError);
 
-export type ReadСityApiV1CitiesСityIdGetData = {
+export type ReadCityApiV1CitiesCityIdGetData = {
     headers?: {
         'Content-Language'?: string;
     };
     path: {
-        сity_id: number;
+        city_id: number;
     };
 };
 
-export type ReadСityApiV1CitiesСityIdGetResponse = (City);
+export type ReadCityApiV1CitiesCityIdGetResponse = (City);
 
-export type ReadСityApiV1CitiesСityIdGetError = (HTTPValidationError);
+export type ReadCityApiV1CitiesCityIdGetError = (HTTPValidationError);
 
-export type UpdateСityApiV1CitiesСityIdPutData = {
+export type UpdateCityApiV1CitiesCityIdPutData = {
     body: CityUpdate;
     headers?: {
         Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
-        сity_id: number;
+        city_id: number;
     };
 };
 
-export type UpdateСityApiV1CitiesСityIdPutResponse = (City);
+export type UpdateCityApiV1CitiesCityIdPutResponse = (City);
 
-export type UpdateСityApiV1CitiesСityIdPutError = (HTTPValidationError);
+export type UpdateCityApiV1CitiesCityIdPutError = (HTTPValidationError);
 
-export type DeleteСityApiV1CitiesСityIdDeleteData = {
+export type DeleteCityApiV1CitiesCityIdDeleteData = {
     headers?: {
         Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
-        сity_id: number;
+        city_id: number;
     };
 };
 
-export type DeleteСityApiV1CitiesСityIdDeleteResponse = (City);
+export type DeleteCityApiV1CitiesCityIdDeleteResponse = (City);
 
-export type DeleteСityApiV1CitiesСityIdDeleteError = (HTTPValidationError);
+export type DeleteCityApiV1CitiesCityIdDeleteError = (HTTPValidationError);
 
 export type ReadCountriesApiV1CountriesGetData = {
     headers?: {
