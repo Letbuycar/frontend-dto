@@ -822,6 +822,7 @@ export type ReadCitiesApiV1CitiesGetError = (HTTPValidationError);
 export type CreateСityApiV1CitiesPostData = {
     body: CityCreate;
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -846,6 +847,7 @@ export type ReadСityApiV1CitiesСityIdGetError = (HTTPValidationError);
 export type UpdateСityApiV1CitiesСityIdPutData = {
     body: CityUpdate;
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -859,6 +861,7 @@ export type UpdateСityApiV1CitiesСityIdPutError = (HTTPValidationError);
 
 export type DeleteСityApiV1CitiesСityIdDeleteData = {
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1011,6 +1014,7 @@ export type ReadPortsToApiV1PortToGetError = (HTTPValidationError);
 export type CreatePortToApiV1PortToPostData = {
     body: PortToCreate;
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1035,6 +1039,7 @@ export type ReadPortToApiV1PortToPortToIdGetError = (HTTPValidationError);
 export type UpdatePortToApiV1PortToPortToIdPutData = {
     body: PortToUpdate;
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1048,6 +1053,7 @@ export type UpdatePortToApiV1PortToPortToIdPutError = (HTTPValidationError);
 
 export type DeletePortToApiV1PortToPortToIdDeleteData = {
     headers?: {
+        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
