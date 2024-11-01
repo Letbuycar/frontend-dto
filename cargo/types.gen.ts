@@ -190,6 +190,13 @@ export type PaginationSchema_CarModel_ = {
     items: Array<CarModel>;
 };
 
+export type PaginationSchema_Country_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Country>;
+};
+
 export type PaginationSchema_EngineVolume_ = {
     total: number;
     page: number;
@@ -202,6 +209,20 @@ export type PaginationSchema_FuelType_ = {
     page: number;
     total_pages: number;
     items: Array<FuelType>;
+};
+
+export type PaginationSchema_PortFrom_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<PortFrom>;
+};
+
+export type PaginationSchema_PortTo_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<PortTo>;
 };
 
 export type PaginationSchema_Transmission_ = {
@@ -782,6 +803,9 @@ export type ReadCitiesApiV1CitiesGetData = {
     headers?: {
         'Content-Language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
 export type ReadCitiesApiV1CitiesGetResponse = (Array<City>);
@@ -843,9 +867,12 @@ export type ReadCountriesApiV1CountriesGetData = {
     headers?: {
         'Content-Language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
-export type ReadCountriesApiV1CountriesGetResponse = (Array<Country>);
+export type ReadCountriesApiV1CountriesGetResponse = (PaginationSchema_Country_);
 
 export type ReadCountriesApiV1CountriesGetError = (HTTPValidationError);
 
@@ -909,7 +936,7 @@ export type ReadPortsFromApiV1PortFromGetData = {
     };
 };
 
-export type ReadPortsFromApiV1PortFromGetResponse = (Array<PortFrom>);
+export type ReadPortsFromApiV1PortFromGetResponse = (PaginationSchema_PortFrom_);
 
 export type ReadPortsFromApiV1PortFromGetError = (HTTPValidationError);
 
@@ -965,9 +992,12 @@ export type ReadPortsToApiV1PortToGetData = {
     headers?: {
         'Content-Language'?: string;
     };
+    query?: {
+        page?: number;
+    };
 };
 
-export type ReadPortsToApiV1PortToGetResponse = (Array<PortTo>);
+export type ReadPortsToApiV1PortToGetResponse = (PaginationSchema_PortTo_);
 
 export type ReadPortsToApiV1PortToGetError = (HTTPValidationError);
 

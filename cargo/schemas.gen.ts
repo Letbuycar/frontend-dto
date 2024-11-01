@@ -865,6 +865,33 @@ export const PaginationSchema_CarModel_Schema = {
     title: 'PaginationSchema[CarModel]'
 } as const;
 
+export const PaginationSchema_Country_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/Country'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[Country]'
+} as const;
+
 export const PaginationSchema_EngineVolume_Schema = {
     properties: {
         total: {
@@ -917,6 +944,60 @@ export const PaginationSchema_FuelType_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[FuelType]'
+} as const;
+
+export const PaginationSchema_PortFrom_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/PortFrom'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[PortFrom]'
+} as const;
+
+export const PaginationSchema_PortTo_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/PortTo'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[PortTo]'
 } as const;
 
 export const PaginationSchema_Transmission_Schema = {
