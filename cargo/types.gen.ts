@@ -190,6 +190,13 @@ export type PaginationSchema_CarModel_ = {
     items: Array<CarModel>;
 };
 
+export type PaginationSchema_City_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<City>;
+};
+
 export type PaginationSchema_Country_ = {
     total: number;
     page: number;
@@ -808,7 +815,7 @@ export type ReadCitiesApiV1CitiesGetData = {
     };
 };
 
-export type ReadCitiesApiV1CitiesGetResponse = (Array<City>);
+export type ReadCitiesApiV1CitiesGetResponse = (PaginationSchema_City_);
 
 export type ReadCitiesApiV1CitiesGetError = (HTTPValidationError);
 
