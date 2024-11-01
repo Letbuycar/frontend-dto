@@ -784,6 +784,111 @@ export const HTTPValidationErrorSchema = {
     title: 'HTTPValidationError'
 } as const;
 
+export const LocationFromSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title'
+        },
+        port_ids: {
+            anyOf: [
+                {
+                    items: {},
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Ids',
+            default: []
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        is_active: {
+            type: 'boolean',
+            title: 'Is Active'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        }
+    },
+    type: 'object',
+    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    title: 'LocationFrom'
+} as const;
+
+export const LocationFromCreateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title'
+        },
+        port_ids: {
+            anyOf: [
+                {
+                    items: {},
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Ids',
+            default: []
+        }
+    },
+    type: 'object',
+    required: ['title'],
+    title: 'LocationFromCreate'
+} as const;
+
+export const LocationFromUpdateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title'
+        },
+        port_ids: {
+            anyOf: [
+                {
+                    items: {},
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Ids',
+            default: []
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    required: ['title'],
+    title: 'LocationFromUpdate'
+} as const;
+
 export const PaginationSchema_BodyType_Schema = {
     properties: {
         total: {
@@ -971,6 +1076,33 @@ export const PaginationSchema_FuelType_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[FuelType]'
+} as const;
+
+export const PaginationSchema_LocationFrom_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/LocationFrom'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[LocationFrom]'
 } as const;
 
 export const PaginationSchema_PortFrom_Schema = {

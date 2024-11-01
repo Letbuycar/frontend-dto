@@ -169,6 +169,26 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type LocationFrom = {
+    title: string;
+    port_ids?: (Array<unknown> | null);
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+};
+
+export type LocationFromCreate = {
+    title: string;
+    port_ids?: (Array<unknown> | null);
+};
+
+export type LocationFromUpdate = {
+    title: string;
+    port_ids?: (Array<unknown> | null);
+    is_active?: (boolean | null);
+};
+
 export type PaginationSchema_BodyType_ = {
     total: number;
     page: number;
@@ -216,6 +236,13 @@ export type PaginationSchema_FuelType_ = {
     page: number;
     total_pages: number;
     items: Array<FuelType>;
+};
+
+export type PaginationSchema_LocationFrom_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<LocationFrom>;
 };
 
 export type PaginationSchema_PortFrom_ = {
@@ -939,6 +966,73 @@ export type DeleteCountryApiV1CountriesCountryIdDeleteData = {
 export type DeleteCountryApiV1CountriesCountryIdDeleteResponse = (Country);
 
 export type DeleteCountryApiV1CountriesCountryIdDeleteError = (HTTPValidationError);
+
+export type ReadLocationsFromApiV1LocationFromGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    query?: {
+        page?: number;
+    };
+};
+
+export type ReadLocationsFromApiV1LocationFromGetResponse = (PaginationSchema_LocationFrom_);
+
+export type ReadLocationsFromApiV1LocationFromGetError = (HTTPValidationError);
+
+export type CreateLocationFromApiV1LocationFromPostData = {
+    body: LocationFromCreate;
+    headers?: {
+        Authorization?: string;
+        'Content-Language'?: string;
+    };
+};
+
+export type CreateLocationFromApiV1LocationFromPostResponse = (LocationFrom);
+
+export type CreateLocationFromApiV1LocationFromPostError = (HTTPValidationError);
+
+export type ReadLocationFromApiV1LocationFromLocationFromIdGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        location_from_id: number;
+    };
+};
+
+export type ReadLocationFromApiV1LocationFromLocationFromIdGetResponse = (LocationFrom);
+
+export type ReadLocationFromApiV1LocationFromLocationFromIdGetError = (HTTPValidationError);
+
+export type UpdateLocationFromApiV1LocationFromLocationFromIdPutData = {
+    body: LocationFromUpdate;
+    headers?: {
+        Authorization?: string;
+        'Content-Language'?: string;
+    };
+    path: {
+        location_from_id: number;
+    };
+};
+
+export type UpdateLocationFromApiV1LocationFromLocationFromIdPutResponse = (LocationFrom);
+
+export type UpdateLocationFromApiV1LocationFromLocationFromIdPutError = (HTTPValidationError);
+
+export type DeleteLocationFromApiV1LocationFromLocationFromIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+        'Content-Language'?: string;
+    };
+    path: {
+        location_from_id: number;
+    };
+};
+
+export type DeleteLocationFromApiV1LocationFromLocationFromIdDeleteResponse = (LocationFrom);
+
+export type DeleteLocationFromApiV1LocationFromLocationFromIdDeleteError = (HTTPValidationError);
 
 export type ReadPortsFromApiV1PortFromGetData = {
     query?: {
