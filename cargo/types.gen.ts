@@ -294,7 +294,7 @@ export type PortTo = {
     country_id?: (number | null);
     is_active?: (boolean | null);
     id: number;
-    country: Country;
+    country?: (Country | null);
     updated_on: string;
     created_on: string;
 };
@@ -968,9 +968,6 @@ export type DeleteCountryApiV1CountriesCountryIdDeleteResponse = (Country);
 export type DeleteCountryApiV1CountriesCountryIdDeleteError = (HTTPValidationError);
 
 export type ReadLocationsFromApiV1LocationFromGetData = {
-    headers?: {
-        'Content-Language'?: string;
-    };
     query?: {
         page?: number;
     };
@@ -984,7 +981,6 @@ export type CreateLocationFromApiV1LocationFromPostData = {
     body: LocationFromCreate;
     headers?: {
         Authorization?: string;
-        'Content-Language'?: string;
     };
 };
 
@@ -993,9 +989,6 @@ export type CreateLocationFromApiV1LocationFromPostResponse = (LocationFrom);
 export type CreateLocationFromApiV1LocationFromPostError = (HTTPValidationError);
 
 export type ReadLocationFromApiV1LocationFromLocationFromIdGetData = {
-    headers?: {
-        'Content-Language'?: string;
-    };
     path: {
         location_from_id: number;
     };
@@ -1009,7 +1002,6 @@ export type UpdateLocationFromApiV1LocationFromLocationFromIdPutData = {
     body: LocationFromUpdate;
     headers?: {
         Authorization?: string;
-        'Content-Language'?: string;
     };
     path: {
         location_from_id: number;
@@ -1023,7 +1015,6 @@ export type UpdateLocationFromApiV1LocationFromLocationFromIdPutError = (HTTPVal
 export type DeleteLocationFromApiV1LocationFromLocationFromIdDeleteData = {
     headers?: {
         Authorization?: string;
-        'Content-Language'?: string;
     };
     path: {
         location_from_id: number;

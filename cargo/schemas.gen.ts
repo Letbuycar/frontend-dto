@@ -1352,7 +1352,14 @@ export const PortToSchema = {
             title: 'Id'
         },
         country: {
-            '$ref': '#/components/schemas/Country'
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Country'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         updated_on: {
             type: 'string',
@@ -1366,7 +1373,7 @@ export const PortToSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'country', 'updated_on', 'created_on'],
+    required: ['title', 'id', 'updated_on', 'created_on'],
     title: 'PortTo'
 } as const;
 
