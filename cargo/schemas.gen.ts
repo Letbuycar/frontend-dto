@@ -896,9 +896,9 @@ export const OverlandTariffSchema = {
             type: 'string',
             title: 'Price'
         },
-        location_from_id: {
+        location_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Location Id'
         },
         port_id: {
             type: 'integer',
@@ -922,7 +922,7 @@ export const OverlandTariffSchema = {
             format: 'date-time',
             title: 'Created On'
         },
-        location_from: {
+        location: {
             anyOf: [
                 {
                     '$ref': '#/components/schemas/LocationFrom'
@@ -961,9 +961,9 @@ export const OverlandTariffCreateSchema = {
             ],
             title: 'Price'
         },
-        location_from_id: {
+        location_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Location Id'
         },
         port_id: {
             type: 'integer',
@@ -987,9 +987,9 @@ export const OverlandTariffUpdateSchema = {
             ],
             title: 'Price'
         },
-        location_from_id: {
+        location_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Location Id'
         },
         port_id: {
             type: 'integer',

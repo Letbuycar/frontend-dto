@@ -191,25 +191,25 @@ export type LocationFromUpdate = {
 
 export type OverlandTariff = {
     price?: string;
-    location_from_id?: number;
+    location_id?: number;
     port_id?: number;
     id: number;
     is_active: boolean;
     updated_on: string;
     created_on: string;
-    location_from?: (LocationFrom | null);
+    location?: (LocationFrom | null);
     port?: (PortFrom | null);
 };
 
 export type OverlandTariffCreate = {
     price?: (number | string);
-    location_from_id?: number;
+    location_id?: number;
     port_id?: number;
 };
 
 export type OverlandTariffUpdate = {
     price?: (number | string);
-    location_from_id?: number;
+    location_id?: number;
     port_id?: number;
     is_active?: (boolean | null);
 };
@@ -1216,8 +1216,9 @@ export type DeletePortToApiV1PortToPortToIdDeleteError = (HTTPValidationError);
 
 export type ReadOverlandTariffsApiV1OverlandTariffGetData = {
     query?: {
-        car_brand_id?: number;
+        location_id?: number;
         page?: number;
+        port_id?: number;
     };
 };
 
