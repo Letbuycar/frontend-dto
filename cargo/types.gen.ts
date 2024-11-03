@@ -216,26 +216,26 @@ export type OverlandTariffUpdate = {
 
 export type OverseaTariff = {
     price?: string;
-    location_from_id?: number;
-    port_id?: number;
+    port_from_id?: number;
+    port_to_id?: number;
     id: number;
     is_active: boolean;
     updated_on: string;
     created_on: string;
-    location_from?: (LocationFrom | null);
-    port?: (PortFrom | null);
+    port_from?: (PortFrom | null);
+    port_to?: (PortTo | null);
 };
 
 export type OverseaTariffCreate = {
     price?: (number | string);
-    location_from_id?: number;
-    port_id?: number;
+    port_from_id?: number;
+    port_to_id?: number;
 };
 
 export type OverseaTariffUpdate = {
     price?: (number | string);
-    location_from_id?: number;
-    port_id?: number;
+    port_from_id?: number;
+    port_to_id?: number;
     is_active?: (boolean | null);
 };
 

@@ -1018,13 +1018,13 @@ export const OverseaTariffSchema = {
             type: 'string',
             title: 'Price'
         },
-        location_from_id: {
+        port_from_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Port From Id'
         },
-        port_id: {
+        port_to_id: {
             type: 'integer',
-            title: 'Port Id'
+            title: 'Port To Id'
         },
         id: {
             type: 'integer',
@@ -1044,20 +1044,20 @@ export const OverseaTariffSchema = {
             format: 'date-time',
             title: 'Created On'
         },
-        location_from: {
+        port_from: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/LocationFrom'
+                    '$ref': '#/components/schemas/PortFrom'
                 },
                 {
                     type: 'null'
                 }
             ]
         },
-        port: {
+        port_to: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/PortFrom'
+                    '$ref': '#/components/schemas/PortTo'
                 },
                 {
                     type: 'null'
@@ -1083,13 +1083,13 @@ export const OverseaTariffCreateSchema = {
             ],
             title: 'Price'
         },
-        location_from_id: {
+        port_from_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Port From Id'
         },
-        port_id: {
+        port_to_id: {
             type: 'integer',
-            title: 'Port Id'
+            title: 'Port To Id'
         }
     },
     type: 'object',
@@ -1109,13 +1109,13 @@ export const OverseaTariffUpdateSchema = {
             ],
             title: 'Price'
         },
-        location_from_id: {
+        port_from_id: {
             type: 'integer',
-            title: 'Location From Id'
+            title: 'Port From Id'
         },
-        port_id: {
+        port_to_id: {
             type: 'integer',
-            title: 'Port Id'
+            title: 'Port To Id'
         },
         is_active: {
             anyOf: [
