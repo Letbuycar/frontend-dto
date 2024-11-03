@@ -536,7 +536,8 @@ export const CountrySchema = {
     properties: {
         title: {
             type: 'string',
-            title: 'Title'
+            title: 'Title',
+            default: ''
         },
         is_active: {
             anyOf: [
@@ -566,7 +567,7 @@ export const CountrySchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'Country'
 } as const;
 
@@ -574,7 +575,8 @@ export const CountryCreateSchema = {
     properties: {
         title: {
             type: 'string',
-            title: 'Title'
+            title: 'Title',
+            default: ''
         },
         is_active: {
             anyOf: [
@@ -590,7 +592,6 @@ export const CountryCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CountryCreate'
 } as const;
 
@@ -598,7 +599,8 @@ export const CountryUpdateSchema = {
     properties: {
         title: {
             type: 'string',
-            title: 'Title'
+            title: 'Title',
+            default: ''
         },
         is_active: {
             anyOf: [
@@ -614,7 +616,6 @@ export const CountryUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CountryUpdate'
 } as const;
 
@@ -889,6 +890,250 @@ export const LocationFromUpdateSchema = {
     title: 'LocationFromUpdate'
 } as const;
 
+export const OverlandTariffSchema = {
+    properties: {
+        price: {
+            type: 'string',
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        is_active: {
+            type: 'boolean',
+            title: 'Is Active'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        },
+        location_from: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/LocationFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    title: 'OverlandTariff'
+} as const;
+
+export const OverlandTariffCreateSchema = {
+    properties: {
+        price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'string'
+                }
+            ],
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        }
+    },
+    type: 'object',
+    title: 'OverlandTariffCreate'
+} as const;
+
+export const OverlandTariffUpdateSchema = {
+    properties: {
+        price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'string'
+                }
+            ],
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'OverlandTariffUpdate'
+} as const;
+
+export const OverseaTariffSchema = {
+    properties: {
+        price: {
+            type: 'string',
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        is_active: {
+            type: 'boolean',
+            title: 'Is Active'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        },
+        location_from: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/LocationFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    title: 'OverseaTariff'
+} as const;
+
+export const OverseaTariffCreateSchema = {
+    properties: {
+        price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'string'
+                }
+            ],
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        }
+    },
+    type: 'object',
+    title: 'OverseaTariffCreate'
+} as const;
+
+export const OverseaTariffUpdateSchema = {
+    properties: {
+        price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'string'
+                }
+            ],
+            title: 'Price'
+        },
+        location_from_id: {
+            type: 'integer',
+            title: 'Location From Id'
+        },
+        port_id: {
+            type: 'integer',
+            title: 'Port Id'
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'OverseaTariffUpdate'
+} as const;
+
 export const PaginationSchema_BodyType_Schema = {
     properties: {
         total: {
@@ -1103,6 +1348,60 @@ export const PaginationSchema_LocationFrom_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[LocationFrom]'
+} as const;
+
+export const PaginationSchema_OverlandTariff_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/OverlandTariff'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[OverlandTariff]'
+} as const;
+
+export const PaginationSchema_OverseaTariff_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/OverseaTariff'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[OverseaTariff]'
 } as const;
 
 export const PaginationSchema_PortFrom_Schema = {
@@ -1373,7 +1672,7 @@ export const PortToSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['title', 'id'],
     title: 'PortTo'
 } as const;
 

@@ -113,20 +113,20 @@ export type CityUpdate = {
 };
 
 export type Country = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
     id: number;
-    updated_on: string;
-    created_on: string;
+    updated_on?: string;
+    created_on?: string;
 };
 
 export type CountryCreate = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
 };
 
 export type CountryUpdate = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
 };
 
@@ -189,6 +189,56 @@ export type LocationFromUpdate = {
     is_active?: (boolean | null);
 };
 
+export type OverlandTariff = {
+    price?: string;
+    location_from_id?: number;
+    port_id?: number;
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+    location_from?: (LocationFrom | null);
+    port?: (PortFrom | null);
+};
+
+export type OverlandTariffCreate = {
+    price?: (number | string);
+    location_from_id?: number;
+    port_id?: number;
+};
+
+export type OverlandTariffUpdate = {
+    price?: (number | string);
+    location_from_id?: number;
+    port_id?: number;
+    is_active?: (boolean | null);
+};
+
+export type OverseaTariff = {
+    price?: string;
+    location_from_id?: number;
+    port_id?: number;
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+    location_from?: (LocationFrom | null);
+    port?: (PortFrom | null);
+};
+
+export type OverseaTariffCreate = {
+    price?: (number | string);
+    location_from_id?: number;
+    port_id?: number;
+};
+
+export type OverseaTariffUpdate = {
+    price?: (number | string);
+    location_from_id?: number;
+    port_id?: number;
+    is_active?: (boolean | null);
+};
+
 export type PaginationSchema_BodyType_ = {
     total: number;
     page: number;
@@ -245,6 +295,20 @@ export type PaginationSchema_LocationFrom_ = {
     items: Array<LocationFrom>;
 };
 
+export type PaginationSchema_OverlandTariff_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<OverlandTariff>;
+};
+
+export type PaginationSchema_OverseaTariff_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<OverseaTariff>;
+};
+
 export type PaginationSchema_PortFrom_ = {
     total: number;
     page: number;
@@ -295,8 +359,8 @@ export type PortTo = {
     is_active?: (boolean | null);
     id: number;
     country?: (Country | null);
-    updated_on: string;
-    created_on: string;
+    updated_on?: string;
+    created_on?: string;
 };
 
 export type PortToCreate = {
@@ -1149,6 +1213,124 @@ export type DeletePortToApiV1PortToPortToIdDeleteData = {
 export type DeletePortToApiV1PortToPortToIdDeleteResponse = (PortTo);
 
 export type DeletePortToApiV1PortToPortToIdDeleteError = (HTTPValidationError);
+
+export type ReadOverlandTariffsApiV1OverlandTariffGetData = {
+    query?: {
+        car_brand_id?: number;
+        page?: number;
+    };
+};
+
+export type ReadOverlandTariffsApiV1OverlandTariffGetResponse = (PaginationSchema_OverlandTariff_);
+
+export type ReadOverlandTariffsApiV1OverlandTariffGetError = (HTTPValidationError);
+
+export type CreateNewOverlandTariffApiV1OverlandTariffPostData = {
+    body: OverlandTariffCreate;
+    headers?: {
+        Authorization?: string;
+    };
+};
+
+export type CreateNewOverlandTariffApiV1OverlandTariffPostResponse = (OverlandTariff);
+
+export type CreateNewOverlandTariffApiV1OverlandTariffPostError = (HTTPValidationError);
+
+export type ReadOverlandTariffApiV1OverlandTariffOverlandTariffIdGetData = {
+    path: {
+        overland_tariff_id: number;
+    };
+};
+
+export type ReadOverlandTariffApiV1OverlandTariffOverlandTariffIdGetResponse = (OverlandTariff);
+
+export type ReadOverlandTariffApiV1OverlandTariffOverlandTariffIdGetError = (HTTPValidationError);
+
+export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutData = {
+    body: OverlandTariffUpdate;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        overland_tariff_id: number;
+    };
+};
+
+export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutResponse = (OverlandTariff);
+
+export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutError = (HTTPValidationError);
+
+export type DeleteExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        overland_tariff_id: number;
+    };
+};
+
+export type DeleteExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdDeleteResponse = (OverlandTariff);
+
+export type DeleteExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdDeleteError = (HTTPValidationError);
+
+export type ReadOverseaTariffsApiV1OverseaTariffGetData = {
+    query?: {
+        car_brand_id?: number;
+        page?: number;
+    };
+};
+
+export type ReadOverseaTariffsApiV1OverseaTariffGetResponse = (PaginationSchema_OverseaTariff_);
+
+export type ReadOverseaTariffsApiV1OverseaTariffGetError = (HTTPValidationError);
+
+export type CreateNewOverseaTariffApiV1OverseaTariffPostData = {
+    body: OverseaTariffCreate;
+    headers?: {
+        Authorization?: string;
+    };
+};
+
+export type CreateNewOverseaTariffApiV1OverseaTariffPostResponse = (OverseaTariff);
+
+export type CreateNewOverseaTariffApiV1OverseaTariffPostError = (HTTPValidationError);
+
+export type ReadOverseaTariffApiV1OverseaTariffOverseaTariffIdGetData = {
+    path: {
+        oversea_tariff_id: number;
+    };
+};
+
+export type ReadOverseaTariffApiV1OverseaTariffOverseaTariffIdGetResponse = (OverseaTariff);
+
+export type ReadOverseaTariffApiV1OverseaTariffOverseaTariffIdGetError = (HTTPValidationError);
+
+export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutData = {
+    body: OverseaTariffUpdate;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        oversea_tariff_id: number;
+    };
+};
+
+export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutResponse = (OverseaTariff);
+
+export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutError = (HTTPValidationError);
+
+export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        oversea_tariff_id: number;
+    };
+};
+
+export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteResponse = (OverseaTariff);
+
+export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
