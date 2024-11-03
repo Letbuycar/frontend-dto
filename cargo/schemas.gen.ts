@@ -897,11 +897,25 @@ export const OverlandTariffSchema = {
             title: 'Price'
         },
         location_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Location Id'
         },
         port_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port Id'
         },
         id: {
@@ -962,11 +976,25 @@ export const OverlandTariffCreateSchema = {
             title: 'Price'
         },
         location_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Location Id'
         },
         port_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port Id'
         }
     },
@@ -988,11 +1016,25 @@ export const OverlandTariffUpdateSchema = {
             title: 'Price'
         },
         location_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Location Id'
         },
         port_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port Id'
         },
         is_active: {
@@ -1019,11 +1061,25 @@ export const OverseaTariffSchema = {
             title: 'Price'
         },
         port_from_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port From Id'
         },
         port_to_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port To Id'
         },
         id: {
@@ -1084,11 +1140,25 @@ export const OverseaTariffCreateSchema = {
             title: 'Price'
         },
         port_from_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port From Id'
         },
         port_to_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port To Id'
         }
     },
@@ -1110,11 +1180,25 @@ export const OverseaTariffUpdateSchema = {
             title: 'Price'
         },
         port_from_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port From Id'
         },
         port_to_id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Port To Id'
         },
         is_active: {

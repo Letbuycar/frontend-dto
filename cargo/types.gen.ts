@@ -191,8 +191,8 @@ export type LocationFromUpdate = {
 
 export type OverlandTariff = {
     price?: string;
-    location_id?: number;
-    port_id?: number;
+    location_id?: (number | null);
+    port_id?: (number | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -203,21 +203,21 @@ export type OverlandTariff = {
 
 export type OverlandTariffCreate = {
     price?: (number | string);
-    location_id?: number;
-    port_id?: number;
+    location_id?: (number | null);
+    port_id?: (number | null);
 };
 
 export type OverlandTariffUpdate = {
     price?: (number | string);
-    location_id?: number;
-    port_id?: number;
+    location_id?: (number | null);
+    port_id?: (number | null);
     is_active?: (boolean | null);
 };
 
 export type OverseaTariff = {
     price?: string;
-    port_from_id?: number;
-    port_to_id?: number;
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -228,14 +228,14 @@ export type OverseaTariff = {
 
 export type OverseaTariffCreate = {
     price?: (number | string);
-    port_from_id?: number;
-    port_to_id?: number;
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
 };
 
 export type OverseaTariffUpdate = {
     price?: (number | string);
-    port_from_id?: number;
-    port_to_id?: number;
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
     is_active?: (boolean | null);
 };
 
@@ -1276,8 +1276,9 @@ export type DeleteExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdDelet
 
 export type ReadOverseaTariffsApiV1OverseaTariffGetData = {
     query?: {
-        car_brand_id?: number;
         page?: number;
+        port_from_id?: number;
+        port_to_id?: number;
     };
 };
 
