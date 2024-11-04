@@ -65,6 +65,16 @@ export const AdminUserInfoSchema = {
                 }
             ],
             title: 'Phone'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',

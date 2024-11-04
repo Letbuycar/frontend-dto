@@ -8,6 +8,7 @@ export type AdminUserInfo = {
     phone_number?: (string | null);
     email_verified: boolean;
     phone?: (string | null);
+    role?: (UserRole | null);
 };
 
 export type AdminUserUpdate = {
@@ -117,16 +118,6 @@ export type ChangeUserApiV1AuthChangeUserIdPatchResponse = (UserInfo);
 
 export type ChangeUserApiV1AuthChangeUserIdPatchError = (HTTPValidationError);
 
-export type CheckUserRoleApiV1AuthCheckRoleUserIdGetData = {
-    headers?: {
-        Authorization?: string;
-    };
-};
-
-export type CheckUserRoleApiV1AuthCheckRoleUserIdGetResponse = (unknown);
-
-export type CheckUserRoleApiV1AuthCheckRoleUserIdGetError = (HTTPValidationError);
-
 export type AdminGetUsersApiV1UsersGetData = {
     query?: {
         page?: number;
@@ -148,7 +139,7 @@ export type AdminGetUserApiV1UsersUserIdGetResponse = (AdminUserInfo);
 export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchData = {
-    body?: (AdminUserUpdate);
+    body?: (AdminUserInfo);
     headers?: {
         Authorization?: string;
     };
