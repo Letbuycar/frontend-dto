@@ -3,7 +3,15 @@
 export const AdminUserInfoSchema = {
     properties: {
         id: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'string',
+                    format: 'uuid'
+                }
+            ],
             title: 'Id'
         },
         email: {
@@ -52,7 +60,14 @@ export const AdminUserInfoSchema = {
             title: 'Phone Number'
         },
         email_verified: {
-            type: 'boolean',
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Email Verified'
         },
         phone: {
@@ -78,70 +93,7 @@ export const AdminUserInfoSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'email_verified'],
     title: 'AdminUserInfo'
-} as const;
-
-export const AdminUserUpdateSchema = {
-    properties: {
-        email: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'email'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Email'
-        },
-        first_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'First Name'
-        },
-        last_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Last Name'
-        },
-        phone_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Phone Number'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        }
-    },
-    type: 'object',
-    title: 'AdminUserUpdate'
 } as const;
 
 export const HTTPValidationErrorSchema = {
@@ -211,7 +163,15 @@ export const SignInUserInfoSchema = {
 export const UserInfoSchema = {
     properties: {
         id: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'string',
+                    format: 'uuid'
+                }
+            ],
             title: 'Id'
         },
         email: {
@@ -261,7 +221,6 @@ export const UserInfoSchema = {
         }
     },
     type: 'object',
-    required: ['id'],
     title: 'UserInfo'
 } as const;
 
