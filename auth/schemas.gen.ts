@@ -2,6 +2,10 @@
 
 export const AdminUserInfoSchema = {
     properties: {
+        id: {
+            type: 'string',
+            title: 'Id'
+        },
         email: {
             anyOf: [
                 {
@@ -64,7 +68,7 @@ export const AdminUserInfoSchema = {
         }
     },
     type: 'object',
-    required: ['email_verified'],
+    required: ['id', 'email_verified'],
     title: 'AdminUserInfo'
 } as const;
 
@@ -196,6 +200,10 @@ export const SignInUserInfoSchema = {
 
 export const UserInfoSchema = {
     properties: {
+        id: {
+            type: 'string',
+            title: 'Id'
+        },
         email: {
             anyOf: [
                 {
@@ -243,6 +251,7 @@ export const UserInfoSchema = {
         }
     },
     type: 'object',
+    required: ['id'],
     title: 'UserInfo'
 } as const;
 
