@@ -1756,7 +1756,7 @@ export const PortToSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id'],
+    required: ['title'],
     title: 'PortTo'
 } as const;
 

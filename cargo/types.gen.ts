@@ -357,7 +357,7 @@ export type PortTo = {
     title: string;
     country_id?: (number | null);
     is_active?: (boolean | null);
-    id: number;
+    id?: number;
     country?: (Country | null);
     updated_on?: string;
     created_on?: string;
