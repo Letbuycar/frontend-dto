@@ -114,6 +114,10 @@ export type Cargo = {
     closed_locat?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    car_brand_id?: (number | null);
+    car_brand?: (CarBrand | null);
+    car_model_id?: (number | null);
+    car_model?: (CarModel | null);
     container_id?: (number | null);
     container?: (Container | null);
     port_from_id?: (number | null);
@@ -160,6 +164,10 @@ export type CargoCreate = {
     closed_locat?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    car_brand_id?: (number | null);
+    car_brand?: (CarBrand | null);
+    car_model_id?: (number | null);
+    car_model?: (CarModel | null);
     container_id?: (number | null);
     container?: (Container | null);
     port_from_id?: (number | null);
@@ -202,6 +210,10 @@ export type CargoUpdate = {
     closed_locat?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    car_brand_id?: (number | null);
+    car_brand?: (CarBrand | null);
+    car_model_id?: (number | null);
+    car_model?: (CarModel | null);
     container_id?: (number | null);
     container?: (Container | null);
     port_from_id?: (number | null);

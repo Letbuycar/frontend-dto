@@ -672,6 +672,48 @@ export const CargoSchema = {
             title: 'Doc Change',
             default: 0
         },
+        car_brand_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Brand Id'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrand'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Model Id'
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModel'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         container_id: {
             anyOf: [
                 {
@@ -1132,6 +1174,48 @@ export const CargoCreateSchema = {
             title: 'Doc Change',
             default: 0
         },
+        car_brand_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Brand Id'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrand'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Model Id'
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModel'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         container_id: {
             anyOf: [
                 {
@@ -1572,6 +1656,48 @@ export const CargoUpdateSchema = {
             ],
             title: 'Doc Change',
             default: 0
+        },
+        car_brand_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Brand Id'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrand'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Model Id'
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModel'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         container_id: {
             anyOf: [
