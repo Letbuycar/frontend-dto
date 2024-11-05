@@ -399,6 +399,13 @@ export type OverseaTariffUpdate = {
     is_active?: (boolean | null);
 };
 
+export type PaginationSchema_Auction_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Auction>;
+};
+
 export type PaginationSchema_BodyType_ = {
     total: number;
     page: number;
@@ -579,7 +586,7 @@ export type ReadAuctionsApiV1AuctionsGetData = {
     };
 };
 
-export type ReadAuctionsApiV1AuctionsGetResponse = (Array<Auction>);
+export type ReadAuctionsApiV1AuctionsGetResponse = (PaginationSchema_Auction_);
 
 export type ReadAuctionsApiV1AuctionsGetError = (HTTPValidationError);
 

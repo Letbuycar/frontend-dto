@@ -2764,6 +2764,33 @@ export const OverseaTariffUpdateSchema = {
     title: 'OverseaTariffUpdate'
 } as const;
 
+export const PaginationSchema_Auction_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/Auction'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[Auction]'
+} as const;
+
 export const PaginationSchema_BodyType_Schema = {
     properties: {
         total: {
