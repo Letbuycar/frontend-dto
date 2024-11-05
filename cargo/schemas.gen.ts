@@ -672,6 +672,30 @@ export const CargoSchema = {
             title: 'Doc Change',
             default: 0
         },
+        participent_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Participent Number',
+            default: 0
+        },
+        lot_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Lot Number',
+            default: 0
+        },
         car_brand_id: {
             anyOf: [
                 {
@@ -1174,6 +1198,30 @@ export const CargoCreateSchema = {
             title: 'Doc Change',
             default: 0
         },
+        participent_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Participent Number',
+            default: 0
+        },
+        lot_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Lot Number',
+            default: 0
+        },
         car_brand_id: {
             anyOf: [
                 {
@@ -1655,6 +1703,30 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Doc Change',
+            default: 0
+        },
+        participent_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Participent Number',
+            default: 0
+        },
+        lot_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Lot Number',
             default: 0
         },
         car_brand_id: {
