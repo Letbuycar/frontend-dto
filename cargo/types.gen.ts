@@ -94,6 +94,137 @@ export type CarModelUpdate = {
     is_active?: (boolean | null);
 };
 
+export type Cargo = {
+    vin_code?: (string | null);
+    year?: (number | null);
+    booking_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    cost?: (number | null);
+    auct_collect?: (number | null);
+    penalty?: (number | null);
+    insurance_type?: (string | null);
+    insurance_pay?: (number | null);
+    sea_freight?: (number | null);
+    land_delivery?: (number | null);
+    sublot?: (number | null);
+    broker_sevice_amount?: (number | null);
+    storage_sevice_amount?: (number | null);
+    is_closed_locat?: (boolean | null);
+    closed_locat?: (number | null);
+    is_doc_change?: (boolean | null);
+    doc_change?: (number | null);
+    container_id?: (number | null);
+    container?: (Container | null);
+    port_from_id?: (number | null);
+    port_from?: (PortFrom | null);
+    port_to_id?: (number | null);
+    port_to?: (PortTo | null);
+    fuel_type_id?: (number | null);
+    fuel_type?: (FuelType | null);
+    engine_volume_id?: (number | null);
+    engine_volume?: (EngineVolume | null);
+    body_type_id?: (number | null);
+    body_type?: (BodyType | null);
+    country_id?: (number | null);
+    country?: (Country | null);
+    auction_id?: (number | null);
+    auction?: (Auction | null);
+    transmission_id?: (number | null);
+    transmission?: (Transmission | null);
+    location_id?: (number | null);
+    location?: (LocationFrom | null);
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+};
+
+export type CargoCreate = {
+    vin_code?: (string | null);
+    year?: (number | null);
+    booking_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    cost?: (number | null);
+    auct_collect?: (number | null);
+    penalty?: (number | null);
+    insurance_type?: (string | null);
+    insurance_pay?: (number | null);
+    sea_freight?: (number | null);
+    land_delivery?: (number | null);
+    sublot?: (number | null);
+    broker_sevice_amount?: (number | null);
+    storage_sevice_amount?: (number | null);
+    is_closed_locat?: (boolean | null);
+    closed_locat?: (number | null);
+    is_doc_change?: (boolean | null);
+    doc_change?: (number | null);
+    container_id?: (number | null);
+    container?: (Container | null);
+    port_from_id?: (number | null);
+    port_from?: (PortFrom | null);
+    port_to_id?: (number | null);
+    port_to?: (PortTo | null);
+    fuel_type_id?: (number | null);
+    fuel_type?: (FuelType | null);
+    engine_volume_id?: (number | null);
+    engine_volume?: (EngineVolume | null);
+    body_type_id?: (number | null);
+    body_type?: (BodyType | null);
+    country_id?: (number | null);
+    country?: (Country | null);
+    auction_id?: (number | null);
+    auction?: (Auction | null);
+    transmission_id?: (number | null);
+    transmission?: (Transmission | null);
+    location_id?: (number | null);
+    location?: (LocationFrom | null);
+};
+
+export type CargoUpdate = {
+    vin_code?: (string | null);
+    year?: (number | null);
+    booking_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    cost?: (number | null);
+    auct_collect?: (number | null);
+    penalty?: (number | null);
+    insurance_type?: (string | null);
+    insurance_pay?: (number | null);
+    sea_freight?: (number | null);
+    land_delivery?: (number | null);
+    sublot?: (number | null);
+    broker_sevice_amount?: (number | null);
+    storage_sevice_amount?: (number | null);
+    is_closed_locat?: (boolean | null);
+    closed_locat?: (number | null);
+    is_doc_change?: (boolean | null);
+    doc_change?: (number | null);
+    container_id?: (number | null);
+    container?: (Container | null);
+    port_from_id?: (number | null);
+    port_from?: (PortFrom | null);
+    port_to_id?: (number | null);
+    port_to?: (PortTo | null);
+    fuel_type_id?: (number | null);
+    fuel_type?: (FuelType | null);
+    engine_volume_id?: (number | null);
+    engine_volume?: (EngineVolume | null);
+    body_type_id?: (number | null);
+    body_type?: (BodyType | null);
+    country_id?: (number | null);
+    country?: (Country | null);
+    auction_id?: (number | null);
+    auction?: (Auction | null);
+    transmission_id?: (number | null);
+    transmission?: (Transmission | null);
+    location_id?: (number | null);
+    location?: (LocationFrom | null);
+    is_active?: (boolean | null);
+};
+
 export type City = {
     title: string;
     is_active?: (boolean | null);
@@ -109,6 +240,23 @@ export type CityCreate = {
 
 export type CityUpdate = {
     title: string;
+    is_active?: (boolean | null);
+};
+
+export type Container = {
+    number: string;
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+};
+
+export type ContainerCreate = {
+    number: string;
+};
+
+export type ContainerUpdate = {
+    number: string;
     is_active?: (boolean | null);
 };
 
@@ -260,11 +408,25 @@ export type PaginationSchema_CarModel_ = {
     items: Array<CarModel>;
 };
 
+export type PaginationSchema_Cargo_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Cargo>;
+};
+
 export type PaginationSchema_City_ = {
     total: number;
     page: number;
     total_pages: number;
     items: Array<City>;
+};
+
+export type PaginationSchema_Container_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Container>;
 };
 
 export type PaginationSchema_Country_ = {
@@ -1333,6 +1495,124 @@ export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteDa
 export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteResponse = (OverseaTariff);
 
 export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteError = (HTTPValidationError);
+
+export type ReadContainersApiV1ContainerGetData = {
+    query?: {
+        car_brand_id?: number;
+        page?: number;
+    };
+};
+
+export type ReadContainersApiV1ContainerGetResponse = (PaginationSchema_Container_);
+
+export type ReadContainersApiV1ContainerGetError = (HTTPValidationError);
+
+export type CreateNewContainerApiV1ContainerPostData = {
+    body: ContainerCreate;
+    headers?: {
+        Authorization?: string;
+    };
+};
+
+export type CreateNewContainerApiV1ContainerPostResponse = (Container);
+
+export type CreateNewContainerApiV1ContainerPostError = (HTTPValidationError);
+
+export type ReadContainerApiV1ContainerContainerIdGetData = {
+    path: {
+        container_id: number;
+    };
+};
+
+export type ReadContainerApiV1ContainerContainerIdGetResponse = (Container);
+
+export type ReadContainerApiV1ContainerContainerIdGetError = (HTTPValidationError);
+
+export type UpdateExistingContainerApiV1ContainerContainerIdPutData = {
+    body: ContainerUpdate;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        container_id: number;
+    };
+};
+
+export type UpdateExistingContainerApiV1ContainerContainerIdPutResponse = (Container);
+
+export type UpdateExistingContainerApiV1ContainerContainerIdPutError = (HTTPValidationError);
+
+export type DeleteExistingContainerApiV1ContainerContainerIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        container_id: number;
+    };
+};
+
+export type DeleteExistingContainerApiV1ContainerContainerIdDeleteResponse = (Container);
+
+export type DeleteExistingContainerApiV1ContainerContainerIdDeleteError = (HTTPValidationError);
+
+export type ReadCargosApiV1CargoGetData = {
+    query?: {
+        car_brand_id?: number;
+        page?: number;
+    };
+};
+
+export type ReadCargosApiV1CargoGetResponse = (PaginationSchema_Cargo_);
+
+export type ReadCargosApiV1CargoGetError = (HTTPValidationError);
+
+export type CreateNewCargoApiV1CargoPostData = {
+    body: CargoCreate;
+    headers?: {
+        Authorization?: string;
+    };
+};
+
+export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
+
+export type CreateNewCargoApiV1CargoPostError = (HTTPValidationError);
+
+export type ReadCargoApiV1CargoCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type ReadCargoApiV1CargoCargoIdGetResponse = (Cargo);
+
+export type ReadCargoApiV1CargoCargoIdGetError = (HTTPValidationError);
+
+export type UpdateExistingCargoApiV1CargoCargoIdPutData = {
+    body: CargoUpdate;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UpdateExistingCargoApiV1CargoCargoIdPutResponse = (Cargo);
+
+export type UpdateExistingCargoApiV1CargoCargoIdPutError = (HTTPValidationError);
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteResponse = (Cargo);
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
