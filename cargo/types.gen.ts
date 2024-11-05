@@ -110,8 +110,8 @@ export type Cargo = {
     sublot?: (number | null);
     broker_sevice_amount?: (number | null);
     storage_sevice_amount?: (number | null);
-    is_closed_locat?: (boolean | null);
-    closed_locat?: (number | null);
+    is_closed_location?: (boolean | null);
+    closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
     participent_number?: (number | null);
@@ -162,8 +162,8 @@ export type CargoCreate = {
     sublot?: (number | null);
     broker_sevice_amount?: (number | null);
     storage_sevice_amount?: (number | null);
-    is_closed_locat?: (boolean | null);
-    closed_locat?: (number | null);
+    is_closed_location?: (boolean | null);
+    closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
     participent_number?: (number | null);
@@ -210,8 +210,8 @@ export type CargoUpdate = {
     sublot?: (number | null);
     broker_sevice_amount?: (number | null);
     storage_sevice_amount?: (number | null);
-    is_closed_locat?: (boolean | null);
-    closed_locat?: (number | null);
+    is_closed_location?: (boolean | null);
+    closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
     participent_number?: (number | null);

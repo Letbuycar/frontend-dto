@@ -624,7 +624,7 @@ export const CargoSchema = {
             title: 'Storage Sevice Amount',
             default: 0
         },
-        is_closed_locat: {
+        is_closed_location: {
             anyOf: [
                 {
                     type: 'boolean'
@@ -633,10 +633,10 @@ export const CargoSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Is Closed Locat',
+            title: 'Is Closed Location',
             default: false
         },
-        closed_locat: {
+        closed_location: {
             anyOf: [
                 {
                     type: 'number'
@@ -645,7 +645,7 @@ export const CargoSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Closed Locat',
+            title: 'Closed Location',
             default: 0
         },
         is_doc_change: {
@@ -1150,7 +1150,7 @@ export const CargoCreateSchema = {
             title: 'Storage Sevice Amount',
             default: 0
         },
-        is_closed_locat: {
+        is_closed_location: {
             anyOf: [
                 {
                     type: 'boolean'
@@ -1159,10 +1159,10 @@ export const CargoCreateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Is Closed Locat',
+            title: 'Is Closed Location',
             default: false
         },
-        closed_locat: {
+        closed_location: {
             anyOf: [
                 {
                     type: 'number'
@@ -1171,7 +1171,7 @@ export const CargoCreateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Closed Locat',
+            title: 'Closed Location',
             default: 0
         },
         is_doc_change: {
@@ -1657,7 +1657,7 @@ export const CargoUpdateSchema = {
             title: 'Storage Sevice Amount',
             default: 0
         },
-        is_closed_locat: {
+        is_closed_location: {
             anyOf: [
                 {
                     type: 'boolean'
@@ -1666,10 +1666,10 @@ export const CargoUpdateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Is Closed Locat',
+            title: 'Is Closed Location',
             default: false
         },
-        closed_locat: {
+        closed_location: {
             anyOf: [
                 {
                     type: 'number'
@@ -1678,7 +1678,7 @@ export const CargoUpdateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Closed Locat',
+            title: 'Closed Location',
             default: 0
         },
         is_doc_change: {
