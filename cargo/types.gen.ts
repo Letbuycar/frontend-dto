@@ -1639,6 +1639,16 @@ export type DeleteExistingCargoApiV1CargoCargoIdDeleteResponse = (Cargo);
 
 export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationError);
 
+export type ReadCargoByVinApiV1CargoVinCargoVinGetData = {
+    path: {
+        cargo_vin: number;
+    };
+};
+
+export type ReadCargoByVinApiV1CargoVinCargoVinGetResponse = (Cargo);
+
+export type ReadCargoByVinApiV1CargoVinCargoVinGetError = (HTTPValidationError);
+
 export type RootGetResponse = (unknown);
 
 export type RootGetError = unknown;
