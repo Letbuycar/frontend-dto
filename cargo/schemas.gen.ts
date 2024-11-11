@@ -6,7 +6,7 @@ export const AuctionSchema = {
             type: 'string',
             title: 'Title'
         },
-        payment_method: {
+        payment_account: {
             anyOf: [
                 {
                     type: 'string'
@@ -15,7 +15,7 @@ export const AuctionSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Payment Method'
+            title: 'Payment Account'
         },
         id: {
             type: 'integer',
@@ -47,7 +47,7 @@ export const AuctionCreateSchema = {
             type: 'string',
             title: 'Title'
         },
-        payment_method: {
+        payment_account: {
             anyOf: [
                 {
                     type: 'string'
@@ -56,7 +56,7 @@ export const AuctionCreateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Payment Method'
+            title: 'Payment Account'
         }
     },
     type: 'object',
@@ -70,7 +70,7 @@ export const AuctionUpdateSchema = {
             type: 'string',
             title: 'Title'
         },
-        payment_method: {
+        payment_account: {
             anyOf: [
                 {
                     type: 'string'
@@ -79,7 +79,7 @@ export const AuctionUpdateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Payment Method'
+            title: 'Payment Account'
         },
         is_active: {
             anyOf: [
@@ -540,18 +540,6 @@ export const CargoSchema = {
             title: 'Penalty',
             default: 0
         },
-        insurance_type: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Insurance Type',
-            default: '0'
-        },
         insurance_pay: {
             anyOf: [
                 {
@@ -947,6 +935,18 @@ export const CargoSchema = {
                     type: 'null'
                 }
             ]
+        },
+        date_buy: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Buy'
         },
         id: {
             type: 'integer',
@@ -1066,18 +1066,6 @@ export const CargoCreateSchema = {
             title: 'Penalty',
             default: 0
         },
-        insurance_type: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Insurance Type',
-            default: '0'
-        },
         insurance_pay: {
             anyOf: [
                 {
@@ -1473,6 +1461,18 @@ export const CargoCreateSchema = {
                     type: 'null'
                 }
             ]
+        },
+        date_buy: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Buy'
         }
     },
     type: 'object',
@@ -1573,18 +1573,6 @@ export const CargoUpdateSchema = {
             title: 'Penalty',
             default: 0
         },
-        insurance_type: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Insurance Type',
-            default: '0'
-        },
         insurance_pay: {
             anyOf: [
                 {
@@ -1980,6 +1968,18 @@ export const CargoUpdateSchema = {
                     type: 'null'
                 }
             ]
+        },
+        date_buy: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Buy'
         },
         is_active: {
             anyOf: [
@@ -2337,7 +2337,7 @@ export const FuelTypeSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'FuelType'
 } as const;
 
@@ -2361,7 +2361,6 @@ export const FuelTypeCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'FuelTypeCreate'
 } as const;
 
@@ -2385,7 +2384,6 @@ export const FuelTypeUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'FuelTypeUpdate'
 } as const;
 

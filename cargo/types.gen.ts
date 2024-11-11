@@ -2,7 +2,7 @@
 
 export type Auction = {
     title: string;
-    payment_method?: (string | null);
+    payment_account?: (string | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -11,12 +11,12 @@ export type Auction = {
 
 export type AuctionCreate = {
     title: string;
-    payment_method?: (string | null);
+    payment_account?: (string | null);
 };
 
 export type AuctionUpdate = {
     title: string;
-    payment_method?: (string | null);
+    payment_account?: (string | null);
     is_active?: (boolean | null);
 };
 
@@ -103,7 +103,6 @@ export type Cargo = {
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
-    insurance_type?: (string | null);
     insurance_pay?: (number | null);
     sea_freight?: (number | null);
     land_delivery?: (number | null);
@@ -140,6 +139,7 @@ export type Cargo = {
     transmission?: (Transmission | null);
     location_id?: (number | null);
     location?: (LocationFrom | null);
+    date_buy?: (string | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -155,7 +155,6 @@ export type CargoCreate = {
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
-    insurance_type?: (string | null);
     insurance_pay?: (number | null);
     sea_freight?: (number | null);
     land_delivery?: (number | null);
@@ -192,6 +191,7 @@ export type CargoCreate = {
     transmission?: (Transmission | null);
     location_id?: (number | null);
     location?: (LocationFrom | null);
+    date_buy?: (string | null);
 };
 
 export type CargoUpdate = {
@@ -203,7 +203,6 @@ export type CargoUpdate = {
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
-    insurance_type?: (string | null);
     insurance_pay?: (number | null);
     sea_freight?: (number | null);
     land_delivery?: (number | null);
@@ -240,6 +239,7 @@ export type CargoUpdate = {
     transmission?: (Transmission | null);
     location_id?: (number | null);
     location?: (LocationFrom | null);
+    date_buy?: (string | null);
     is_active?: (boolean | null);
 };
 
@@ -314,7 +314,7 @@ export type EngineVolumeUpdate = {
 };
 
 export type FuelType = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
     id: number;
     updated_on: string;
@@ -322,12 +322,12 @@ export type FuelType = {
 };
 
 export type FuelTypeCreate = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
 };
 
 export type FuelTypeUpdate = {
-    title: string;
+    title?: string;
     is_active?: (boolean | null);
 };
 
