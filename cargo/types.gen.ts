@@ -1641,7 +1641,7 @@ export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationErr
 
 export type ReadCargoByVinApiV1CargoVinCargoVinGetData = {
     path: {
-        cargo_vin: number;
+        cargo_vin: string;
     };
 };
 
