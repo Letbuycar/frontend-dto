@@ -695,16 +695,6 @@ export const CargoSchema = {
             ],
             title: 'Car Brand Id'
         },
-        car_brand: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarBrand'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         car_model_id: {
             anyOf: [
                 {
@@ -715,16 +705,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Car Model Id'
-        },
-        car_model: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarModel'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         container_id: {
             anyOf: [
@@ -737,16 +717,6 @@ export const CargoSchema = {
             ],
             title: 'Container Id'
         },
-        container: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Container'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         port_from_id: {
             anyOf: [
                 {
@@ -757,16 +727,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Port From Id'
-        },
-        port_from: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         port_to_id: {
             anyOf: [
@@ -779,16 +739,6 @@ export const CargoSchema = {
             ],
             title: 'Port To Id'
         },
-        port_to: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortTo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         fuel_type_id: {
             anyOf: [
                 {
@@ -799,16 +749,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Fuel Type Id'
-        },
-        fuel_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/FuelType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         engine_volume_id: {
             anyOf: [
@@ -821,16 +761,6 @@ export const CargoSchema = {
             ],
             title: 'Engine Volume Id'
         },
-        engine_volume: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/EngineVolume'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         body_type_id: {
             anyOf: [
                 {
@@ -841,16 +771,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Body Type Id'
-        },
-        body_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/BodyType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         country_id: {
             anyOf: [
@@ -863,16 +783,6 @@ export const CargoSchema = {
             ],
             title: 'Country Id'
         },
-        country: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Country'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         auction_id: {
             anyOf: [
                 {
@@ -883,16 +793,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Auction Id'
-        },
-        auction: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Auction'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         transmission_id: {
             anyOf: [
@@ -905,16 +805,6 @@ export const CargoSchema = {
             ],
             title: 'Transmission Id'
         },
-        transmission: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Transmission'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         location_id: {
             anyOf: [
                 {
@@ -925,16 +815,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Location Id'
-        },
-        location: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/LocationFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         date_buy: {
             anyOf: [
@@ -965,6 +845,126 @@ export const CargoSchema = {
             type: 'string',
             format: 'date-time',
             title: 'Created On'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrand'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModel'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        container: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Container'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_from: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_to: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortTo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        fuel_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FuelType'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        engine_volume: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/EngineVolume'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        body_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/BodyType'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        country: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Country'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        auction: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Auction'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        transmission: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Transmission'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        location: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/LocationFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -1221,16 +1221,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Car Brand Id'
         },
-        car_brand: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarBrand'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         car_model_id: {
             anyOf: [
                 {
@@ -1241,16 +1231,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Car Model Id'
-        },
-        car_model: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarModel'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         container_id: {
             anyOf: [
@@ -1263,16 +1243,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Container Id'
         },
-        container: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Container'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         port_from_id: {
             anyOf: [
                 {
@@ -1283,16 +1253,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Port From Id'
-        },
-        port_from: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         port_to_id: {
             anyOf: [
@@ -1305,16 +1265,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Port To Id'
         },
-        port_to: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortTo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         fuel_type_id: {
             anyOf: [
                 {
@@ -1325,16 +1275,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Fuel Type Id'
-        },
-        fuel_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/FuelType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         engine_volume_id: {
             anyOf: [
@@ -1347,16 +1287,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Engine Volume Id'
         },
-        engine_volume: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/EngineVolume'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         body_type_id: {
             anyOf: [
                 {
@@ -1367,16 +1297,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Body Type Id'
-        },
-        body_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/BodyType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         country_id: {
             anyOf: [
@@ -1389,16 +1309,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Country Id'
         },
-        country: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Country'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         auction_id: {
             anyOf: [
                 {
@@ -1409,16 +1319,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Auction Id'
-        },
-        auction: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Auction'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         transmission_id: {
             anyOf: [
@@ -1431,16 +1331,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Transmission Id'
         },
-        transmission: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Transmission'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         location_id: {
             anyOf: [
                 {
@@ -1451,16 +1341,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Location Id'
-        },
-        location: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/LocationFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         date_buy: {
             anyOf: [
@@ -1728,16 +1608,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Car Brand Id'
         },
-        car_brand: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarBrand'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         car_model_id: {
             anyOf: [
                 {
@@ -1748,16 +1618,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Car Model Id'
-        },
-        car_model: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CarModel'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         container_id: {
             anyOf: [
@@ -1770,16 +1630,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Container Id'
         },
-        container: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Container'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         port_from_id: {
             anyOf: [
                 {
@@ -1790,16 +1640,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Port From Id'
-        },
-        port_from: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         port_to_id: {
             anyOf: [
@@ -1812,16 +1652,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Port To Id'
         },
-        port_to: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/PortTo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         fuel_type_id: {
             anyOf: [
                 {
@@ -1832,16 +1662,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Fuel Type Id'
-        },
-        fuel_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/FuelType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         engine_volume_id: {
             anyOf: [
@@ -1854,16 +1674,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Engine Volume Id'
         },
-        engine_volume: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/EngineVolume'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         body_type_id: {
             anyOf: [
                 {
@@ -1874,16 +1684,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Body Type Id'
-        },
-        body_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/BodyType'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         country_id: {
             anyOf: [
@@ -1896,16 +1696,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Country Id'
         },
-        country: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Country'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         auction_id: {
             anyOf: [
                 {
@@ -1916,16 +1706,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Auction Id'
-        },
-        auction: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Auction'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         transmission_id: {
             anyOf: [
@@ -1938,16 +1718,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Transmission Id'
         },
-        transmission: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/Transmission'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         location_id: {
             anyOf: [
                 {
@@ -1958,16 +1728,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Location Id'
-        },
-        location: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/LocationFrom'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         date_buy: {
             anyOf: [
