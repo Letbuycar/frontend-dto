@@ -271,6 +271,12 @@ export const BodyTypeUpdateSchema = {
     title: 'BodyTypeUpdate'
 } as const;
 
+export const CARGO_TYPESchema = {
+    type: 'string',
+    enum: ['car', 'crossover', 'moto', 'boat', 'extra_large_auto', 'special_equipment'],
+    title: 'CARGO_TYPE'
+} as const;
+
 export const CarBrandSchema = {
     properties: {
         title: {
@@ -659,6 +665,17 @@ export const CargoSchema = {
             ],
             title: 'Doc Change',
             default: 0
+        },
+        cargo_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'car'
         },
         participent_number: {
             anyOf: [
@@ -1186,6 +1203,17 @@ export const CargoCreateSchema = {
             title: 'Doc Change',
             default: 0
         },
+        cargo_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'car'
+        },
         participent_number: {
             anyOf: [
                 {
@@ -1572,6 +1600,17 @@ export const CargoUpdateSchema = {
             ],
             title: 'Doc Change',
             default: 0
+        },
+        cargo_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'car'
         },
         participent_number: {
             anyOf: [

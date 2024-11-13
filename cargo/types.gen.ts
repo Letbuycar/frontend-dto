@@ -56,6 +56,8 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
+export type CARGO_TYPE = 'car' | 'crossover' | 'moto' | 'boat' | 'extra_large_auto' | 'special_equipment';
+
 export type CarBrand = {
     title: string;
     id: number;
@@ -113,6 +115,7 @@ export type Cargo = {
     closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
     car_brand_id?: (number | null);
@@ -165,6 +168,7 @@ export type CargoCreate = {
     closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
     car_brand_id?: (number | null);
@@ -201,6 +205,7 @@ export type CargoUpdate = {
     closed_location?: (number | null);
     is_doc_change?: (boolean | null);
     doc_change?: (number | null);
+    cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
     car_brand_id?: (number | null);
