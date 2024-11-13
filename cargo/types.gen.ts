@@ -1564,6 +1564,7 @@ export type DeleteExistingContainerApiV1ContainerContainerIdDeleteError = (HTTPV
 export type ReadCargosApiV1CargoGetData = {
     query?: {
         car_brand_id?: number;
+        dealer_id?: string;
         page?: number;
     };
 };
