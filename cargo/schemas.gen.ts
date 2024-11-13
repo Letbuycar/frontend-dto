@@ -701,6 +701,17 @@ export const CargoSchema = {
             title: 'Lot Number',
             default: 0
         },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
+        },
         car_brand_id: {
             anyOf: [
                 {
@@ -1238,6 +1249,17 @@ export const CargoCreateSchema = {
             title: 'Lot Number',
             default: 0
         },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
+        },
         car_brand_id: {
             anyOf: [
                 {
@@ -1635,6 +1657,17 @@ export const CargoUpdateSchema = {
             ],
             title: 'Lot Number',
             default: 0
+        },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
         },
         car_brand_id: {
             anyOf: [

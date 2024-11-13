@@ -118,6 +118,7 @@ export type Cargo = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
     container_id?: (number | null);
@@ -171,6 +172,7 @@ export type CargoCreate = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
     container_id?: (number | null);
@@ -208,6 +210,7 @@ export type CargoUpdate = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
     container_id?: (number | null);
@@ -1580,7 +1583,7 @@ export type CreateNewCargoApiV1CargoPostData = {
     };
 };
 
-export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
+export type CreateNewCargoApiV1CargoPostResponse = (unknown);
 
 export type CreateNewCargoApiV1CargoPostError = (HTTPValidationError);
 
