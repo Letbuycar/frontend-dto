@@ -704,7 +704,8 @@ export const CargoSchema = {
         dealer_id: {
             anyOf: [
                 {
-                    type: 'string'
+                    type: 'string',
+                    format: 'uuid'
                 },
                 {
                     type: 'null'
@@ -1252,7 +1253,8 @@ export const CargoCreateSchema = {
         dealer_id: {
             anyOf: [
                 {
-                    type: 'string'
+                    type: 'string',
+                    format: 'uuid'
                 },
                 {
                     type: 'null'
@@ -1661,7 +1663,8 @@ export const CargoUpdateSchema = {
         dealer_id: {
             anyOf: [
                 {
-                    type: 'string'
+                    type: 'string',
+                    format: 'uuid'
                 },
                 {
                     type: 'null'

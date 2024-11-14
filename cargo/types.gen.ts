@@ -1569,6 +1569,7 @@ export type ReadCargosApiV1CargoGetData = {
         car_brand_id?: number;
         dealer_id?: string;
         page?: number;
+        search?: string;
     };
 };
 
