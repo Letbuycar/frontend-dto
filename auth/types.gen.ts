@@ -97,8 +97,12 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 export type GetMeApiV1AuthMeGetError = unknown;
 
 export type AdminGetUsersApiV1UsersGetData = {
+    headers?: {
+        Authorization?: string;
+    };
     query?: {
         page?: number;
+        search?: string;
     };
 };
 
