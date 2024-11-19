@@ -8,6 +8,11 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type ImageUploadResponse = {
+    id: string;
+    filename: string;
+};
+
 export type ValidationError = {
     loc: Array<(string | number)>;
     msg: string;
@@ -21,19 +26,19 @@ export type UploadFileApiV1ImagesVinCodePostData = {
     };
 };
 
-export type UploadFileApiV1ImagesVinCodePostResponse = (unknown);
+export type UploadFileApiV1ImagesVinCodePostResponse = (ImageUploadResponse);
 
 export type UploadFileApiV1ImagesVinCodePostError = (HTTPValidationError);
 
-export type GetFileApiV1ImagesVinCodeGetData = {
+export type GetFilesApiV1ImagesVinCodeGetData = {
     path: {
         vin_code: string;
     };
 };
 
-export type GetFileApiV1ImagesVinCodeGetResponse = (unknown);
+export type GetFilesApiV1ImagesVinCodeGetResponse = (Array<(string)>);
 
-export type GetFileApiV1ImagesVinCodeGetError = (HTTPValidationError);
+export type GetFilesApiV1ImagesVinCodeGetError = (HTTPValidationError);
 
 export type GetFileApiV1ImagesVinCodeFilenameGetData = {
     path: {

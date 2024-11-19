@@ -27,6 +27,23 @@ export const HTTPValidationErrorSchema = {
     title: 'HTTPValidationError'
 } as const;
 
+export const ImageUploadResponseSchema = {
+    properties: {
+        id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Id'
+        },
+        filename: {
+            type: 'string',
+            title: 'Filename'
+        }
+    },
+    type: 'object',
+    required: ['id', 'filename'],
+    title: 'ImageUploadResponse'
+} as const;
+
 export const ValidationErrorSchema = {
     properties: {
         loc: {
