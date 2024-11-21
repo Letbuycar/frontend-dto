@@ -1,0 +1,6 @@
+Error downloading http://localhost:8002/openapi.json 
+fetch failed
+JSONParserError: Error downloading http://localhost:8002/openapi.json 
+fetch failed
+    at download (/Users/mac/work/git/lbc/frontend-dto/node_modules/@apidevtools/json-schema-ref-parser/dist/lib/resolvers/http.js:113:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

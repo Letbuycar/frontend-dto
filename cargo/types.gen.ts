@@ -132,6 +132,7 @@ export type Cargo = {
     transmission_id?: (number | null);
     location_id?: (number | null);
     date_buy?: (string | null);
+    is_archived?: (boolean | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -186,6 +187,7 @@ export type CargoCreate = {
     transmission_id?: (number | null);
     location_id?: (number | null);
     date_buy?: (string | null);
+    is_archived?: (boolean | null);
 };
 
 export type CargoUpdate = {
@@ -224,6 +226,7 @@ export type CargoUpdate = {
     transmission_id?: (number | null);
     location_id?: (number | null);
     date_buy?: (string | null);
+    is_archived?: (boolean | null);
     is_active?: (boolean | null);
 };
 
@@ -1568,6 +1571,7 @@ export type ReadCargosApiV1CargoGetData = {
     query?: {
         car_brand_id?: number;
         dealer_id?: string;
+        is_archived?: boolean;
         page?: number;
         search?: string;
     };
@@ -1584,7 +1588,7 @@ export type CreateNewCargoApiV1CargoPostData = {
     };
 };
 
-export type CreateNewCargoApiV1CargoPostResponse = (unknown);
+export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
 
 export type CreateNewCargoApiV1CargoPostError = (HTTPValidationError);
 

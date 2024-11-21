@@ -857,6 +857,18 @@ export const CargoSchema = {
             ],
             title: 'Date Buy'
         },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -1405,6 +1417,18 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Date Buy'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         }
     },
     type: 'object',
@@ -1815,6 +1839,18 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Date Buy'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         },
         is_active: {
             anyOf: [
