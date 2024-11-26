@@ -97,11 +97,17 @@ export type CarModelUpdate = {
 };
 
 export type Cargo = {
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    container_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    broker_id?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     booking_number?: (string | null);
-    carrier_title?: (string | null);
-    ship_title?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -152,11 +158,17 @@ export type Cargo = {
 };
 
 export type CargoCreate = {
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    container_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    broker_id?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     booking_number?: (string | null);
-    carrier_title?: (string | null);
-    ship_title?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -191,11 +203,17 @@ export type CargoCreate = {
 };
 
 export type CargoUpdate = {
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    container_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    broker_id?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     booking_number?: (string | null);
-    carrier_title?: (string | null);
-    ship_title?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -228,6 +246,17 @@ export type CargoUpdate = {
     date_buy?: (string | null);
     is_archived?: (boolean | null);
     is_active?: (boolean | null);
+};
+
+export type CargoUpdateLogist = {
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    container_number?: (string | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    broker_id?: (string | null);
 };
 
 export type City = {
@@ -1593,6 +1622,9 @@ export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
 export type CreateNewCargoApiV1CargoPostError = (HTTPValidationError);
 
 export type ReadCargoApiV1CargoCargoIdGetData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         cargo_id: number;
     };
@@ -1601,6 +1633,19 @@ export type ReadCargoApiV1CargoCargoIdGetData = {
 export type ReadCargoApiV1CargoCargoIdGetResponse = (Cargo);
 
 export type ReadCargoApiV1CargoCargoIdGetError = (HTTPValidationError);
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteResponse = (Cargo);
+
+export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationError);
 
 export type UpdateExistingCargoApiV1CargoCargoIdPutData = {
     body: CargoUpdate;
@@ -1616,19 +1661,6 @@ export type UpdateExistingCargoApiV1CargoCargoIdPutResponse = (Cargo);
 
 export type UpdateExistingCargoApiV1CargoCargoIdPutError = (HTTPValidationError);
 
-export type DeleteExistingCargoApiV1CargoCargoIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
-    path: {
-        cargo_id: number;
-    };
-};
-
-export type DeleteExistingCargoApiV1CargoCargoIdDeleteResponse = (Cargo);
-
-export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationError);
-
 export type ReadCargoByVinApiV1CargoVinCargoVinGetData = {
     path: {
         cargo_vin: string;
@@ -1638,6 +1670,34 @@ export type ReadCargoByVinApiV1CargoVinCargoVinGetData = {
 export type ReadCargoByVinApiV1CargoVinCargoVinGetResponse = (Cargo);
 
 export type ReadCargoByVinApiV1CargoVinCargoVinGetError = (HTTPValidationError);
+
+export type UpdateExistingCargoManagerApiV1CargoManagerCargoIdPutData = {
+    body: CargoUpdate;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UpdateExistingCargoManagerApiV1CargoManagerCargoIdPutResponse = (Cargo);
+
+export type UpdateExistingCargoManagerApiV1CargoManagerCargoIdPutError = (HTTPValidationError);
+
+export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutData = {
+    body: CargoUpdateLogist;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutResponse = (Cargo);
+
+export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

@@ -454,6 +454,99 @@ export const CarModelUpdateSchema = {
 
 export const CargoSchema = {
     properties: {
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
+        container_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Number'
+        },
+        carrier_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Carrier Title'
+        },
+        ship_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Ship Title'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -487,28 +580,6 @@ export const CargoSchema = {
                 }
             ],
             title: 'Booking Number'
-        },
-        carrier_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Carrier Title'
-        },
-        ship_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Ship Title'
         },
         cost: {
             anyOf: [
@@ -1015,6 +1086,99 @@ export const CargoSchema = {
 
 export const CargoCreateSchema = {
     properties: {
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
+        container_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Number'
+        },
+        carrier_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Carrier Title'
+        },
+        ship_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Ship Title'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -1048,28 +1212,6 @@ export const CargoCreateSchema = {
                 }
             ],
             title: 'Booking Number'
-        },
-        carrier_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Carrier Title'
-        },
-        ship_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Ship Title'
         },
         cost: {
             anyOf: [
@@ -1437,6 +1579,99 @@ export const CargoCreateSchema = {
 
 export const CargoUpdateSchema = {
     properties: {
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
+        container_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Number'
+        },
+        carrier_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Carrier Title'
+        },
+        ship_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Ship Title'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -1470,28 +1705,6 @@ export const CargoUpdateSchema = {
                 }
             ],
             title: 'Booking Number'
-        },
-        carrier_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Carrier Title'
-        },
-        ship_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Ship Title'
         },
         cost: {
             anyOf: [
@@ -1867,6 +2080,106 @@ export const CargoUpdateSchema = {
     },
     type: 'object',
     title: 'CargoUpdate'
+} as const;
+
+export const CargoUpdateLogistSchema = {
+    properties: {
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
+        container_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Number'
+        },
+        carrier_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Carrier Title'
+        },
+        ship_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Ship Title'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        }
+    },
+    type: 'object',
+    title: 'CargoUpdateLogist'
 } as const;
 
 export const CitySchema = {
