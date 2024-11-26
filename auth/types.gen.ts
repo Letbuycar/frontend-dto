@@ -6,9 +6,9 @@ export type AdminUserInfo = {
     first_name?: (string | null);
     last_name?: (string | null);
     phone_number?: (string | null);
+    role?: (UserRole | null);
     email_verified?: (boolean | null);
     phone?: (string | null);
-    role?: (UserRole | null);
 };
 
 export type HTTPValidationError = {
@@ -35,6 +35,7 @@ export type UserInfo = {
     first_name?: (string | null);
     last_name?: (string | null);
     phone_number?: (string | null);
+    role?: (UserRole | null);
 };
 
 export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer';
@@ -97,9 +98,6 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 export type GetMeApiV1AuthMeGetError = unknown;
 
 export type AdminGetUsersApiV1UsersGetData = {
-    headers?: {
-        Authorization?: string;
-    };
     query?: {
         page?: number;
         search?: string;
