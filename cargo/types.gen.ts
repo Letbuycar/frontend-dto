@@ -105,9 +105,9 @@ export type Cargo = {
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
+    booking_number?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
-    booking_number?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -166,9 +166,9 @@ export type CargoCreate = {
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
+    booking_number?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
-    booking_number?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -211,9 +211,9 @@ export type CargoUpdate = {
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
+    booking_number?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
-    booking_number?: (string | null);
     cost?: (number | null);
     auct_collect?: (number | null);
     penalty?: (number | null);
@@ -257,6 +257,7 @@ export type CargoUpdateLogist = {
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
+    booking_number?: (string | null);
 };
 
 export type City = {

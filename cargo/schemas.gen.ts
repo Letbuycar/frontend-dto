@@ -547,6 +547,17 @@ export const CargoSchema = {
             ],
             title: 'Broker Id'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -569,17 +580,6 @@ export const CargoSchema = {
             ],
             title: 'Year',
             default: 2024
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         cost: {
             anyOf: [
@@ -1179,6 +1179,17 @@ export const CargoCreateSchema = {
             ],
             title: 'Broker Id'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -1201,17 +1212,6 @@ export const CargoCreateSchema = {
             ],
             title: 'Year',
             default: 2024
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         cost: {
             anyOf: [
@@ -1672,6 +1672,17 @@ export const CargoUpdateSchema = {
             ],
             title: 'Broker Id'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -1694,17 +1705,6 @@ export const CargoUpdateSchema = {
             ],
             title: 'Year',
             default: 2024
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         cost: {
             anyOf: [
@@ -2176,6 +2176,17 @@ export const CargoUpdateLogistSchema = {
                 }
             ],
             title: 'Broker Id'
+        },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
         }
     },
     type: 'object',
