@@ -13,6 +13,22 @@ export const Body_upload_file_api_v1_images__vin_code___postSchema = {
     title: 'Body_upload_file_api_v1_images__vin_code___post'
 } as const;
 
+export const Body_upload_multiple_files_api_v1_images__vin_code__multiple__postSchema = {
+    properties: {
+        files: {
+            items: {
+                type: 'string',
+                format: 'binary'
+            },
+            type: 'array',
+            title: 'Files'
+        }
+    },
+    type: 'object',
+    required: ['files'],
+    title: 'Body_upload_multiple_files_api_v1_images__vin_code__multiple__post'
+} as const;
+
 export const HTTPValidationErrorSchema = {
     properties: {
         detail: {
@@ -29,19 +45,29 @@ export const HTTPValidationErrorSchema = {
 
 export const ImageUploadResponseSchema = {
     properties: {
-        id: {
-            type: 'string',
-            format: 'uuid',
-            title: 'Id'
-        },
         filename: {
             type: 'string',
             title: 'Filename'
         }
     },
     type: 'object',
-    required: ['id', 'filename'],
+    required: ['filename'],
     title: 'ImageUploadResponse'
+} as const;
+
+export const MultiImageUploadResponseSchema = {
+    properties: {
+        filenames: {
+            items: {
+                type: 'string'
+            },
+            type: 'array',
+            title: 'Filenames'
+        }
+    },
+    type: 'object',
+    required: ['filenames'],
+    title: 'MultiImageUploadResponse'
 } as const;
 
 export const ValidationErrorSchema = {

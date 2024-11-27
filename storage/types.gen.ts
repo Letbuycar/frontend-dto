@@ -4,13 +4,20 @@ export type Body_upload_file_api_v1_images__vin_code___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_multiple_files_api_v1_images__vin_code__multiple__post = {
+    files: Array<((Blob | File))>;
+};
+
 export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
 export type ImageUploadResponse = {
-    id: string;
     filename: string;
+};
+
+export type MultiImageUploadResponse = {
+    filenames: Array<(string)>;
 };
 
 export type ValidationError = {
@@ -21,6 +28,9 @@ export type ValidationError = {
 
 export type UploadFileApiV1ImagesVinCodePostData = {
     body: Body_upload_file_api_v1_images__vin_code___post;
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         vin_code: string;
     };
@@ -40,6 +50,20 @@ export type GetFilesApiV1ImagesVinCodeGetResponse = (Array<(string)>);
 
 export type GetFilesApiV1ImagesVinCodeGetError = (HTTPValidationError);
 
+export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostData = {
+    body: Body_upload_multiple_files_api_v1_images__vin_code__multiple__post;
+    headers?: {
+        Authorization?: string;
+    };
+    path: {
+        vin_code: string;
+    };
+};
+
+export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostResponse = (MultiImageUploadResponse);
+
+export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostError = (HTTPValidationError);
+
 export type GetFileApiV1ImagesVinCodeFilenameGetData = {
     path: {
         filename: string;
@@ -52,6 +76,9 @@ export type GetFileApiV1ImagesVinCodeFilenameGetResponse = (unknown);
 export type GetFileApiV1ImagesVinCodeFilenameGetError = (HTTPValidationError);
 
 export type DeleteFileApiV1ImagesVinCodeFilenameDeleteData = {
+    headers?: {
+        Authorization?: string;
+    };
     path: {
         filename: string;
         vin_code: string;
