@@ -98,6 +98,9 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 export type GetMeApiV1AuthMeGetError = unknown;
 
 export type AdminGetUsersApiV1UsersGetData = {
+    headers?: {
+        Authorization?: string;
+    };
     query?: {
         page?: number;
         search?: string;
@@ -131,6 +134,20 @@ export type ChangeUserApiV1UsersChangeUserIdPatchData = {
 export type ChangeUserApiV1UsersChangeUserIdPatchResponse = (AdminUserInfo);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchError = (HTTPValidationError);
+
+export type AdminGetUsersApiV1UsersBrokersGetData = {
+    headers?: {
+        Authorization?: string;
+    };
+    query?: {
+        page?: number;
+        search?: string;
+    };
+};
+
+export type AdminGetUsersApiV1UsersBrokersGetResponse = (PaginationSchema_AdminUserInfo_);
+
+export type AdminGetUsersApiV1UsersBrokersGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
