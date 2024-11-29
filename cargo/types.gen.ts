@@ -124,6 +124,7 @@ export type Cargo = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    is_photos?: (boolean | null);
     dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
@@ -185,6 +186,7 @@ export type CargoCreate = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    is_photos?: (boolean | null);
     dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
@@ -200,6 +202,11 @@ export type CargoCreate = {
     location_id?: (number | null);
     date_buy?: (string | null);
     is_archived?: (boolean | null);
+};
+
+export type CargoSetIsPhotos = {
+    vin_code: string;
+    is_photo: boolean;
 };
 
 export type CargoUpdate = {
@@ -230,6 +237,7 @@ export type CargoUpdate = {
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
+    is_photos?: (boolean | null);
     dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
@@ -615,9 +623,6 @@ export type ReadAuctionsApiV1AuctionsGetError = (HTTPValidationError);
 
 export type CreateNewAuctionApiV1AuctionsPostData = {
     body: AuctionCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewAuctionApiV1AuctionsPostResponse = (Auction);
@@ -636,9 +641,6 @@ export type ReadAuctionApiV1AuctionsAuctionIdGetError = (HTTPValidationError);
 
 export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutData = {
     body: AuctionUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         auction_id: number;
     };
@@ -649,9 +651,6 @@ export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutResponse = (Auction);
 export type UpdateExistingAuctionApiV1AuctionsAuctionIdPutError = (HTTPValidationError);
 
 export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         auction_id: number;
     };
@@ -674,7 +673,6 @@ export type ReadBoatTypesApiV1BoatTypesGetError = (HTTPValidationError);
 export type CreateBoatTypeApiV1BoatTypesPostData = {
     body: BoatTypeCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -699,7 +697,6 @@ export type ReadBoatTypeApiV1BoatTypesBodyTypeIdGetError = (HTTPValidationError)
 export type UpdateBoatTypeApiV1BoatTypesBodyTypeIdPutData = {
     body: BoatTypeUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -713,7 +710,6 @@ export type UpdateBoatTypeApiV1BoatTypesBodyTypeIdPutError = (HTTPValidationErro
 
 export type DeleteBoatTypeApiV1BoatTypesBodyTypeIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -741,7 +737,6 @@ export type ReadBodyTypesApiV1BodyTypesGetError = (HTTPValidationError);
 export type CreateBodyTypeApiV1BodyTypesPostData = {
     body: BodyTypeCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -766,7 +761,6 @@ export type ReadBodyTypeApiV1BodyTypesBodyTypeIdGetError = (HTTPValidationError)
 export type UpdateBodyTypeApiV1BodyTypesBodyTypeIdPutData = {
     body: BodyTypeUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -780,7 +774,6 @@ export type UpdateBodyTypeApiV1BodyTypesBodyTypeIdPutError = (HTTPValidationErro
 
 export type DeleteBodyTypeApiV1BodyTypesBodyTypeIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -804,9 +797,6 @@ export type ReadCarBrandsApiV1CarBrandsGetError = (HTTPValidationError);
 
 export type CreateNewCarBrandApiV1CarBrandsPostData = {
     body: CarBrandCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewCarBrandApiV1CarBrandsPostResponse = (CarBrand);
@@ -825,9 +815,6 @@ export type ReadCarBrandApiV1CarBrandsCarBrandIdGetError = (HTTPValidationError)
 
 export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutData = {
     body: CarBrandUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         car_brand_id: number;
     };
@@ -838,9 +825,6 @@ export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutResponse = (CarBran
 export type UpdateExistingCarBrandApiV1CarBrandsCarBrandIdPutError = (HTTPValidationError);
 
 export type DeleteExistingCarBrandApiV1CarBrandsCarBrandIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         car_brand_id: number;
     };
@@ -863,9 +847,6 @@ export type ReadCarModelsApiV1CarModelsGetError = (HTTPValidationError);
 
 export type CreateNewCarModelApiV1CarModelsPostData = {
     body: CarModelCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewCarModelApiV1CarModelsPostResponse = (CarModel);
@@ -884,9 +865,6 @@ export type ReadCarModelApiV1CarModelsCarModelIdGetError = (HTTPValidationError)
 
 export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutData = {
     body: CarModelUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         car_model_id: number;
     };
@@ -897,9 +875,6 @@ export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutResponse = (CarMode
 export type UpdateExistingCarModelApiV1CarModelsCarModelIdPutError = (HTTPValidationError);
 
 export type DeleteExistingCarModelApiV1CarModelsCarModelIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         car_model_id: number;
     };
@@ -921,9 +896,6 @@ export type ReadEngineVolumesApiV1EngineVolumesGetError = (HTTPValidationError);
 
 export type CreateNewEngineVolumeApiV1EngineVolumesPostData = {
     body: EngineVolumeCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewEngineVolumeApiV1EngineVolumesPostResponse = (EngineVolume);
@@ -942,9 +914,6 @@ export type ReadEngineVolumeApiV1EngineVolumesEngineVolumeIdGetError = (HTTPVali
 
 export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutData = {
     body: EngineVolumeUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         engine_volume_id: number;
     };
@@ -955,9 +924,6 @@ export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutRespons
 export type UpdateExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdPutError = (HTTPValidationError);
 
 export type DeleteExistingEngineVolumeApiV1EngineVolumesEngineVolumeIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         engine_volume_id: number;
     };
@@ -983,7 +949,6 @@ export type ReadFuelTypesApiV1FuelTypesGetError = (HTTPValidationError);
 export type CreateFuelTypeApiV1FuelTypesPostData = {
     body: FuelTypeCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1008,7 +973,6 @@ export type ReadFuelTypeApiV1FuelTypesFuelTypeIdGetError = (HTTPValidationError)
 export type UpdateFuelTypeApiV1FuelTypesFuelTypeIdPutData = {
     body: FuelTypeUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1022,7 +986,6 @@ export type UpdateFuelTypeApiV1FuelTypesFuelTypeIdPutError = (HTTPValidationErro
 
 export type DeleteFuelTypeApiV1FuelTypesFuelTypeIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1063,7 +1026,6 @@ export type ReadTransmissionApiV1TransmissionsTransmissionsTransmissionIdGetErro
 export type CreateTransmissionApiV1TransmissionsPostData = {
     body: TransmissionCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1075,7 +1037,6 @@ export type CreateTransmissionApiV1TransmissionsPostError = (HTTPValidationError
 export type UpdateTransmissionApiV1TransmissionsTransmissionIdPutData = {
     body: TransmissionUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1089,7 +1050,6 @@ export type UpdateTransmissionApiV1TransmissionsTransmissionIdPutError = (HTTPVa
 
 export type DeleteTransmissionApiV1TransmissionsTransmissionIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1117,7 +1077,6 @@ export type ReadCitiesApiV1CitiesGetError = (HTTPValidationError);
 export type CreateCityApiV1CitiesPostData = {
     body: CityCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1142,7 +1101,6 @@ export type ReadCityApiV1CitiesCityIdGetError = (HTTPValidationError);
 export type UpdateCityApiV1CitiesCityIdPutData = {
     body: CityUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1156,7 +1114,6 @@ export type UpdateCityApiV1CitiesCityIdPutError = (HTTPValidationError);
 
 export type DeleteCityApiV1CitiesCityIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1184,7 +1141,6 @@ export type ReadCountriesApiV1CountriesGetError = (HTTPValidationError);
 export type CreateCountryApiV1CountriesPostData = {
     body: CountryCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1209,7 +1165,6 @@ export type ReadCountryApiV1CountriesCountryIdGetError = (HTTPValidationError);
 export type UpdateCountryApiV1CountriesCountryIdPutData = {
     body: CountryUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1223,7 +1178,6 @@ export type UpdateCountryApiV1CountriesCountryIdPutError = (HTTPValidationError)
 
 export type DeleteCountryApiV1CountriesCountryIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1247,9 +1201,6 @@ export type ReadLocationsFromApiV1LocationFromGetError = (HTTPValidationError);
 
 export type CreateLocationFromApiV1LocationFromPostData = {
     body: LocationFromCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateLocationFromApiV1LocationFromPostResponse = (LocationFrom);
@@ -1268,9 +1219,6 @@ export type ReadLocationFromApiV1LocationFromLocationFromIdGetError = (HTTPValid
 
 export type UpdateLocationFromApiV1LocationFromLocationFromIdPutData = {
     body: LocationFromUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         location_from_id: number;
     };
@@ -1281,9 +1229,6 @@ export type UpdateLocationFromApiV1LocationFromLocationFromIdPutResponse = (Loca
 export type UpdateLocationFromApiV1LocationFromLocationFromIdPutError = (HTTPValidationError);
 
 export type DeleteLocationFromApiV1LocationFromLocationFromIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         location_from_id: number;
     };
@@ -1305,9 +1250,6 @@ export type ReadPortsFromApiV1PortFromGetError = (HTTPValidationError);
 
 export type CreateNewPortFromApiV1PortFromPostData = {
     body: PortFromCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewPortFromApiV1PortFromPostResponse = (PortFrom);
@@ -1326,9 +1268,6 @@ export type ReadPortFromApiV1PortFromPortFromIdGetError = (HTTPValidationError);
 
 export type UpdateExistingPortFromApiV1PortFromPortFromIdPutData = {
     body: PortFromUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         port_from_id: number;
     };
@@ -1339,9 +1278,6 @@ export type UpdateExistingPortFromApiV1PortFromPortFromIdPutResponse = (PortFrom
 export type UpdateExistingPortFromApiV1PortFromPortFromIdPutError = (HTTPValidationError);
 
 export type DeleteExistingPortFromApiV1PortFromPortFromIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         port_from_id: number;
     };
@@ -1367,7 +1303,6 @@ export type ReadPortsToApiV1PortToGetError = (HTTPValidationError);
 export type CreatePortToApiV1PortToPostData = {
     body: PortToCreate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
 };
@@ -1392,7 +1327,6 @@ export type ReadPortToApiV1PortToPortToIdGetError = (HTTPValidationError);
 export type UpdatePortToApiV1PortToPortToIdPutData = {
     body: PortToUpdate;
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1406,7 +1340,6 @@ export type UpdatePortToApiV1PortToPortToIdPutError = (HTTPValidationError);
 
 export type DeletePortToApiV1PortToPortToIdDeleteData = {
     headers?: {
-        Authorization?: string;
         'Content-Language'?: string;
     };
     path: {
@@ -1432,9 +1365,6 @@ export type ReadOverlandTariffsApiV1OverlandTariffGetError = (HTTPValidationErro
 
 export type CreateNewOverlandTariffApiV1OverlandTariffPostData = {
     body: OverlandTariffCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewOverlandTariffApiV1OverlandTariffPostResponse = (OverlandTariff);
@@ -1453,9 +1383,6 @@ export type ReadOverlandTariffApiV1OverlandTariffOverlandTariffIdGetError = (HTT
 
 export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutData = {
     body: OverlandTariffUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         overland_tariff_id: number;
     };
@@ -1466,9 +1393,6 @@ export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutRe
 export type UpdateExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdPutError = (HTTPValidationError);
 
 export type DeleteExistingOverlandTariffApiV1OverlandTariffOverlandTariffIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         overland_tariff_id: number;
     };
@@ -1492,9 +1416,6 @@ export type ReadOverseaTariffsApiV1OverseaTariffGetError = (HTTPValidationError)
 
 export type CreateNewOverseaTariffApiV1OverseaTariffPostData = {
     body: OverseaTariffCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewOverseaTariffApiV1OverseaTariffPostResponse = (OverseaTariff);
@@ -1513,9 +1434,6 @@ export type ReadOverseaTariffApiV1OverseaTariffOverseaTariffIdGetError = (HTTPVa
 
 export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutData = {
     body: OverseaTariffUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         oversea_tariff_id: number;
     };
@@ -1526,9 +1444,6 @@ export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutRespo
 export type UpdateExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdPutError = (HTTPValidationError);
 
 export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         oversea_tariff_id: number;
     };
@@ -1551,9 +1466,6 @@ export type ReadContainersApiV1ContainerGetError = (HTTPValidationError);
 
 export type CreateNewContainerApiV1ContainerPostData = {
     body: ContainerCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewContainerApiV1ContainerPostResponse = (Container);
@@ -1572,9 +1484,6 @@ export type ReadContainerApiV1ContainerContainerIdGetError = (HTTPValidationErro
 
 export type UpdateExistingContainerApiV1ContainerContainerIdPutData = {
     body: ContainerUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         container_id: number;
     };
@@ -1585,9 +1494,6 @@ export type UpdateExistingContainerApiV1ContainerContainerIdPutResponse = (Conta
 export type UpdateExistingContainerApiV1ContainerContainerIdPutError = (HTTPValidationError);
 
 export type DeleteExistingContainerApiV1ContainerContainerIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         container_id: number;
     };
@@ -1613,9 +1519,6 @@ export type ReadCargosApiV1CargoGetError = (HTTPValidationError);
 
 export type CreateNewCargoApiV1CargoPostData = {
     body: CargoCreate;
-    headers?: {
-        Authorization?: string;
-    };
 };
 
 export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
@@ -1623,9 +1526,6 @@ export type CreateNewCargoApiV1CargoPostResponse = (Cargo);
 export type CreateNewCargoApiV1CargoPostError = (HTTPValidationError);
 
 export type ReadCargoApiV1CargoCargoIdGetData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         cargo_id: number;
     };
@@ -1636,9 +1536,6 @@ export type ReadCargoApiV1CargoCargoIdGetResponse = (Cargo);
 export type ReadCargoApiV1CargoCargoIdGetError = (HTTPValidationError);
 
 export type DeleteExistingCargoApiV1CargoCargoIdDeleteData = {
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         cargo_id: number;
     };
@@ -1650,9 +1547,6 @@ export type DeleteExistingCargoApiV1CargoCargoIdDeleteError = (HTTPValidationErr
 
 export type UpdateExistingCargoApiV1CargoCargoIdPutData = {
     body: CargoUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         cargo_id: number;
     };
@@ -1674,9 +1568,6 @@ export type ReadCargoByVinApiV1CargoVinCargoVinGetError = (HTTPValidationError);
 
 export type UpdateExistingCargoManagerApiV1CargoManagerCargoIdPutData = {
     body: CargoUpdate;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         cargo_id: number;
     };
@@ -1688,9 +1579,6 @@ export type UpdateExistingCargoManagerApiV1CargoManagerCargoIdPutError = (HTTPVa
 
 export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutData = {
     body: CargoUpdateLogist;
-    headers?: {
-        Authorization?: string;
-    };
     path: {
         cargo_id: number;
     };
@@ -1699,6 +1587,14 @@ export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutData = {
 export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutResponse = (Cargo);
 
 export type UpdateExistingCargoLogistApiV1CargoLogistCargoIdPutError = (HTTPValidationError);
+
+export type UpdateExistingCargoLogistApiV1CargoSetIsPhotoPostData = {
+    body: CargoSetIsPhotos;
+};
+
+export type UpdateExistingCargoLogistApiV1CargoSetIsPhotoPostResponse = (unknown);
+
+export type UpdateExistingCargoLogistApiV1CargoSetIsPhotoPostError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

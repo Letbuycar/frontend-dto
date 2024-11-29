@@ -772,6 +772,18 @@ export const CargoSchema = {
             title: 'Lot Number',
             default: 0
         },
+        is_photos: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Photos',
+            default: false
+        },
         dealer_id: {
             anyOf: [
                 {
@@ -1404,6 +1416,18 @@ export const CargoCreateSchema = {
             title: 'Lot Number',
             default: 0
         },
+        is_photos: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Photos',
+            default: false
+        },
         dealer_id: {
             anyOf: [
                 {
@@ -1575,6 +1599,22 @@ export const CargoCreateSchema = {
     },
     type: 'object',
     title: 'CargoCreate'
+} as const;
+
+export const CargoSetIsPhotosSchema = {
+    properties: {
+        vin_code: {
+            type: 'string',
+            title: 'Vin Code'
+        },
+        is_photo: {
+            type: 'boolean',
+            title: 'Is Photo'
+        }
+    },
+    type: 'object',
+    required: ['vin_code', 'is_photo'],
+    title: 'CargoSetIsPhotos'
 } as const;
 
 export const CargoUpdateSchema = {
@@ -1896,6 +1936,18 @@ export const CargoUpdateSchema = {
             ],
             title: 'Lot Number',
             default: 0
+        },
+        is_photos: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Photos',
+            default: false
         },
         dealer_id: {
             anyOf: [
