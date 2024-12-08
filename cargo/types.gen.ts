@@ -370,6 +370,13 @@ export type CargoManager = {
     location_id?: (number | null);
     date_buy?: (string | null);
     is_archived?: (boolean | null);
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    container_number?: (string | null);
+    broker_id?: (string | null);
+    booking_number?: (string | null);
     id: number;
     sublot?: (number | null);
     is_active: boolean;
