@@ -61,15 +61,37 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type PaginationSchema_Transaction_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Transaction>;
+};
+
 export type PayCargoResponse = {
     success: boolean;
     amount: number;
+};
+
+export type Transaction = {
+    created_by: string;
+    created_by_role: UserRole;
+    user_id: string;
+    amount: number;
+    balance_before: number;
+    balance_after: number;
+    cargo_id: (number | null);
+    cargo: (CargoSchema | null);
+    updated_on: string;
+    created_on: string;
 };
 
 export type UserBalance = {
     user_id: string;
     balance: number;
 };
+
+export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer' | 'Robot';
 
 export type ValidationError = {
     loc: Array<(string | number)>;
@@ -156,6 +178,27 @@ export type PayForCargoApiV1CargoPayCargoIdPostData = {
 export type PayForCargoApiV1CargoPayCargoIdPostResponse = (PayCargoResponse);
 
 export type PayForCargoApiV1CargoPayCargoIdPostError = (HTTPValidationError);
+
+export type GetTransactionsApiV1TransactionsGetData = {
+    query?: {
+        cargo_id?: string;
+        user_id?: string;
+    };
+};
+
+export type GetTransactionsApiV1TransactionsGetResponse = (PaginationSchema_Transaction_);
+
+export type GetTransactionsApiV1TransactionsGetError = (HTTPValidationError);
+
+export type GetSingleTransactionApiV1TransactionsTransactionIdGetData = {
+    path: {
+        transaction_id: number;
+    };
+};
+
+export type GetSingleTransactionApiV1TransactionsTransactionIdGetResponse = (Transaction);
+
+export type GetSingleTransactionApiV1TransactionsTransactionIdGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

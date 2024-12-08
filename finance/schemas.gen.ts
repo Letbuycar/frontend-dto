@@ -594,6 +594,33 @@ export const HTTPValidationErrorSchema = {
     title: 'HTTPValidationError'
 } as const;
 
+export const PaginationSchema_Transaction_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/Transaction'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[Transaction]'
+} as const;
+
 export const PayCargoResponseSchema = {
     properties: {
         success: {
@@ -608,6 +635,70 @@ export const PayCargoResponseSchema = {
     type: 'object',
     required: ['success', 'amount'],
     title: 'PayCargoResponse'
+} as const;
+
+export const TransactionSchema = {
+    properties: {
+        created_by: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Created By'
+        },
+        created_by_role: {
+            '$ref': '#/components/schemas/UserRole'
+        },
+        user_id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'User Id'
+        },
+        amount: {
+            type: 'number',
+            title: 'Amount'
+        },
+        balance_before: {
+            type: 'number',
+            title: 'Balance Before'
+        },
+        balance_after: {
+            type: 'number',
+            title: 'Balance After'
+        },
+        cargo_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Id'
+        },
+        cargo: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CargoSchema'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        }
+    },
+    type: 'object',
+    required: ['created_by', 'created_by_role', 'user_id', 'amount', 'balance_before', 'balance_after', 'cargo_id', 'cargo', 'updated_on', 'created_on'],
+    title: 'Transaction'
 } as const;
 
 export const UserBalanceSchema = {
@@ -625,6 +716,12 @@ export const UserBalanceSchema = {
     type: 'object',
     required: ['user_id', 'balance'],
     title: 'UserBalance'
+} as const;
+
+export const UserRoleSchema = {
+    type: 'string',
+    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer', 'Robot'],
+    title: 'UserRole'
 } as const;
 
 export const ValidationErrorSchema = {
