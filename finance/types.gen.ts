@@ -181,7 +181,7 @@ export type PayForCargoApiV1CargoPayCargoIdPostError = (HTTPValidationError);
 
 export type GetTransactionsApiV1TransactionsGetData = {
     query?: {
-        cargo_id?: string;
+        cargo_id?: number;
         user_id?: string;
     };
 };
