@@ -743,17 +743,39 @@ export const CargoSchema = {
             title: 'Id'
         },
         is_active: {
-            type: 'boolean',
-            title: 'Is Active'
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         },
         updated_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Updated On'
         },
         created_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Created On'
         },
         car_brand: {
@@ -878,7 +900,7 @@ export const CargoSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'Cargo'
 } as const;
 
@@ -1185,17 +1207,39 @@ export const CargoAccountantSchema = {
             default: 0
         },
         is_active: {
-            type: 'boolean',
-            title: 'Is Active'
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         },
         updated_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Updated On'
         },
         created_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Created On'
         },
         car_brand: {
@@ -1356,7 +1400,7 @@ export const CargoAccountantSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'CargoAccountant'
 } as const;
 
@@ -2333,17 +2377,39 @@ export const CargoAdminSchema = {
             title: 'Id'
         },
         is_active: {
-            type: 'boolean',
-            title: 'Is Active'
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         },
         updated_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Updated On'
         },
         created_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Created On'
         },
         car_brand: {
@@ -2468,7 +2534,7 @@ export const CargoAdminSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'CargoAdmin'
 } as const;
 
@@ -3463,17 +3529,39 @@ export const CargoLogisticianSchema = {
             title: 'Id'
         },
         is_active: {
-            type: 'boolean',
-            title: 'Is Active'
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         },
         updated_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Updated On'
         },
         created_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Created On'
         },
         car_brand: {
@@ -3680,7 +3768,7 @@ export const CargoLogisticianSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'CargoLogistician'
 } as const;
 
@@ -4442,17 +4530,39 @@ export const CargoManagerSchema = {
             default: 0
         },
         is_active: {
-            type: 'boolean',
-            title: 'Is Active'
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         },
         updated_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Updated On'
         },
         created_on: {
-            type: 'string',
-            format: 'date-time',
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Created On'
         },
         car_brand: {
@@ -4613,7 +4723,7 @@ export const CargoManagerSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'CargoManager'
 } as const;
 
