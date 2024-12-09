@@ -124,8 +124,8 @@ export type Cargo = {
     is_archived?: (boolean | null);
     id: number;
     is_active?: (boolean | null);
-    updated_on: (string | null);
-    created_on: (string | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
     car_brand?: (CarBrand | null);
     car_model?: (CarModel | null);
     container?: (Container | null);
@@ -169,8 +169,8 @@ export type CargoAccountant = {
     id: number;
     sublot?: (number | null);
     is_active?: (boolean | null);
-    updated_on: (string | null);
-    created_on: (string | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
     car_brand?: (CarBrand | null);
     car_model?: (CarModel | null);
     container?: (Container | null);
@@ -284,8 +284,8 @@ export type CargoAdmin = {
     sublot?: (number | null);
     id: number;
     is_active?: (boolean | null);
-    updated_on: (string | null);
-    created_on: (string | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
     car_brand?: (CarBrand | null);
     car_model?: (CarModel | null);
     container?: (Container | null);
@@ -394,8 +394,8 @@ export type CargoLogistician = {
     is_archived?: (boolean | null);
     id: number;
     is_active?: (boolean | null);
-    updated_on: (string | null);
-    created_on: (string | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
     car_brand?: (CarBrand | null);
     car_model?: (CarModel | null);
     container?: (Container | null);
@@ -488,8 +488,8 @@ export type CargoManager = {
     id: number;
     sublot?: (number | null);
     is_active?: (boolean | null);
-    updated_on: (string | null);
-    created_on: (string | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
     car_brand?: (CarBrand | null);
     car_model?: (CarModel | null);
     container?: (Container | null);

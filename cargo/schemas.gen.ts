@@ -900,7 +900,7 @@ export const CargoSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'Cargo'
 } as const;
 
@@ -1400,7 +1400,7 @@ export const CargoAccountantSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'CargoAccountant'
 } as const;
 
@@ -2534,7 +2534,7 @@ export const CargoAdminSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'CargoAdmin'
 } as const;
 
@@ -3768,7 +3768,7 @@ export const CargoLogisticianSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'CargoLogistician'
 } as const;
 
@@ -4723,7 +4723,7 @@ export const CargoManagerSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'updated_on', 'created_on'],
+    required: ['id'],
     title: 'CargoManager'
 } as const;
 
