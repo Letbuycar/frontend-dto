@@ -213,7 +213,7 @@ export type GetSingleTransactionApiV1TransactionsTransactionIdGetError = (HTTPVa
 export type GetAllPaymentsApiV1PaymentsAccountantGetData = {
     query?: {
         status?: (PAYMENT_STATUS);
-        user_id?: Array<(string)>;
+        user_id?: string;
     };
 };
 
