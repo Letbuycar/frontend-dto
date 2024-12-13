@@ -444,6 +444,7 @@ export type CargoDealer = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    duties_amount?: (number | null);
     duties_receipt_file_path?: (number | null);
 };
 

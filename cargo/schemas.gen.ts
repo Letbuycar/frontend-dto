@@ -4064,6 +4064,18 @@ export const CargoDealerSchema = {
                 }
             ]
         },
+        duties_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Amount',
+            default: 0
+        },
         duties_receipt_file_path: {
             anyOf: [
                 {
