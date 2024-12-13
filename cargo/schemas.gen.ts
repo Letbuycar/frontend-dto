@@ -3541,6 +3541,17 @@ export const CargoBrokerUpdateSchema = {
 
 export const CargoDealerSchema = {
     properties: {
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
+        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -4052,6 +4063,18 @@ export const CargoDealerSchema = {
                     type: 'null'
                 }
             ]
+        },
+        duties_receipt_file_path: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Path',
+            default: ''
         }
     },
     type: 'object',
@@ -4061,6 +4084,17 @@ export const CargoDealerSchema = {
 
 export const CargoDealerUpdateSchema = {
     properties: {
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
+        },
         cost_dealer_add_buy: {
             anyOf: [
                 {

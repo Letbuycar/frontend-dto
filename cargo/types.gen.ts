@@ -396,6 +396,7 @@ export type CargoBrokerUpdate = {
 };
 
 export type CargoDealer = {
+    duties_receipt_file_id?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
@@ -443,9 +444,11 @@ export type CargoDealer = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    duties_receipt_file_path?: (number | null);
 };
 
 export type CargoDealerUpdate = {
+    duties_receipt_file_id?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
