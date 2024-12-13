@@ -13,6 +13,19 @@ export const Body_upload_file_api_v1_images__vin_code___postSchema = {
     title: 'Body_upload_file_api_v1_images__vin_code___post'
 } as const;
 
+export const Body_upload_file_duty_api_v1_duties__cargo_id___postSchema = {
+    properties: {
+        file: {
+            type: 'string',
+            format: 'binary',
+            title: 'File'
+        }
+    },
+    type: 'object',
+    required: ['file'],
+    title: 'Body_upload_file_duty_api_v1_duties__cargo_id___post'
+} as const;
+
 export const Body_upload_multiple_files_api_v1_images__vin_code__multiple__postSchema = {
     properties: {
         files: {

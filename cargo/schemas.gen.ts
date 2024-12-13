@@ -3002,6 +3002,18 @@ export const CargoBrokerSchema = {
             ],
             title: 'Duties Receipt File Id'
         },
+        is_duties_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Duties Paid',
+            default: false
+        },
         vin_code: {
             anyOf: [
                 {
@@ -3509,6 +3521,18 @@ export const CargoBrokerUpdateSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        is_duties_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Duties Paid',
+            default: false
         }
     },
     type: 'object',
@@ -4108,6 +4132,26 @@ export const CargoDealerUpdateSchema = {
     },
     type: 'object',
     title: 'CargoDealerUpdate'
+} as const;
+
+export const CargoDocsAccessSchema = {
+    properties: {
+        cargo_id: {
+            type: 'integer',
+            title: 'Cargo Id'
+        },
+        user_id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'User Id'
+        },
+        doc_type: {
+            '$ref': '#/components/schemas/DOCS_TYPE'
+        }
+    },
+    type: 'object',
+    required: ['cargo_id', 'user_id', 'doc_type'],
+    title: 'CargoDocsAccess'
 } as const;
 
 export const CargoLogisticianSchema = {
@@ -6268,6 +6312,12 @@ export const CountryUpdateSchema = {
     },
     type: 'object',
     title: 'CountryUpdate'
+} as const;
+
+export const DOCS_TYPESchema = {
+    type: 'string',
+    enum: ['invoice', 'duty_receipt', 'cargo_docs', 'user_docs', 'payment'],
+    title: 'DOCS_TYPE'
 } as const;
 
 export const EngineVolumeSchema = {

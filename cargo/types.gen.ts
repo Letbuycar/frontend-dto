@@ -342,6 +342,7 @@ export type CargoBroker = {
     port_photos_link?: (string | null);
     final_receiver_name?: (string | null);
     duties_receipt_file_id?: (string | null);
+    is_duties_paid?: (boolean | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -391,6 +392,7 @@ export type CargoBrokerUpdate = {
     port_photos_link?: (string | null);
     final_receiver_name?: (string | null);
     duties_receipt_file_id?: (string | null);
+    is_duties_paid?: (boolean | null);
 };
 
 export type CargoDealer = {
@@ -450,6 +452,12 @@ export type CargoDealerUpdate = {
     invoice_company?: (string | null);
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
+};
+
+export type CargoDocsAccess = {
+    cargo_id: number;
+    user_id: string;
+    doc_type: DOCS_TYPE;
 };
 
 export type CargoLogistician = {
@@ -691,6 +699,8 @@ export type CountryUpdate = {
     title?: string;
     is_active?: (boolean | null);
 };
+
+export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment';
 
 export type EngineVolume = {
     title: string;
@@ -2233,6 +2243,14 @@ export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostData = {
 export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostResponse = (unknown);
 
 export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostError = (HTTPValidationError);
+
+export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostData = {
+    body: CargoDocsAccess;
+};
+
+export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostResponse = (unknown);
+
+export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

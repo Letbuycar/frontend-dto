@@ -4,6 +4,10 @@ export type Body_upload_file_api_v1_images__vin_code___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_file_duty_api_v1_duties__cargo_id___post = {
+    file: (Blob | File);
+};
+
 export type Body_upload_multiple_files_api_v1_images__vin_code__multiple__post = {
     files: Array<((Blob | File))>;
 };
@@ -79,6 +83,28 @@ export type DeleteFileApiV1ImagesVinCodeFilenameDeleteData = {
 export type DeleteFileApiV1ImagesVinCodeFilenameDeleteResponse = (unknown);
 
 export type DeleteFileApiV1ImagesVinCodeFilenameDeleteError = (HTTPValidationError);
+
+export type UploadFileDutyApiV1DutiesCargoIdPostData = {
+    body: Body_upload_file_duty_api_v1_duties__cargo_id___post;
+    path: {
+        cargo_id: string;
+    };
+};
+
+export type UploadFileDutyApiV1DutiesCargoIdPostResponse = (ImageUploadResponse);
+
+export type UploadFileDutyApiV1DutiesCargoIdPostError = (HTTPValidationError);
+
+export type GetFileDutyApiV1DutiesCargoIdFilenameGetData = {
+    path: {
+        cargo_id: string;
+        filename: string;
+    };
+};
+
+export type GetFileDutyApiV1DutiesCargoIdFilenameGetResponse = (unknown);
+
+export type GetFileDutyApiV1DutiesCargoIdFilenameGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
