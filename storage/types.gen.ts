@@ -157,6 +157,17 @@ export type GetFileApiV1CargoDocsCargoIdFilenameGetResponse = (unknown);
 
 export type GetFileApiV1CargoDocsCargoIdFilenameGetError = (HTTPValidationError);
 
+export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteData = {
+    path: {
+        cargo_id: string;
+        filename: string;
+    };
+};
+
+export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteResponse = (unknown);
+
+export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteError = (HTTPValidationError);
+
 export type RootGetResponse = (unknown);
 
 export type RootGetError = unknown;
