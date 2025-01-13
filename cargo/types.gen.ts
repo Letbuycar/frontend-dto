@@ -405,6 +405,10 @@ export type CargoDealer = {
     invoice_company?: (string | null);
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
+    is_duties_paid?: (boolean | null);
+    final_receiver_name?: (string | null);
+    delivery_comment?: (string | null);
+    date_receive?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -458,6 +462,10 @@ export type CargoDealerUpdate = {
     invoice_company?: (string | null);
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
+    is_duties_paid?: (boolean | null);
+    final_receiver_name?: (string | null);
+    delivery_comment?: (string | null);
+    date_receive?: (string | null);
 };
 
 export type CargoDocsAccess = {

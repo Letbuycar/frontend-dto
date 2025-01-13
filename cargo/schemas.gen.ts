@@ -3644,6 +3644,52 @@ export const CargoDealerSchema = {
             ],
             title: 'Invoice Passport'
         },
+        is_duties_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Duties Paid',
+            default: false
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        date_receive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Receive'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -4198,6 +4244,52 @@ export const CargoDealerUpdateSchema = {
                 }
             ],
             title: 'Invoice Passport'
+        },
+        is_duties_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Duties Paid',
+            default: false
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        date_receive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Receive'
         }
     },
     type: 'object',
