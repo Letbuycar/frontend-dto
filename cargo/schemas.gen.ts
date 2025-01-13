@@ -2958,39 +2958,6 @@ export const CargoBrokerSchema = {
             title: 'Duties Amount',
             default: 0
         },
-        delivery_comment: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Delivery Comment'
-        },
-        port_photos_link: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port Photos Link'
-        },
-        final_receiver_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Final Receiver Name'
-        },
         duties_receipt_file_id: {
             anyOf: [
                 {
@@ -3013,6 +2980,51 @@ export const CargoBrokerSchema = {
             ],
             title: 'Is Duties Paid',
             default: false
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        date_receive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Receive'
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         },
         vin_code: {
             anyOf: [
@@ -3478,39 +3490,6 @@ export const CargoBrokerUpdateSchema = {
             title: 'Duties Amount',
             default: 0
         },
-        delivery_comment: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Delivery Comment'
-        },
-        port_photos_link: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port Photos Link'
-        },
-        final_receiver_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Final Receiver Name'
-        },
         duties_receipt_file_id: {
             anyOf: [
                 {
@@ -3533,6 +3512,51 @@ export const CargoBrokerUpdateSchema = {
             ],
             title: 'Is Duties Paid',
             default: false
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        date_receive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Receive'
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         }
     },
     type: 'object',

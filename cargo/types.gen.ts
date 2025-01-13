@@ -338,11 +338,12 @@ export type CargoAdminUpdate = {
 
 export type CargoBroker = {
     duties_amount?: (number | null);
-    delivery_comment?: (string | null);
-    port_photos_link?: (string | null);
-    final_receiver_name?: (string | null);
     duties_receipt_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
+    final_receiver_name?: (string | null);
+    delivery_comment?: (string | null);
+    date_receive?: (string | null);
+    port_photos_link?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -388,11 +389,12 @@ export type CargoBroker = {
 
 export type CargoBrokerUpdate = {
     duties_amount?: (number | null);
-    delivery_comment?: (string | null);
-    port_photos_link?: (string | null);
-    final_receiver_name?: (string | null);
     duties_receipt_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
+    final_receiver_name?: (string | null);
+    delivery_comment?: (string | null);
+    date_receive?: (string | null);
+    port_photos_link?: (string | null);
 };
 
 export type CargoDealer = {
