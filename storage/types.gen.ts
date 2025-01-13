@@ -159,7 +159,7 @@ export type GetFileApiV1CargoDocsCargoIdFilenameGetError = (HTTPValidationError)
 
 export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteData = {
     path: {
-        cargo_id: string;
+        cargo_id: number;
         filename: string;
     };
 };
