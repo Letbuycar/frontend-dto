@@ -56,7 +56,9 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
-export type CARGO_STATUS_BROKER = 'no_cargo_doc' | 'broker_check_doc';
+export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc';
+
+export type CARGO_STATUS_BROKER_UPDATE = 'no_cargo_doc' | 'broker_check_doc';
 
 export type CARGO_STATUS_LOGIST = 'logist_car_arived_to_storage' | 'logist_car_to_shipment';
 
@@ -348,7 +350,7 @@ export type CargoBroker = {
     delivery_comment?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
-    status?: (CARGO_STATUS_BROKER | null);
+    status?: (CARGO_STATUS_BROKER_GET | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -400,7 +402,7 @@ export type CargoBrokerUpdate = {
     delivery_comment?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
-    status?: (CARGO_STATUS_BROKER | null);
+    status?: (CARGO_STATUS_BROKER_UPDATE | null);
 };
 
 export type CargoDealer = {

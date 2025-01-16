@@ -271,10 +271,16 @@ export const BodyTypeUpdateSchema = {
     title: 'BodyTypeUpdate'
 } as const;
 
-export const CARGO_STATUS_BROKERSchema = {
+export const CARGO_STATUS_BROKER_GETSchema = {
+    type: 'string',
+    enum: ['no_cargo_doc', 'broker_check_doc', 'have_cargo_doc'],
+    title: 'CARGO_STATUS_BROKER_GET'
+} as const;
+
+export const CARGO_STATUS_BROKER_UPDATESchema = {
     type: 'string',
     enum: ['no_cargo_doc', 'broker_check_doc'],
-    title: 'CARGO_STATUS_BROKER'
+    title: 'CARGO_STATUS_BROKER_UPDATE'
 } as const;
 
 export const CARGO_STATUS_LOGISTSchema = {
@@ -3041,7 +3047,7 @@ export const CargoBrokerSchema = {
         status: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER'
+                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER_GET'
                 },
                 {
                     type: 'null'
@@ -3583,7 +3589,7 @@ export const CargoBrokerUpdateSchema = {
         status: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER'
+                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER_UPDATE'
                 },
                 {
                     type: 'null'
