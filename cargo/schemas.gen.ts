@@ -271,6 +271,18 @@ export const BodyTypeUpdateSchema = {
     title: 'BodyTypeUpdate'
 } as const;
 
+export const CARGO_STATUS_BROKERSchema = {
+    type: 'string',
+    enum: ['CARGO_STATUS.NO_CARGO_DOC', 'CARGO_STATUS.BROKER_CHECK_DOC'],
+    title: 'CARGO_STATUS_BROKER'
+} as const;
+
+export const CARGO_STATUS_LOGISTSchema = {
+    type: 'string',
+    enum: ['CARGO_STATUS.LOGIST_CAR_ARIVED_TO_STORAGE', 'CARGO_STATUS.LOGIST_CAR_TO_SHIPMENT'],
+    title: 'CARGO_STATUS_LOGIST'
+} as const;
+
 export const CARGO_TYPESchema = {
     type: 'string',
     enum: ['car', 'crossover', 'moto', 'boat', 'extra_large_auto', 'special_equipment'],
@@ -3026,6 +3038,16 @@ export const CargoBrokerSchema = {
             ],
             title: 'Port Photos Link'
         },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         vin_code: {
             anyOf: [
                 {
@@ -3557,6 +3579,16 @@ export const CargoBrokerUpdateSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_BROKER'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -3565,17 +3597,6 @@ export const CargoBrokerUpdateSchema = {
 
 export const CargoDealerSchema = {
     properties: {
-        duties_receipt_file_id: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Duties Receipt File Id'
-        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -3643,6 +3664,17 @@ export const CargoDealerSchema = {
                 }
             ],
             title: 'Invoice Passport'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         },
         is_duties_paid: {
             anyOf: [
@@ -4166,17 +4198,6 @@ export const CargoDealerSchema = {
 
 export const CargoDealerUpdateSchema = {
     properties: {
-        duties_receipt_file_id: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Duties Receipt File Id'
-        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -4244,6 +4265,17 @@ export const CargoDealerUpdateSchema = {
                 }
             ],
             title: 'Invoice Passport'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         },
         is_duties_paid: {
             anyOf: [
@@ -4843,6 +4875,16 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Booking Number'
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_LOGIST'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -4955,6 +4997,16 @@ export const CargoLogisticianUpdateSchema = {
                 }
             ],
             title: 'Booking Number'
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_LOGIST'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -5066,6 +5118,16 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Booking Number'
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_LOGIST'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         vin_code: {
             anyOf: [

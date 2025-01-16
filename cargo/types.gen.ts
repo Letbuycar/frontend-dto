@@ -56,6 +56,10 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
+export type CARGO_STATUS_BROKER = 'CARGO_STATUS.NO_CARGO_DOC' | 'CARGO_STATUS.BROKER_CHECK_DOC';
+
+export type CARGO_STATUS_LOGIST = 'CARGO_STATUS.LOGIST_CAR_ARIVED_TO_STORAGE' | 'CARGO_STATUS.LOGIST_CAR_TO_SHIPMENT';
+
 export type CARGO_TYPE = 'car' | 'crossover' | 'moto' | 'boat' | 'extra_large_auto' | 'special_equipment';
 
 export type CarBrand = {
@@ -344,6 +348,7 @@ export type CargoBroker = {
     delivery_comment?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
+    status?: (CARGO_STATUS_BROKER | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -395,16 +400,17 @@ export type CargoBrokerUpdate = {
     delivery_comment?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
+    status?: (CARGO_STATUS_BROKER | null);
 };
 
 export type CargoDealer = {
-    duties_receipt_file_id?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
     invoice_company?: (string | null);
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
+    duties_receipt_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -455,13 +461,13 @@ export type CargoDealer = {
 };
 
 export type CargoDealerUpdate = {
-    duties_receipt_file_id?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
     invoice_company?: (string | null);
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
+    duties_receipt_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -523,6 +529,7 @@ export type CargoLogistician = {
     container_number?: (string | null);
     broker_id?: (string | null);
     booking_number?: (string | null);
+    status?: (CARGO_STATUS_LOGIST | null);
 };
 
 export type CargoLogisticianUpdate = {
@@ -535,6 +542,7 @@ export type CargoLogisticianUpdate = {
     ship_title?: (string | null);
     broker_id?: (string | null);
     booking_number?: (string | null);
+    status?: (CARGO_STATUS_LOGIST | null);
 };
 
 export type CargoManager = {
@@ -547,6 +555,7 @@ export type CargoManager = {
     ship_title?: (string | null);
     broker_id?: (string | null);
     booking_number?: (string | null);
+    status?: (CARGO_STATUS_LOGIST | null);
     vin_code?: (string | null);
     year?: (number | null);
     is_closed_location?: (boolean | null);
