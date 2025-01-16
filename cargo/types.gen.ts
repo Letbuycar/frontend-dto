@@ -56,9 +56,9 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
-export type CARGO_STATUS_BROKER = 'CARGO_STATUS.NO_CARGO_DOC' | 'CARGO_STATUS.BROKER_CHECK_DOC';
+export type CARGO_STATUS_BROKER = 'no_cargo_doc' | 'broker_check_doc';
 
-export type CARGO_STATUS_LOGIST = 'CARGO_STATUS.LOGIST_CAR_ARIVED_TO_STORAGE' | 'CARGO_STATUS.LOGIST_CAR_TO_SHIPMENT';
+export type CARGO_STATUS_LOGIST = 'logist_car_arived_to_storage' | 'logist_car_to_shipment';
 
 export type CARGO_TYPE = 'car' | 'crossover' | 'moto' | 'boat' | 'extra_large_auto' | 'special_equipment';
 

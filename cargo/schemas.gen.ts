@@ -273,13 +273,13 @@ export const BodyTypeUpdateSchema = {
 
 export const CARGO_STATUS_BROKERSchema = {
     type: 'string',
-    enum: ['CARGO_STATUS.NO_CARGO_DOC', 'CARGO_STATUS.BROKER_CHECK_DOC'],
+    enum: ['no_cargo_doc', 'broker_check_doc'],
     title: 'CARGO_STATUS_BROKER'
 } as const;
 
 export const CARGO_STATUS_LOGISTSchema = {
     type: 'string',
-    enum: ['CARGO_STATUS.LOGIST_CAR_ARIVED_TO_STORAGE', 'CARGO_STATUS.LOGIST_CAR_TO_SHIPMENT'],
+    enum: ['logist_car_arived_to_storage', 'logist_car_to_shipment'],
     title: 'CARGO_STATUS_LOGIST'
 } as const;
 
