@@ -50,6 +50,17 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type INVOICE_TYPE = 'auction' | 'company' | 'storage';
+
+export type InvoiceSchema = {
+    id?: number;
+    invoice_type?: (INVOICE_TYPE | null);
+    total_amount?: (string | null);
+    paid_amount?: (string | null);
+    file_id?: (string | null);
+    cargo_id?: (number | null);
+};
+
 export type PAYMENT_STATUS = 'new' | 'approving' | 'approved' | 'failed';
 
 export type PaginationSchema_Payment_ = {
@@ -81,6 +92,11 @@ export type Payment = {
     is_active: boolean;
     updated_on: string;
     created_on: string;
+};
+
+export type SettingsSchema = {
+    payment_account: string;
+    payment_storage_account: string;
 };
 
 export type Transaction = {
@@ -272,6 +288,34 @@ export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostData = {
 export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostResponse = (Payment);
 
 export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostError = (HTTPValidationError);
+
+export type GetSettingsApiV1SettingsGetData = {
+    query?: {
+        cargo_ids?: string;
+    };
+};
+
+export type GetSettingsApiV1SettingsGetResponse = (SettingsSchema);
+
+export type GetSettingsApiV1SettingsGetError = (HTTPValidationError);
+
+export type UpdateSettingsApiV1SettingsPostData = {
+    body: SettingsSchema;
+};
+
+export type UpdateSettingsApiV1SettingsPostResponse = (unknown);
+
+export type UpdateSettingsApiV1SettingsPostError = (HTTPValidationError);
+
+export type GetInvoicesApiV1InvoicesCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetInvoicesApiV1InvoicesCargoIdGetResponse = (Array<InvoiceSchema>);
+
+export type GetInvoicesApiV1InvoicesCargoIdGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

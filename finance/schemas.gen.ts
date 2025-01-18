@@ -418,6 +418,77 @@ export const HTTPValidationErrorSchema = {
     title: 'HTTPValidationError'
 } as const;
 
+export const INVOICE_TYPESchema = {
+    type: 'string',
+    enum: ['auction', 'company', 'storage'],
+    title: 'INVOICE_TYPE'
+} as const;
+
+export const InvoiceSchemaSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        invoice_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/INVOICE_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        total_amount: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Total Amount'
+        },
+        paid_amount: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Paid Amount'
+        },
+        file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'File Id'
+        },
+        cargo_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Id'
+        }
+    },
+    type: 'object',
+    title: 'InvoiceSchema'
+} as const;
+
 export const PAYMENT_STATUSSchema = {
     type: 'string',
     enum: ['new', 'approving', 'approved', 'failed'],
@@ -547,6 +618,22 @@ export const PaymentSchema = {
     type: 'object',
     required: ['id', 'user_id', 'amount', 'file_path', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
     title: 'Payment'
+} as const;
+
+export const SettingsSchemaSchema = {
+    properties: {
+        payment_account: {
+            type: 'string',
+            title: 'Payment Account'
+        },
+        payment_storage_account: {
+            type: 'string',
+            title: 'Payment Storage Account'
+        }
+    },
+    type: 'object',
+    required: ['payment_account', 'payment_storage_account'],
+    title: 'SettingsSchema'
 } as const;
 
 export const TransactionSchema = {
