@@ -84,7 +84,7 @@ export type PayCargoResponse = {
 
 export type Payment = {
     amount: number;
-    file_path: (string | null);
+    file_id: (string | null);
     cargo_id: (number | null);
     id: number;
     user_id: string;
@@ -97,7 +97,7 @@ export type Payment = {
 
 export type PaymentDealerCreate = {
     amount: number;
-    file_path: (string | null);
+    file_id: (string | null);
     cargo_id: (number | null);
 };
 

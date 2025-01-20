@@ -571,7 +571,7 @@ export const PaymentSchema = {
             type: 'number',
             title: 'Amount'
         },
-        file_path: {
+        file_id: {
             anyOf: [
                 {
                     type: 'string'
@@ -580,7 +580,7 @@ export const PaymentSchema = {
                     type: 'null'
                 }
             ],
-            title: 'File Path'
+            title: 'File Id'
         },
         cargo_id: {
             anyOf: [
@@ -627,7 +627,7 @@ export const PaymentSchema = {
         }
     },
     type: 'object',
-    required: ['amount', 'file_path', 'cargo_id', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
+    required: ['amount', 'file_id', 'cargo_id', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
     title: 'Payment'
 } as const;
 
@@ -637,7 +637,7 @@ export const PaymentDealerCreateSchema = {
             type: 'number',
             title: 'Amount'
         },
-        file_path: {
+        file_id: {
             anyOf: [
                 {
                     type: 'string'
@@ -646,7 +646,7 @@ export const PaymentDealerCreateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'File Path'
+            title: 'File Id'
         },
         cargo_id: {
             anyOf: [
@@ -661,7 +661,7 @@ export const PaymentDealerCreateSchema = {
         }
     },
     type: 'object',
-    required: ['amount', 'file_path', 'cargo_id'],
+    required: ['amount', 'file_id', 'cargo_id'],
     title: 'PaymentDealerCreate'
 } as const;
 
