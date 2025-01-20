@@ -638,7 +638,7 @@ export const PaymentSchema = {
         }
     },
     type: 'object',
-    required: ['amount', 'file_id', 'cargo_id', 'cargo_vin', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
+    required: ['amount', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
     title: 'Payment'
 } as const;
 
@@ -683,7 +683,7 @@ export const PaymentDealerCreateSchema = {
         }
     },
     type: 'object',
-    required: ['amount', 'file_id', 'cargo_id', 'cargo_vin'],
+    required: ['amount'],
     title: 'PaymentDealerCreate'
 } as const;
 
