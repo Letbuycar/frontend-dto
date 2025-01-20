@@ -83,15 +83,28 @@ export type PayCargoResponse = {
 };
 
 export type Payment = {
-    id: number;
-    user_id: string;
     amount: number;
     file_path: (string | null);
+    cargo_id: (number | null);
+    id: number;
+    user_id: string;
     payment_date: string;
     status: string;
     is_active: boolean;
     updated_on: string;
     created_on: string;
+};
+
+export type PaymentDealerCreate = {
+    amount: number;
+    file_path: (string | null);
+    cargo_id: (number | null);
+};
+
+export type PaymentsDocsAccess = {
+    payment_id: number;
+    user_id: string;
+    doc_type: string;
 };
 
 export type SettingsSchema = {
@@ -179,7 +192,7 @@ export type GetCargoApiV1CargoCargoIdGetData = {
     };
 };
 
-export type GetCargoApiV1CargoCargoIdGetResponse = (CargoSchema);
+export type GetCargoApiV1CargoCargoIdGetResponse = (unknown);
 
 export type GetCargoApiV1CargoCargoIdGetError = (HTTPValidationError);
 
@@ -258,6 +271,14 @@ export type ProcessPaymentApiV1PaymentsAccountantPaymentIdPostResponse = (Paymen
 
 export type ProcessPaymentApiV1PaymentsAccountantPaymentIdPostError = (HTTPValidationError);
 
+export type CreatePaymentApiV1PaymentsDealerPostData = {
+    body: PaymentDealerCreate;
+};
+
+export type CreatePaymentApiV1PaymentsDealerPostResponse = (Payment);
+
+export type CreatePaymentApiV1PaymentsDealerPostError = (HTTPValidationError);
+
 export type GetMyPaymentsApiV1PaymentsDealerGetData = {
     query: {
         token: string;
@@ -288,6 +309,14 @@ export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostData = {
 export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostResponse = (Payment);
 
 export type GetSinglePaymentApiV1PaymentsAdminPaymentIdPostError = (HTTPValidationError);
+
+export type UpdateExistingCargoLogistApiV1PaymentsRobotHasFileAccessPostData = {
+    body: PaymentsDocsAccess;
+};
+
+export type UpdateExistingCargoLogistApiV1PaymentsRobotHasFileAccessPostResponse = (unknown);
+
+export type UpdateExistingCargoLogistApiV1PaymentsRobotHasFileAccessPostError = (HTTPValidationError);
 
 export type GetSettingsApiV1SettingsGetData = {
     query?: {

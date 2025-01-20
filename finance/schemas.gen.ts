@@ -567,15 +567,6 @@ export const PayCargoResponseSchema = {
 
 export const PaymentSchema = {
     properties: {
-        id: {
-            type: 'integer',
-            title: 'Id'
-        },
-        user_id: {
-            type: 'string',
-            format: 'uuid',
-            title: 'User Id'
-        },
         amount: {
             type: 'number',
             title: 'Amount'
@@ -590,6 +581,26 @@ export const PaymentSchema = {
                 }
             ],
             title: 'File Path'
+        },
+        cargo_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Id'
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        user_id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'User Id'
         },
         payment_date: {
             type: 'string',
@@ -616,8 +627,63 @@ export const PaymentSchema = {
         }
     },
     type: 'object',
-    required: ['id', 'user_id', 'amount', 'file_path', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
+    required: ['amount', 'file_path', 'cargo_id', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
     title: 'Payment'
+} as const;
+
+export const PaymentDealerCreateSchema = {
+    properties: {
+        amount: {
+            type: 'number',
+            title: 'Amount'
+        },
+        file_path: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'File Path'
+        },
+        cargo_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Id'
+        }
+    },
+    type: 'object',
+    required: ['amount', 'file_path', 'cargo_id'],
+    title: 'PaymentDealerCreate'
+} as const;
+
+export const PaymentsDocsAccessSchema = {
+    properties: {
+        payment_id: {
+            type: 'integer',
+            title: 'Payment Id'
+        },
+        user_id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'User Id'
+        },
+        doc_type: {
+            type: 'string',
+            title: 'Doc Type'
+        }
+    },
+    type: 'object',
+    required: ['payment_id', 'user_id', 'doc_type'],
+    title: 'PaymentsDocsAccess'
 } as const;
 
 export const SettingsSchemaSchema = {
