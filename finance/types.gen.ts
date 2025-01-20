@@ -86,6 +86,7 @@ export type Payment = {
     amount: number;
     file_id: (string | null);
     cargo_id: (number | null);
+    cargo_vin: (string | null);
     id: number;
     user_id: string;
     payment_date: string;
@@ -99,6 +100,7 @@ export type PaymentDealerCreate = {
     amount: number;
     file_id: (string | null);
     cargo_id: (number | null);
+    cargo_vin: (string | null);
 };
 
 export type PaymentsDocsAccess = {

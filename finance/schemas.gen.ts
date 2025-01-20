@@ -593,6 +593,17 @@ export const PaymentSchema = {
             ],
             title: 'Cargo Id'
         },
+        cargo_vin: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Vin'
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -627,7 +638,7 @@ export const PaymentSchema = {
         }
     },
     type: 'object',
-    required: ['amount', 'file_id', 'cargo_id', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
+    required: ['amount', 'file_id', 'cargo_id', 'cargo_vin', 'id', 'user_id', 'payment_date', 'status', 'is_active', 'updated_on', 'created_on'],
     title: 'Payment'
 } as const;
 
@@ -658,10 +669,21 @@ export const PaymentDealerCreateSchema = {
                 }
             ],
             title: 'Cargo Id'
+        },
+        cargo_vin: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Vin'
         }
     },
     type: 'object',
-    required: ['amount', 'file_id', 'cargo_id'],
+    required: ['amount', 'file_id', 'cargo_id', 'cargo_vin'],
     title: 'PaymentDealerCreate'
 } as const;
 
