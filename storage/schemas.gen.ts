@@ -39,6 +39,32 @@ export const Body_upload_file_duty_api_v1_duties__cargo_id___postSchema = {
     title: 'Body_upload_file_duty_api_v1_duties__cargo_id___post'
 } as const;
 
+export const Body_upload_file_invoice_api_v1_invoices__cargo_id___postSchema = {
+    properties: {
+        file: {
+            type: 'string',
+            format: 'binary',
+            title: 'File'
+        }
+    },
+    type: 'object',
+    required: ['file'],
+    title: 'Body_upload_file_invoice_api_v1_invoices__cargo_id___post'
+} as const;
+
+export const Body_upload_file_payment_api_v1_payments__postSchema = {
+    properties: {
+        file: {
+            type: 'string',
+            format: 'binary',
+            title: 'File'
+        }
+    },
+    type: 'object',
+    required: ['file'],
+    title: 'Body_upload_file_payment_api_v1_payments__post'
+} as const;
+
 export const Body_upload_multiple_files_api_v1_cargo_docs__cargo_id__multiple__postSchema = {
     properties: {
         files: {

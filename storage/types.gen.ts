@@ -12,6 +12,14 @@ export type Body_upload_file_duty_api_v1_duties__cargo_id___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_file_invoice_api_v1_invoices__cargo_id___post = {
+    file: (Blob | File);
+};
+
+export type Body_upload_file_payment_api_v1_payments__post = {
+    file: (Blob | File);
+};
+
 export type Body_upload_multiple_files_api_v1_cargo_docs__cargo_id__multiple__post = {
     files: Array<((Blob | File))>;
 };
@@ -167,6 +175,68 @@ export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteData = {
 export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteResponse = (unknown);
 
 export type DeleteFileApiV1CargoDocsCargoIdFilenameDeleteError = (HTTPValidationError);
+
+export type UploadFileInvoiceApiV1InvoicesCargoIdPostData = {
+    body: Body_upload_file_invoice_api_v1_invoices__cargo_id___post;
+    path: {
+        cargo_id: string;
+    };
+};
+
+export type UploadFileInvoiceApiV1InvoicesCargoIdPostResponse = (ImageUploadResponse);
+
+export type UploadFileInvoiceApiV1InvoicesCargoIdPostError = (HTTPValidationError);
+
+export type GetFileInvoiceApiV1InvoicesCargoIdFilenameGetData = {
+    path: {
+        cargo_id: string;
+        filename: string;
+    };
+};
+
+export type GetFileInvoiceApiV1InvoicesCargoIdFilenameGetResponse = (unknown);
+
+export type GetFileInvoiceApiV1InvoicesCargoIdFilenameGetError = (HTTPValidationError);
+
+export type UploadFilePaymentApiV1PaymentsPostData = {
+    body: Body_upload_file_payment_api_v1_payments__post;
+};
+
+export type UploadFilePaymentApiV1PaymentsPostResponse = (ImageUploadResponse);
+
+export type UploadFilePaymentApiV1PaymentsPostError = (HTTPValidationError);
+
+export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetData = {
+    path: {
+        filename: string;
+        payment_id: string;
+    };
+};
+
+export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetResponse = (unknown);
+
+export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetError = (HTTPValidationError);
+
+export type GetFilePaymentApiV1PaymentsDealerFilenameGetData = {
+    path: {
+        filename: string;
+    };
+};
+
+export type GetFilePaymentApiV1PaymentsDealerFilenameGetResponse = (unknown);
+
+export type GetFilePaymentApiV1PaymentsDealerFilenameGetError = (HTTPValidationError);
+
+export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetData = {
+    path: {
+        filename: string;
+        user_id: string;
+    };
+};
+
+export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetResponse = (unknown);
+
+export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
