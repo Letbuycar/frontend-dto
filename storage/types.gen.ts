@@ -209,7 +209,7 @@ export type UploadFilePaymentApiV1PaymentsPostError = (HTTPValidationError);
 export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetData = {
     path: {
         filename: string;
-        payment_id: string;
+        payment_id: number;
     };
 };
 
