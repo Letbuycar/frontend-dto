@@ -15,6 +15,130 @@ export const ApprovePaymentSchema = {
     title: 'ApprovePayment'
 } as const;
 
+export const AuctionSchemaSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        title: {
+            type: 'string',
+            title: 'Title'
+        },
+        payment_account: {
+            type: 'string',
+            title: 'Payment Account'
+        }
+    },
+    type: 'object',
+    required: ['id', 'title', 'payment_account'],
+    title: 'AuctionSchema'
+} as const;
+
+export const CarBrandSchemaSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        title: {
+            type: 'string',
+            title: 'Title'
+        }
+    },
+    type: 'object',
+    required: ['id', 'title'],
+    title: 'CarBrandSchema'
+} as const;
+
+export const CarModelSchemaSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        title: {
+            type: 'string',
+            title: 'Title'
+        }
+    },
+    type: 'object',
+    required: ['id', 'title'],
+    title: 'CarModelSchema'
+} as const;
+
+export const CargoForPaymentSchemaSchema = {
+    properties: {
+        vin_code: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Vin Code'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrandSchema'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModelSchema'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        participent_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Participent Number',
+            default: 0
+        },
+        lot_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Lot Number',
+            default: 0
+        },
+        auction: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AuctionSchema'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    title: 'CargoForPaymentSchema'
+} as const;
+
 export const CargoPaySchemaSchema = {
     properties: {
         amount: {
@@ -621,6 +745,16 @@ export const PaymentSchema = {
         status: {
             type: 'string',
             title: 'Status'
+        },
+        cargo: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CargoForPaymentSchema'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         is_active: {
             type: 'boolean',

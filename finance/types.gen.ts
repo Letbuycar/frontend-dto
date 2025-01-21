@@ -5,6 +5,31 @@ export type ApprovePayment = {
     status: PAYMENT_STATUS;
 };
 
+export type AuctionSchema = {
+    id: number;
+    title: string;
+    payment_account: string;
+};
+
+export type CarBrandSchema = {
+    id: number;
+    title: string;
+};
+
+export type CarModelSchema = {
+    id: number;
+    title: string;
+};
+
+export type CargoForPaymentSchema = {
+    vin_code?: (string | null);
+    car_brand?: (CarBrandSchema | null);
+    car_model?: (CarModelSchema | null);
+    participent_number?: (number | null);
+    lot_number?: (number | null);
+    auction?: (AuctionSchema | null);
+};
+
 export type CargoPaySchema = {
     amount: number;
 };
@@ -91,6 +116,7 @@ export type Payment = {
     user_id: string;
     payment_date: string;
     status: string;
+    cargo?: (CargoForPaymentSchema | null);
     is_active: boolean;
     updated_on: string;
     created_on: string;
