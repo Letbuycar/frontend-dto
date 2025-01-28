@@ -279,7 +279,7 @@ export const CARGO_STATUS_BROKER_GETSchema = {
 
 export const CARGO_STATUS_BROKER_UPDATESchema = {
     type: 'string',
-    enum: ['no_cargo_doc', 'broker_check_doc'],
+    enum: ['no_cargo_doc', 'broker_check_doc', 'success'],
     title: 'CARGO_STATUS_BROKER_UPDATE'
 } as const;
 
@@ -287,6 +287,12 @@ export const CARGO_STATUS_LOGISTSchema = {
     type: 'string',
     enum: ['logist_car_arived_to_storage', 'logist_car_to_shipment'],
     title: 'CARGO_STATUS_LOGIST'
+} as const;
+
+export const CARGO_STATUS_MANAGERSchema = {
+    type: 'string',
+    enum: ['success'],
+    title: 'CARGO_STATUS_MANAGER'
 } as const;
 
 export const CARGO_TYPESchema = {
@@ -4354,6 +4360,574 @@ export const CargoDocsAccessSchema = {
     title: 'CargoDocsAccess'
 } as const;
 
+export const CargoForInvoiceSchemaSchema = {
+    properties: {
+        vin_code: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Vin Code'
+        },
+        year: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Year',
+            default: 2024
+        },
+        carrier_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Carrier Title'
+        },
+        ship_title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Ship Title'
+        },
+        is_closed_location: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Closed Location',
+            default: false
+        },
+        is_doc_change: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Doc Change',
+            default: false
+        },
+        cargo_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'car'
+        },
+        participent_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Participent Number',
+            default: 0
+        },
+        lot_number: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Lot Number',
+            default: 0
+        },
+        is_photos: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Photos',
+            default: false
+        },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
+        },
+        car_brand_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Brand Id'
+        },
+        car_model_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Car Model Id'
+        },
+        container_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Id'
+        },
+        port_from_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port From Id'
+        },
+        port_to_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port To Id'
+        },
+        fuel_type_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Fuel Type Id'
+        },
+        engine_volume_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Engine Volume Id'
+        },
+        body_type_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Body Type Id'
+        },
+        country_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Country Id'
+        },
+        auction_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Auction Id'
+        },
+        transmission_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Transmission Id'
+        },
+        location_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Location Id'
+        },
+        date_buy: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Buy'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        },
+        updated_on: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Updated On'
+        },
+        created_on: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Created On'
+        },
+        car_brand: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarBrand'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        car_model: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CarModel'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        container: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Container'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_from: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_to: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortTo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        fuel_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FuelType'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        engine_volume: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/EngineVolume'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        body_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/BodyType'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        country: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Country'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        auction: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Auction'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        transmission: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Transmission'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        location: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/LocationFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        cost_dealer_add_buy: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost Dealer Add Buy',
+            default: 0
+        },
+        cost_dealer_add_service: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost Dealer Add Service',
+            default: 0
+        },
+        invoice_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Name'
+        },
+        invoice_company: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Company'
+        },
+        invoice_address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Address'
+        },
+        invoice_passport: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Passport'
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        logistician_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Logistician Id'
+        },
+        accountant_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Accountant Id'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'CargoForInvoiceSchema'
+} as const;
+
 export const CargoLogisticianSchema = {
     properties: {
         vin_code: {
@@ -4959,6 +5533,17 @@ export const CargoLogisticianUpdateSchema = {
             ],
             title: 'Container Number'
         },
+        container_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Id'
+        },
         carrier_title: {
             anyOf: [
                 {
@@ -5003,6 +5588,28 @@ export const CargoLogisticianUpdateSchema = {
                 }
             ],
             title: 'Booking Number'
+        },
+        port_from_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port From Id'
+        },
+        port_to_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port To Id'
         },
         status: {
             anyOf: [
@@ -5080,6 +5687,17 @@ export const CargoManagerSchema = {
             ],
             title: 'Container Number'
         },
+        container_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Id'
+        },
         carrier_title: {
             anyOf: [
                 {
@@ -5124,6 +5742,28 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Booking Number'
+        },
+        port_from_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port From Id'
+        },
+        port_to_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port To Id'
         },
         status: {
             anyOf: [
@@ -5262,39 +5902,6 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Car Model Id'
-        },
-        container_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Container Id'
-        },
-        port_from_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port From Id'
-        },
-        port_to_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port To Id'
         },
         fuel_type_id: {
             anyOf: [
@@ -6283,6 +6890,16 @@ export const CargoManagerUpdateSchema = {
             ],
             title: 'Left To Pay Amount',
             default: 0
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_MANAGER'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -6295,13 +6912,13 @@ export const CargoSetIsPhotosSchema = {
             type: 'string',
             title: 'Vin Code'
         },
-        is_photo: {
+        is_photos: {
             type: 'boolean',
-            title: 'Is Photo'
+            title: 'Is Photos'
         }
     },
     type: 'object',
-    required: ['vin_code', 'is_photo'],
+    required: ['vin_code', 'is_photos'],
     title: 'CargoSetIsPhotos'
 } as const;
 

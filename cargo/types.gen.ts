@@ -58,9 +58,11 @@ export type BodyTypeUpdate = {
 
 export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc';
 
-export type CARGO_STATUS_BROKER_UPDATE = 'no_cargo_doc' | 'broker_check_doc';
+export type CARGO_STATUS_BROKER_UPDATE = 'no_cargo_doc' | 'broker_check_doc' | 'success';
 
 export type CARGO_STATUS_LOGIST = 'logist_car_arived_to_storage' | 'logist_car_to_shipment';
+
+export type CARGO_STATUS_MANAGER = 'success';
 
 export type CARGO_TYPE = 'car' | 'crossover' | 'moto' | 'boat' | 'extra_large_auto' | 'special_equipment';
 
@@ -482,6 +484,60 @@ export type CargoDocsAccess = {
     doc_type: DOCS_TYPE;
 };
 
+export type CargoForInvoiceSchema = {
+    vin_code?: (string | null);
+    year?: (number | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    is_closed_location?: (boolean | null);
+    is_doc_change?: (boolean | null);
+    cargo_type?: (CARGO_TYPE | null);
+    participent_number?: (number | null);
+    lot_number?: (number | null);
+    is_photos?: (boolean | null);
+    dealer_id?: (string | null);
+    car_brand_id?: (number | null);
+    car_model_id?: (number | null);
+    container_id?: (number | null);
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
+    fuel_type_id?: (number | null);
+    engine_volume_id?: (number | null);
+    body_type_id?: (number | null);
+    country_id?: (number | null);
+    auction_id?: (number | null);
+    transmission_id?: (number | null);
+    location_id?: (number | null);
+    date_buy?: (string | null);
+    is_archived?: (boolean | null);
+    id: number;
+    is_active?: (boolean | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
+    car_brand?: (CarBrand | null);
+    car_model?: (CarModel | null);
+    container?: (Container | null);
+    port_from?: (PortFrom | null);
+    port_to?: (PortTo | null);
+    fuel_type?: (FuelType | null);
+    engine_volume?: (EngineVolume | null);
+    body_type?: (BodyType | null);
+    country?: (Country | null);
+    auction?: (Auction | null);
+    transmission?: (Transmission | null);
+    location?: (LocationFrom | null);
+    cost_dealer_add_buy?: (number | null);
+    cost_dealer_add_service?: (number | null);
+    invoice_name?: (string | null);
+    invoice_company?: (string | null);
+    invoice_address?: (string | null);
+    invoice_passport?: (string | null);
+    manager_id?: (string | null);
+    logistician_id?: (string | null);
+    accountant_id?: (string | null);
+    broker_id?: (string | null);
+};
+
 export type CargoLogistician = {
     vin_code?: (string | null);
     year?: (number | null);
@@ -540,10 +596,13 @@ export type CargoLogisticianUpdate = {
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
     container_number?: (string | null);
+    container_id?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
     booking_number?: (string | null);
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
     status?: (CARGO_STATUS_LOGIST | null);
 };
 
@@ -553,10 +612,13 @@ export type CargoManager = {
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
     container_number?: (string | null);
+    container_id?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
     broker_id?: (string | null);
     booking_number?: (string | null);
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
     status?: (CARGO_STATUS_LOGIST | null);
     vin_code?: (string | null);
     year?: (number | null);
@@ -569,9 +631,6 @@ export type CargoManager = {
     dealer_id?: (string | null);
     car_brand_id?: (number | null);
     car_model_id?: (number | null);
-    container_id?: (number | null);
-    port_from_id?: (number | null);
-    port_to_id?: (number | null);
     fuel_type_id?: (number | null);
     engine_volume_id?: (number | null);
     body_type_id?: (number | null);
@@ -665,11 +724,12 @@ export type CargoManagerUpdate = {
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);
+    status?: (CARGO_STATUS_MANAGER | null);
 };
 
 export type CargoSetIsPhotos = {
     vin_code: string;
-    is_photo: boolean;
+    is_photos: boolean;
 };
 
 export type City = {
@@ -2269,13 +2329,27 @@ export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostResponse = (un
 
 export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostError = (HTTPValidationError);
 
-export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostData = {
+export type UpdateExistingCargoRobotApiV1CargoRobotHasFileAccessPostData = {
     body: CargoDocsAccess;
 };
 
-export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostResponse = (unknown);
+export type UpdateExistingCargoRobotApiV1CargoRobotHasFileAccessPostResponse = (unknown);
 
-export type UpdateExistingCargoLogistApiV1CargoRobotHasFileAccessPostError = (HTTPValidationError);
+export type UpdateExistingCargoRobotApiV1CargoRobotHasFileAccessPostError = (HTTPValidationError);
+
+export type UpdateExistingCargoRobotApiV1CargoRobotCargoCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UpdateExistingCargoRobotApiV1CargoRobotCargoCargoIdGetResponse = (CargoForInvoiceSchema);
+
+export type UpdateExistingCargoRobotApiV1CargoRobotCargoCargoIdGetError = (HTTPValidationError);
+
+export type SendNotificaitonApiV1CargoRobotNotificationGetResponse = (unknown);
+
+export type SendNotificaitonApiV1CargoRobotNotificationGetError = unknown;
 
 export type RootGetResponse = (unknown);
 
