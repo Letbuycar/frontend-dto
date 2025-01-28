@@ -56,7 +56,7 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
-export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc';
+export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc' | 'success';
 
 export type CARGO_STATUS_BROKER_UPDATE = 'no_cargo_doc' | 'broker_check_doc' | 'success';
 
@@ -353,6 +353,7 @@ export type CargoBroker = {
     date_receive?: (string | null);
     port_photos_link?: (string | null);
     status?: (CARGO_STATUS_BROKER_GET | null);
+    is_archived?: (boolean | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -377,7 +378,6 @@ export type CargoBroker = {
     transmission_id?: (number | null);
     location_id?: (number | null);
     date_buy?: (string | null);
-    is_archived?: (boolean | null);
     id: number;
     is_active?: (boolean | null);
     updated_on?: (string | null);
@@ -405,6 +405,7 @@ export type CargoBrokerUpdate = {
     date_receive?: (string | null);
     port_photos_link?: (string | null);
     status?: (CARGO_STATUS_BROKER_UPDATE | null);
+    is_archived?: (boolean | null);
 };
 
 export type CargoDealer = {
@@ -619,7 +620,7 @@ export type CargoManager = {
     booking_number?: (string | null);
     port_from_id?: (number | null);
     port_to_id?: (number | null);
-    status?: (CARGO_STATUS_LOGIST | null);
+    status?: (CARGO_STATUS_MANAGER | null);
     vin_code?: (string | null);
     year?: (number | null);
     is_closed_location?: (boolean | null);

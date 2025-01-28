@@ -273,7 +273,7 @@ export const BodyTypeUpdateSchema = {
 
 export const CARGO_STATUS_BROKER_GETSchema = {
     type: 'string',
-    enum: ['no_cargo_doc', 'broker_check_doc', 'have_cargo_doc'],
+    enum: ['no_cargo_doc', 'broker_check_doc', 'have_cargo_doc', 'success'],
     title: 'CARGO_STATUS_BROKER_GET'
 } as const;
 
@@ -3060,6 +3060,18 @@ export const CargoBrokerSchema = {
                 }
             ]
         },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
         vin_code: {
             anyOf: [
                 {
@@ -3332,18 +3344,6 @@ export const CargoBrokerSchema = {
             ],
             title: 'Date Buy'
         },
-        is_archived: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Archived',
-            default: false
-        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -3601,6 +3601,18 @@ export const CargoBrokerUpdateSchema = {
                     type: 'null'
                 }
             ]
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         }
     },
     type: 'object',
@@ -5768,7 +5780,7 @@ export const CargoManagerSchema = {
         status: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/CARGO_STATUS_LOGIST'
+                    '$ref': '#/components/schemas/CARGO_STATUS_MANAGER'
                 },
                 {
                     type: 'null'
