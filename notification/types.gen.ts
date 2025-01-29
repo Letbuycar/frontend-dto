@@ -13,29 +13,27 @@ export type NOTIFICATION_EVENT_BROKER = 'no_delivery_info';
 export type NOTIFICATION_SERVICE = 'cargo' | 'finance' | 'storage' | 'pdf' | 'notification';
 
 export type NotificationCreate = {
-    user_role: UserRole;
     cargo_id: number;
     notification_event: NOTIFICATION_EVENT;
     notification_service?: NOTIFICATION_SERVICE;
+    user_role: UserRole;
 };
 
 export type NotificationCreateAccountant = {
-    user_role: UserRole;
     cargo_id: number;
     notification_event: NOTIFICATION_EVENT_ACCOUNTANT;
 };
 
 export type NotificationCreateBroker = {
-    user_role: UserRole;
     cargo_id: number;
     notification_event: NOTIFICATION_EVENT_BROKER;
 };
 
 export type NotificationSchema = {
-    user_role: UserRole;
     cargo_id: number;
     notification_event: NOTIFICATION_EVENT;
     notification_service?: NOTIFICATION_SERVICE;
+    user_role: UserRole;
     id: number;
     user_id: string;
     email: string;

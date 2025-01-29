@@ -40,9 +40,6 @@ export const NOTIFICATION_SERVICESchema = {
 
 export const NotificationCreateSchema = {
     properties: {
-        user_role: {
-            '$ref': '#/components/schemas/UserRole'
-        },
         cargo_id: {
             type: 'integer',
             title: 'Cargo Id'
@@ -53,18 +50,18 @@ export const NotificationCreateSchema = {
         notification_service: {
             '$ref': '#/components/schemas/NOTIFICATION_SERVICE',
             default: 'notification'
+        },
+        user_role: {
+            '$ref': '#/components/schemas/UserRole'
         }
     },
     type: 'object',
-    required: ['user_role', 'cargo_id', 'notification_event'],
+    required: ['cargo_id', 'notification_event', 'user_role'],
     title: 'NotificationCreate'
 } as const;
 
 export const NotificationCreateAccountantSchema = {
     properties: {
-        user_role: {
-            '$ref': '#/components/schemas/UserRole'
-        },
         cargo_id: {
             type: 'integer',
             title: 'Cargo Id'
@@ -74,15 +71,12 @@ export const NotificationCreateAccountantSchema = {
         }
     },
     type: 'object',
-    required: ['user_role', 'cargo_id', 'notification_event'],
+    required: ['cargo_id', 'notification_event'],
     title: 'NotificationCreateAccountant'
 } as const;
 
 export const NotificationCreateBrokerSchema = {
     properties: {
-        user_role: {
-            '$ref': '#/components/schemas/UserRole'
-        },
         cargo_id: {
             type: 'integer',
             title: 'Cargo Id'
@@ -92,15 +86,12 @@ export const NotificationCreateBrokerSchema = {
         }
     },
     type: 'object',
-    required: ['user_role', 'cargo_id', 'notification_event'],
+    required: ['cargo_id', 'notification_event'],
     title: 'NotificationCreateBroker'
 } as const;
 
 export const NotificationSchemaSchema = {
     properties: {
-        user_role: {
-            '$ref': '#/components/schemas/UserRole'
-        },
         cargo_id: {
             type: 'integer',
             title: 'Cargo Id'
@@ -111,6 +102,9 @@ export const NotificationSchemaSchema = {
         notification_service: {
             '$ref': '#/components/schemas/NOTIFICATION_SERVICE',
             default: 'notification'
+        },
+        user_role: {
+            '$ref': '#/components/schemas/UserRole'
         },
         id: {
             type: 'integer',
@@ -157,7 +151,7 @@ export const NotificationSchemaSchema = {
         }
     },
     type: 'object',
-    required: ['user_role', 'cargo_id', 'notification_event', 'id', 'user_id', 'email', 'title', 'message', 'url', 'is_email_sent', 'is_active', 'updated_on', 'created_on'],
+    required: ['cargo_id', 'notification_event', 'user_role', 'id', 'user_id', 'email', 'title', 'message', 'url', 'is_email_sent', 'is_active', 'updated_on', 'created_on'],
     title: 'NotificationSchema'
 } as const;
 
