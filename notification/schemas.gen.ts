@@ -28,7 +28,7 @@ export const NOTIFICATION_EVENT_ACCOUNTANTSchema = {
 
 export const NOTIFICATION_EVENT_BROKERSchema = {
     type: 'string',
-    enum: ['no_delivery_info'],
+    enum: ['no_cargo_doc', 'no_delivery_info'],
     title: 'NOTIFICATION_EVENT_BROKER'
 } as const;
 

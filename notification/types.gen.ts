@@ -8,7 +8,7 @@ export type NOTIFICATION_EVENT = 'created_by_manager' | 'accountant_tariff_appro
 
 export type NOTIFICATION_EVENT_ACCOUNTANT = 'company_invoice_not_paid';
 
-export type NOTIFICATION_EVENT_BROKER = 'no_delivery_info';
+export type NOTIFICATION_EVENT_BROKER = 'no_cargo_doc' | 'no_delivery_info';
 
 export type NOTIFICATION_SERVICE = 'cargo' | 'finance' | 'storage' | 'pdf' | 'notification';
 
