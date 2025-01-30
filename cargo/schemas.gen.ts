@@ -6920,17 +6920,52 @@ export const CargoManagerUpdateSchema = {
 
 export const CargoSetIsPhotosSchema = {
     properties: {
+        cargo_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargo Id'
+        },
         vin_code: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Vin Code'
         },
         is_photos: {
-            type: 'boolean',
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Is Photos'
+        },
+        is_docs_uploaded: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Docs Uploaded'
         }
     },
     type: 'object',
-    required: ['vin_code', 'is_photos'],
     title: 'CargoSetIsPhotos'
 } as const;
 

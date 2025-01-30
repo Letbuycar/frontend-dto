@@ -729,8 +729,10 @@ export type CargoManagerUpdate = {
 };
 
 export type CargoSetIsPhotos = {
-    vin_code: string;
-    is_photos: boolean;
+    cargo_id?: (number | null);
+    vin_code?: (string | null);
+    is_photos?: (boolean | null);
+    is_docs_uploaded?: (boolean | null);
 };
 
 export type City = {
@@ -2019,6 +2021,8 @@ export type ReadCargosApiV1CargoGeneralGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2043,6 +2047,8 @@ export type ReadCargosAdminApiV1CargoAdminGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2096,6 +2102,8 @@ export type ReadCargosManagerApiV1CargoManagerGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2159,6 +2167,8 @@ export type ReadCargosLogistApiV1CargoLogisticianGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2194,6 +2204,8 @@ export type ReadCargosAccountantApiV1CargoAccountantGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2239,6 +2251,8 @@ export type ReadCargosBrokerApiV1CargoBrokerGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2284,6 +2298,8 @@ export type ReadCargosDealerApiV1CargoDealerGetData = {
         is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 
@@ -2329,6 +2345,14 @@ export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostData = {
 export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostResponse = (unknown);
 
 export type UpdateExistingCargoLogistApiV1CargoRobotSetIsPhotoPostError = (HTTPValidationError);
+
+export type UpdateExistingCargoRobotApiV1CargoRobotChangeCargoPutData = {
+    body: CargoSetIsPhotos;
+};
+
+export type UpdateExistingCargoRobotApiV1CargoRobotChangeCargoPutResponse = (unknown);
+
+export type UpdateExistingCargoRobotApiV1CargoRobotChangeCargoPutError = (HTTPValidationError);
 
 export type UpdateExistingCargoRobotApiV1CargoRobotHasFileAccessPostData = {
     body: CargoDocsAccess;
