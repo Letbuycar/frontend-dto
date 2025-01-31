@@ -529,6 +529,41 @@ export const CargoSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -980,6 +1015,41 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Ship Title'
+        },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
         },
         is_closed_location: {
             anyOf: [
@@ -1474,6 +1544,41 @@ export const CargoAccountantUpdateSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -1775,6 +1880,41 @@ export const CargoAdminSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -2038,30 +2178,6 @@ export const CargoAdminSchema = {
             ],
             title: 'Date To Container'
         },
-        date_to_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date To Shipment'
-        },
-        date_arrive_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Arrive Shipment'
-        },
         container_number: {
             anyOf: [
                 {
@@ -2084,17 +2200,6 @@ export const CargoAdminSchema = {
                 }
             ],
             title: 'Broker Id'
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         sublot: {
             anyOf: [
@@ -2321,6 +2426,41 @@ export const CargoAdminCreateSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -2584,30 +2724,6 @@ export const CargoAdminCreateSchema = {
             ],
             title: 'Date To Container'
         },
-        date_to_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date To Shipment'
-        },
-        date_arrive_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Arrive Shipment'
-        },
         container_number: {
             anyOf: [
                 {
@@ -2630,17 +2746,6 @@ export const CargoAdminCreateSchema = {
                 }
             ],
             title: 'Broker Id'
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         sublot: {
             anyOf: [
@@ -2705,6 +2810,41 @@ export const CargoAdminUpdateSchema = {
                 }
             ],
             title: 'Ship Title'
+        },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
         },
         is_closed_location: {
             anyOf: [
@@ -3133,6 +3273,41 @@ export const CargoBrokerSchema = {
                 }
             ],
             title: 'Ship Title'
+        },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
         },
         is_closed_location: {
             anyOf: [
@@ -3830,6 +4005,41 @@ export const CargoDealerSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -4469,6 +4679,41 @@ export const CargoForInvoiceSchemaSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -5037,6 +5282,41 @@ export const CargoLogisticianSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -5460,30 +5740,6 @@ export const CargoLogisticianSchema = {
             ],
             title: 'Date To Container'
         },
-        date_to_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date To Shipment'
-        },
-        date_arrive_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Arrive Shipment'
-        },
         container_number: {
             anyOf: [
                 {
@@ -5506,17 +5762,6 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Broker Id'
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
         },
         status: {
             anyOf: [
@@ -6327,6 +6572,41 @@ export const CargoManagerCreateSchema = {
             ],
             title: 'Ship Title'
         },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -6665,6 +6945,41 @@ export const CargoManagerUpdateSchema = {
                 }
             ],
             title: 'Ship Title'
+        },
+        booking_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Booking Number'
+        },
+        date_to_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Shipment'
+        },
+        date_arrive_shipment: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive Shipment'
         },
         is_closed_location: {
             anyOf: [
@@ -8129,33 +8444,6 @@ export const PaginationSchema_CargoManager_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[CargoManager]'
-} as const;
-
-export const PaginationSchema_Cargo_Schema = {
-    properties: {
-        total: {
-            type: 'integer',
-            title: 'Total'
-        },
-        page: {
-            type: 'integer',
-            title: 'Page'
-        },
-        total_pages: {
-            type: 'integer',
-            title: 'Total Pages'
-        },
-        items: {
-            items: {
-                '$ref': '#/components/schemas/Cargo'
-            },
-            type: 'array',
-            title: 'Items'
-        }
-    },
-    type: 'object',
-    required: ['total', 'page', 'total_pages', 'items'],
-    title: 'PaginationSchema[Cargo]'
 } as const;
 
 export const PaginationSchema_City_Schema = {

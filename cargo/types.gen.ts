@@ -111,6 +111,9 @@ export type Cargo = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -155,6 +158,9 @@ export type CargoAccountant = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -203,6 +209,9 @@ export type CargoAccountantUpdate = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -233,6 +242,9 @@ export type CargoAdmin = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -256,11 +268,8 @@ export type CargoAdmin = {
     is_archived?: (boolean | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
-    date_to_shipment?: (string | null);
-    date_arrive_shipment?: (string | null);
     container_number?: (string | null);
     broker_id?: (string | null);
-    booking_number?: (string | null);
     sublot?: (number | null);
     id: number;
     is_active?: (boolean | null);
@@ -285,6 +294,9 @@ export type CargoAdminCreate = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -308,11 +320,8 @@ export type CargoAdminCreate = {
     is_archived?: (boolean | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
-    date_to_shipment?: (string | null);
-    date_arrive_shipment?: (string | null);
     container_number?: (string | null);
     broker_id?: (string | null);
-    booking_number?: (string | null);
     sublot?: (number | null);
 };
 
@@ -321,6 +330,9 @@ export type CargoAdminUpdate = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -361,6 +373,9 @@ export type CargoBroker = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -429,6 +444,9 @@ export type CargoDealer = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -496,6 +514,9 @@ export type CargoForInvoiceSchema = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -550,6 +571,9 @@ export type CargoLogistician = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -589,11 +613,8 @@ export type CargoLogistician = {
     location?: (LocationFrom | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
-    date_to_shipment?: (string | null);
-    date_arrive_shipment?: (string | null);
     container_number?: (string | null);
     broker_id?: (string | null);
-    booking_number?: (string | null);
     status?: (CARGO_STATUS_LOGIST | null);
 };
 
@@ -674,6 +695,9 @@ export type CargoManagerCreate = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -706,6 +730,9 @@ export type CargoManagerUpdate = {
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
@@ -973,13 +1000,6 @@ export type PaginationSchema_CargoManager_ = {
     page: number;
     total_pages: number;
     items: Array<CargoManager>;
-};
-
-export type PaginationSchema_Cargo_ = {
-    total: number;
-    page: number;
-    total_pages: number;
-    items: Array<Cargo>;
 };
 
 export type PaginationSchema_City_ = {
@@ -2019,22 +2039,6 @@ export type DeleteExistingContainerApiV1ContainerContainerIdDeleteData = {
 export type DeleteExistingContainerApiV1ContainerContainerIdDeleteResponse = (Container);
 
 export type DeleteExistingContainerApiV1ContainerContainerIdDeleteError = (HTTPValidationError);
-
-export type ReadCargosApiV1CargoGeneralGetData = {
-    query?: {
-        car_brand_id?: number;
-        dealer_id?: string;
-        is_archived?: boolean;
-        page?: number;
-        search?: string;
-        sort?: string;
-        sort_by?: string;
-    };
-};
-
-export type ReadCargosApiV1CargoGeneralGetResponse = (PaginationSchema_Cargo_);
-
-export type ReadCargosApiV1CargoGeneralGetError = (HTTPValidationError);
 
 export type ReadCargoByVinApiV1CargoGeneralVinCargoVinGetData = {
     path: {
