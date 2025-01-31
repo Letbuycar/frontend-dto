@@ -56,6 +56,8 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
+export type CARGO_STATUS = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'success';
+
 export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc' | 'success';
 
 export type CARGO_STATUS_BROKER_UPDATE = 'no_cargo_doc' | 'broker_check_doc' | 'success';
@@ -347,6 +349,7 @@ export type CargoAdminUpdate = {
 export type CargoBroker = {
     duties_amount?: (number | null);
     duties_receipt_file_id?: (string | null);
+    duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -399,6 +402,7 @@ export type CargoBroker = {
 export type CargoBrokerUpdate = {
     duties_amount?: (number | null);
     duties_receipt_file_id?: (string | null);
+    duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -416,6 +420,7 @@ export type CargoDealer = {
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
     duties_receipt_file_id?: (string | null);
+    duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -473,6 +478,7 @@ export type CargoDealerUpdate = {
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
     duties_receipt_file_id?: (string | null);
+    duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
@@ -2169,6 +2175,7 @@ export type ReadCargosLogistApiV1CargoLogisticianGetData = {
         search?: string;
         sort?: string;
         sort_by?: string;
+        status?: CARGO_STATUS;
     };
 };
 
