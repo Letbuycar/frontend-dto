@@ -9413,6 +9413,17 @@ export const TariffTotalSchema = {
             ],
             title: 'Vat'
         },
+        price: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Price'
+        },
         total: {
             anyOf: [
                 {

@@ -1179,6 +1179,7 @@ export type TariffTotal = {
     duty?: (string | null);
     excise?: (string | null);
     vat?: (string | null);
+    price?: (string | null);
     total?: (string | null);
     cargo_type?: (CARGO_TYPE | null);
     auction?: (Auction | null);
