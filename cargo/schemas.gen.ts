@@ -64,6 +64,249 @@ export const AuctionCreateSchema = {
     title: 'AuctionCreate'
 } as const;
 
+export const AuctionFeeSchema = {
+    properties: {
+        fee_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FEE_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        min_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Min Price',
+            default: 0
+        },
+        max_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Max Price',
+            default: 99999999999
+        },
+        amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Amount',
+            default: 0
+        },
+        percent: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Percent',
+            default: 0
+        },
+        auction_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Auction Id'
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        auction: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Auction'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'AuctionFee'
+} as const;
+
+export const AuctionFeeCreateSchema = {
+    properties: {
+        fee_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FEE_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        min_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Min Price',
+            default: 0
+        },
+        max_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Max Price',
+            default: 99999999999
+        },
+        amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Amount',
+            default: 0
+        },
+        percent: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Percent',
+            default: 0
+        },
+        auction_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Auction Id'
+        }
+    },
+    type: 'object',
+    title: 'AuctionFeeCreate'
+} as const;
+
+export const AuctionFeeUpdateSchema = {
+    properties: {
+        fee_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FEE_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        min_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Min Price',
+            default: 0
+        },
+        max_price: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Max Price',
+            default: 99999999999
+        },
+        amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Amount',
+            default: 0
+        },
+        percent: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Percent',
+            default: 0
+        },
+        auction_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Auction Id'
+        }
+    },
+    type: 'object',
+    title: 'AuctionFeeUpdate'
+} as const;
+
 export const AuctionUpdateSchema = {
     properties: {
         title: {
@@ -7645,6 +7888,18 @@ export const EngineVolumeUpdateSchema = {
     title: 'EngineVolumeUpdate'
 } as const;
 
+export const FEE_TYPESchema = {
+    type: 'string',
+    enum: ['standart', 'virtual', 'service'],
+    title: 'FEE_TYPE'
+} as const;
+
+export const FUEL_TYPESchema = {
+    type: 'string',
+    enum: ['petrol', 'diesel', 'electric', 'hybrid', 'lpg', 'cng', 'other'],
+    title: 'FUEL_TYPE'
+} as const;
+
 export const FuelTypeSchema = {
     properties: {
         title: {
@@ -7662,6 +7917,16 @@ export const FuelTypeSchema = {
             ],
             title: 'Is Active',
             default: true
+        },
+        fuel_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FUEL_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         id: {
             type: 'integer',
@@ -7700,6 +7965,16 @@ export const FuelTypeCreateSchema = {
             ],
             title: 'Is Active',
             default: true
+        },
+        fuel_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FUEL_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -7723,6 +7998,16 @@ export const FuelTypeUpdateSchema = {
             ],
             title: 'Is Active',
             default: true
+        },
+        fuel_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/FUEL_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -8174,6 +8459,33 @@ export const OverseaTariffUpdateSchema = {
     },
     type: 'object',
     title: 'OverseaTariffUpdate'
+} as const;
+
+export const PaginationSchema_AuctionFee_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/AuctionFee'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[AuctionFee]'
 } as const;
 
 export const PaginationSchema_Auction_Schema = {
@@ -9002,6 +9314,179 @@ export const PortToUpdateSchema = {
     type: 'object',
     required: ['title'],
     title: 'PortToUpdate'
+} as const;
+
+export const TariffSchema = {
+    properties: {
+        land: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Land'
+        },
+        sea: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sea'
+        }
+    },
+    type: 'object',
+    title: 'Tariff'
+} as const;
+
+export const TariffTotalSchema = {
+    properties: {
+        land: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Land'
+        },
+        sea: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sea'
+        },
+        fee: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Fee'
+        },
+        duty: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duty'
+        },
+        excise: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Excise'
+        },
+        vat: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Vat'
+        },
+        total: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Total'
+        },
+        cargo_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        auction: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Auction'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        location: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/LocationFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_from: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortFrom'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        port_to: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/PortTo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        country: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Country'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    title: 'TariffTotal'
 } as const;
 
 export const TransmissionSchema = {

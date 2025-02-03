@@ -14,6 +14,35 @@ export type AuctionCreate = {
     payment_account?: (string | null);
 };
 
+export type AuctionFee = {
+    fee_type?: (FEE_TYPE | null);
+    min_price?: (number | null);
+    max_price?: (number | null);
+    amount?: (number | null);
+    percent?: (number | null);
+    auction_id?: (number | null);
+    id: number;
+    auction?: (Auction | null);
+};
+
+export type AuctionFeeCreate = {
+    fee_type?: (FEE_TYPE | null);
+    min_price?: (number | null);
+    max_price?: (number | null);
+    amount?: (number | null);
+    percent?: (number | null);
+    auction_id?: (number | null);
+};
+
+export type AuctionFeeUpdate = {
+    fee_type?: (FEE_TYPE | null);
+    min_price?: (number | null);
+    max_price?: (number | null);
+    amount?: (number | null);
+    percent?: (number | null);
+    auction_id?: (number | null);
+};
+
 export type AuctionUpdate = {
     title: string;
     payment_account?: (string | null);
@@ -840,9 +869,14 @@ export type EngineVolumeUpdate = {
     is_active?: (boolean | null);
 };
 
+export type FEE_TYPE = 'standart' | 'virtual' | 'service';
+
+export type FUEL_TYPE = 'petrol' | 'diesel' | 'electric' | 'hybrid' | 'lpg' | 'cng' | 'other';
+
 export type FuelType = {
     title?: string;
     is_active?: (boolean | null);
+    fuel_type?: (FUEL_TYPE | null);
     id: number;
     updated_on: string;
     created_on: string;
@@ -851,11 +885,13 @@ export type FuelType = {
 export type FuelTypeCreate = {
     title?: string;
     is_active?: (boolean | null);
+    fuel_type?: (FUEL_TYPE | null);
 };
 
 export type FuelTypeUpdate = {
     title?: string;
     is_active?: (boolean | null);
+    fuel_type?: (FUEL_TYPE | null);
 };
 
 export type HTTPValidationError = {
@@ -930,6 +966,13 @@ export type OverseaTariffUpdate = {
     port_from_id?: (number | null);
     port_to_id?: (number | null);
     is_active?: (boolean | null);
+};
+
+export type PaginationSchema_AuctionFee_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<AuctionFee>;
 };
 
 export type PaginationSchema_Auction_ = {
@@ -1124,6 +1167,27 @@ export type PortToUpdate = {
     is_active?: (boolean | null);
 };
 
+export type Tariff = {
+    land?: (string | null);
+    sea?: (string | null);
+};
+
+export type TariffTotal = {
+    land?: (string | null);
+    sea?: (string | null);
+    fee?: (string | null);
+    duty?: (string | null);
+    excise?: (string | null);
+    vat?: (string | null);
+    total?: (string | null);
+    cargo_type?: (CARGO_TYPE | null);
+    auction?: (Auction | null);
+    location?: (LocationFrom | null);
+    port_from?: (PortFrom | null);
+    port_to?: (PortTo | null);
+    country?: (Country | null);
+};
+
 export type Transmission = {
     title: string;
     is_active?: (boolean | null);
@@ -1196,6 +1260,55 @@ export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteData = {
 export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteResponse = (Auction);
 
 export type DeleteExistingAuctionApiV1AuctionsAuctionIdDeleteError = (HTTPValidationError);
+
+export type ReadAuctionFeesApiV1AuctionFeesGetData = {
+    query?: {
+        page?: number;
+    };
+};
+
+export type ReadAuctionFeesApiV1AuctionFeesGetResponse = (PaginationSchema_AuctionFee_);
+
+export type ReadAuctionFeesApiV1AuctionFeesGetError = (HTTPValidationError);
+
+export type CreateNewAuctionfeeApiV1AuctionFeesPostData = {
+    body: AuctionFeeCreate;
+};
+
+export type CreateNewAuctionfeeApiV1AuctionFeesPostResponse = (AuctionFee);
+
+export type CreateNewAuctionfeeApiV1AuctionFeesPostError = (HTTPValidationError);
+
+export type ReadAuctionfeeApiV1AuctionFeesAuctionfeeIdGetData = {
+    path: {
+        auctionfee_id: number;
+    };
+};
+
+export type ReadAuctionfeeApiV1AuctionFeesAuctionfeeIdGetResponse = (AuctionFee);
+
+export type ReadAuctionfeeApiV1AuctionFeesAuctionfeeIdGetError = (HTTPValidationError);
+
+export type UpdateExistingAuctionApiV1AuctionFeesAuctionfeeIdPutData = {
+    body: AuctionFeeUpdate;
+    path: {
+        auctionfee_id: number;
+    };
+};
+
+export type UpdateExistingAuctionApiV1AuctionFeesAuctionfeeIdPutResponse = (AuctionFee);
+
+export type UpdateExistingAuctionApiV1AuctionFeesAuctionfeeIdPutError = (HTTPValidationError);
+
+export type DeleteExistingAuctionfeeApiV1AuctionFeesAuctionfeeIdDeleteData = {
+    path: {
+        auctionfee_id: number;
+    };
+};
+
+export type DeleteExistingAuctionfeeApiV1AuctionFeesAuctionfeeIdDeleteResponse = (AuctionFee);
+
+export type DeleteExistingAuctionfeeApiV1AuctionFeesAuctionfeeIdDeleteError = (HTTPValidationError);
 
 export type ReadBoatTypesApiV1BoatTypesGetData = {
     headers?: {
@@ -1989,6 +2102,37 @@ export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteDa
 export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteResponse = (OverseaTariff);
 
 export type DeleteExistingOverseaTariffApiV1OverseaTariffOverseaTariffIdDeleteError = (HTTPValidationError);
+
+export type GetDeliveryTariffsApiV1CalculateTariffDeliveryGetData = {
+    query: {
+        location_id: number;
+        port_from_id: number;
+        port_to_id: number;
+    };
+};
+
+export type GetDeliveryTariffsApiV1CalculateTariffDeliveryGetResponse = (Tariff);
+
+export type GetDeliveryTariffsApiV1CalculateTariffDeliveryGetError = (HTTPValidationError);
+
+export type GetTotalTariffsApiV1CalculateTariffTotalGetData = {
+    query: {
+        auction_id: number;
+        cargo_type: CARGO_TYPE;
+        country_id: number;
+        engine_volume_id: number;
+        fuel_type_id: number;
+        location_id: number;
+        port_from_id: number;
+        port_to_id: number;
+        price: number;
+        year: number;
+    };
+};
+
+export type GetTotalTariffsApiV1CalculateTariffTotalGetResponse = (TariffTotal);
+
+export type GetTotalTariffsApiV1CalculateTariffTotalGetError = (HTTPValidationError);
 
 export type ReadContainersApiV1ContainerGetData = {
     query?: {
