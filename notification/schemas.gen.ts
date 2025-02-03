@@ -3,43 +3,98 @@
 export const ContactCreateSchema = {
     properties: {
         name: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Name'
         },
         email: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Email'
         },
         phone: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Phone'
         },
         message: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Message'
         }
     },
     type: 'object',
-    required: ['name', 'email', 'phone', 'message'],
     title: 'ContactCreate'
 } as const;
 
 export const ContactSchemaSchema = {
     properties: {
         name: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Name'
         },
         email: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Email'
         },
         phone: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Phone'
         },
         message: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Message'
         },
         id: {
@@ -48,7 +103,7 @@ export const ContactSchemaSchema = {
         }
     },
     type: 'object',
-    required: ['name', 'email', 'phone', 'message', 'id'],
+    required: ['id'],
     title: 'ContactSchema'
 } as const;
 
