@@ -117,15 +117,15 @@ export type CreateNotificationByBrokerApiV1NotificationBrokerPostResponse = (Not
 
 export type CreateNotificationByBrokerApiV1NotificationBrokerPostError = (HTTPValidationError);
 
-export type GetNotificationsApiV1NotificationNotificationIdGetData = {
+export type GetSingleNotificationApiV1NotificationNotificationIdGetData = {
     path: {
         notification_id: number;
     };
 };
 
-export type GetNotificationsApiV1NotificationNotificationIdGetResponse = (NotificationSchema);
+export type GetSingleNotificationApiV1NotificationNotificationIdGetResponse = (NotificationSchema);
 
-export type GetNotificationsApiV1NotificationNotificationIdGetError = (HTTPValidationError);
+export type GetSingleNotificationApiV1NotificationNotificationIdGetError = (HTTPValidationError);
 
 export type DeleteNotificationApiV1NotificationNotificationIdDeleteData = {
     path: {
