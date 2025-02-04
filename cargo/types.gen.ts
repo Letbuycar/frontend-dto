@@ -180,6 +180,7 @@ export type Cargo = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
 };
 
 export type CargoAccountant = {
@@ -228,6 +229,7 @@ export type CargoAccountant = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);
@@ -317,6 +319,7 @@ export type CargoAdmin = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
 };
 
 export type CargoAdminCreate = {
@@ -514,6 +517,7 @@ export type CargoDealer = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
     duties_amount?: (number | null);
     duties_receipt_file_path?: (number | null);
 };
@@ -584,6 +588,7 @@ export type CargoForInvoiceSchema = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
@@ -641,6 +646,7 @@ export type CargoLogistician = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
     container_number?: (string | null);
@@ -715,6 +721,7 @@ export type CargoManager = {
     auction?: (Auction | null);
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);

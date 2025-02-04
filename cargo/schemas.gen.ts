@@ -1205,6 +1205,17 @@ export const CargoSchema = {
                     type: 'null'
                 }
             ]
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         }
     },
     type: 'object',
@@ -1704,6 +1715,17 @@ export const CargoAccountantSchema = {
                     type: 'null'
                 }
             ]
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         },
         total_amount: {
             anyOf: [
@@ -2629,6 +2651,17 @@ export const CargoAdminSchema = {
                     type: 'null'
                 }
             ]
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         }
     },
     type: 'object',
@@ -4696,6 +4729,17 @@ export const CargoDealerSchema = {
                 }
             ]
         },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
+        },
         duties_amount: {
             anyOf: [
                 {
@@ -5370,6 +5414,17 @@ export const CargoForInvoiceSchemaSchema = {
                 }
             ]
         },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
+        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -5972,6 +6027,17 @@ export const CargoLogisticianSchema = {
                     type: 'null'
                 }
             ]
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         },
         date_arived_to_storage: {
             anyOf: [
@@ -6739,6 +6805,17 @@ export const CargoManagerSchema = {
                     type: 'null'
                 }
             ]
+        },
+        port_photos_link: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Port Photos Link'
         },
         total_amount: {
             anyOf: [
