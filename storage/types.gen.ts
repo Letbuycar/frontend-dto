@@ -243,9 +243,6 @@ export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetError = (HTTPV
 
 export type UploadFileContainerApiV1ContainersPostData = {
     body: Body_upload_file_container_api_v1_containers__post;
-    path: {
-        cargo_id: string;
-    };
 };
 
 export type UploadFileContainerApiV1ContainersPostResponse = (ImageUploadResponse);
@@ -254,7 +251,6 @@ export type UploadFileContainerApiV1ContainersPostError = (HTTPValidationError);
 
 export type GetFileContainerApiV1ContainersFilenameGetData = {
     path: {
-        cargo_id: string;
         filename: string;
     };
 };
