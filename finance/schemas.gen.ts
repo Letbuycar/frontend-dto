@@ -35,6 +35,18 @@ export const AuctionSchemaSchema = {
     title: 'AuctionSchema'
 } as const;
 
+export const CARGO_STATUSSchema = {
+    type: 'string',
+    enum: ['accountant_tariff_approved', 'payment_auction_success', 'payment_success', 'accountant_payment_approved', 'company_invoice_not_paid'],
+    title: 'CARGO_STATUS'
+} as const;
+
+export const CARGO_STATUS_ACCOUNTANTSchema = {
+    type: 'string',
+    enum: ['accountant_payment_approved'],
+    title: 'CARGO_STATUS_ACCOUNTANT'
+} as const;
+
 export const CarBrandSchemaSchema = {
     properties: {
         id: {
@@ -320,6 +332,16 @@ export const CargoSchemaSchema = {
             title: 'Paid Amount',
             default: 0
         },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_ACCOUNTANT'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -347,6 +369,20 @@ export const CargoSchemaSchema = {
             ],
             title: 'Left To Pay Amount',
             default: '0.00'
+        },
+        status_list: {
+            anyOf: [
+                {
+                    items: {
+                        '$ref': '#/components/schemas/CARGO_STATUS'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status List'
         }
     },
     type: 'object',
@@ -522,6 +558,16 @@ export const CargoUpdateSchemaSchema = {
             ],
             title: 'Paid Amount',
             default: 0
+        },
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS_ACCOUNTANT'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',

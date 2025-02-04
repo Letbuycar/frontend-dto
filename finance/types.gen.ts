@@ -11,6 +11,10 @@ export type AuctionSchema = {
     payment_account: string;
 };
 
+export type CARGO_STATUS = 'accountant_tariff_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'company_invoice_not_paid';
+
+export type CARGO_STATUS_ACCOUNTANT = 'accountant_payment_approved';
+
 export type CarBrandSchema = {
     id: number;
     title: string;
@@ -49,9 +53,11 @@ export type CargoSchema = {
     closed_location_cost?: (number | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
+    status?: (CARGO_STATUS_ACCOUNTANT | null);
     id: number;
     dealer_id?: (string | null);
     left_to_pay_amount?: (number | null);
+    status_list?: (Array<CARGO_STATUS> | null);
 };
 
 export type CargoUpdateSchema = {
@@ -69,6 +75,7 @@ export type CargoUpdateSchema = {
     closed_location_cost?: (number | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
+    status?: (CARGO_STATUS_ACCOUNTANT | null);
 };
 
 export type HTTPValidationError = {
@@ -220,7 +227,7 @@ export type GetCargoApiV1CargoCargoIdGetData = {
     };
 };
 
-export type GetCargoApiV1CargoCargoIdGetResponse = (unknown);
+export type GetCargoApiV1CargoCargoIdGetResponse = (CargoSchema);
 
 export type GetCargoApiV1CargoCargoIdGetError = (HTTPValidationError);
 
@@ -269,7 +276,7 @@ export type GetSingleTransactionApiV1TransactionsTransactionIdGetError = (HTTPVa
 
 export type GetAllPaymentsApiV1PaymentsAccountantGetData = {
     query?: {
-        status?: (PAYMENT_STATUS);
+        status?: PAYMENT_STATUS;
         user_id?: string;
     };
 };
