@@ -231,6 +231,7 @@ export type CargoAccountant = {
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);
+    status_list?: (Array<(string)> | null);
 };
 
 export type CargoAccountantUpdate = {
@@ -2167,8 +2168,11 @@ export type GetTotalTariffsApiV1CalculateTariffTotalGetError = (HTTPValidationEr
 
 export type ReadContainersApiV1ContainerGetData = {
     query?: {
+        is_archived?: boolean;
         page?: number;
         search?: string;
+        sort?: string;
+        sort_by?: string;
     };
 };
 

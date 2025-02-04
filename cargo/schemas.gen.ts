@@ -1740,6 +1740,20 @@ export const CargoAccountantSchema = {
             ],
             title: 'Left To Pay Amount',
             default: 0
+        },
+        status_list: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status List'
         }
     },
     type: 'object',
