@@ -825,6 +825,20 @@ export type Container = {
     is_active: boolean;
     updated_on: string;
     created_on: string;
+    cargos?: (Array<ContainerCargo> | null);
+};
+
+export type ContainerBase = {
+    number?: (string | null);
+    konosament_file_id?: (string | null);
+    waybill_file_id?: (string | null);
+    date_arrive?: (string | null);
+    is_archived?: (boolean | null);
+};
+
+export type ContainerCargo = {
+    id: number;
+    vin_code?: (string | null);
 };
 
 export type ContainerCreate = {
@@ -1064,11 +1078,11 @@ export type PaginationSchema_City_ = {
     items: Array<City>;
 };
 
-export type PaginationSchema_Container_ = {
+export type PaginationSchema_ContainerBase_ = {
     total: number;
     page: number;
     total_pages: number;
-    items: Array<Container>;
+    items: Array<ContainerBase>;
 };
 
 export type PaginationSchema_Country_ = {
@@ -2149,12 +2163,12 @@ export type GetTotalTariffsApiV1CalculateTariffTotalGetError = (HTTPValidationEr
 
 export type ReadContainersApiV1ContainerGetData = {
     query?: {
-        car_brand_id?: number;
         page?: number;
+        search?: string;
     };
 };
 
-export type ReadContainersApiV1ContainerGetResponse = (PaginationSchema_Container_);
+export type ReadContainersApiV1ContainerGetResponse = (PaginationSchema_ContainerBase_);
 
 export type ReadContainersApiV1ContainerGetError = (HTTPValidationError);
 

@@ -7739,11 +7739,112 @@ export const ContainerSchema = {
             type: 'string',
             format: 'date-time',
             title: 'Created On'
+        },
+        cargos: {
+            anyOf: [
+                {
+                    items: {
+                        '$ref': '#/components/schemas/ContainerCargo'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargos'
         }
     },
     type: 'object',
     required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'Container'
+} as const;
+
+export const ContainerBaseSchema = {
+    properties: {
+        number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Number'
+        },
+        konosament_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Konosament File Id'
+        },
+        waybill_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Waybill File Id'
+        },
+        date_arrive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        }
+    },
+    type: 'object',
+    title: 'ContainerBase'
+} as const;
+
+export const ContainerCargoSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        vin_code: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Vin Code'
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'ContainerCargo'
 } as const;
 
 export const ContainerCreateSchema = {
@@ -8942,7 +9043,7 @@ export const PaginationSchema_City_Schema = {
     title: 'PaginationSchema[City]'
 } as const;
 
-export const PaginationSchema_Container_Schema = {
+export const PaginationSchema_ContainerBase_Schema = {
     properties: {
         total: {
             type: 'integer',
@@ -8958,7 +9059,7 @@ export const PaginationSchema_Container_Schema = {
         },
         items: {
             items: {
-                '$ref': '#/components/schemas/Container'
+                '$ref': '#/components/schemas/ContainerBase'
             },
             type: 'array',
             title: 'Items'
@@ -8966,7 +9067,7 @@ export const PaginationSchema_Container_Schema = {
     },
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
-    title: 'PaginationSchema[Container]'
+    title: 'PaginationSchema[ContainerBase]'
 } as const;
 
 export const PaginationSchema_Country_Schema = {
