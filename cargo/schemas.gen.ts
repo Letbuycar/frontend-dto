@@ -7739,20 +7739,6 @@ export const ContainerSchema = {
             type: 'string',
             format: 'date-time',
             title: 'Created On'
-        },
-        cargos: {
-            anyOf: [
-                {
-                    items: {
-                        '$ref': '#/components/schemas/ContainerCargo'
-                    },
-                    type: 'array'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Cargos'
         }
     },
     type: 'object',
@@ -7909,6 +7895,103 @@ export const ContainerCreateSchema = {
     },
     type: 'object',
     title: 'ContainerCreate'
+} as const;
+
+export const ContainerFullSchema = {
+    properties: {
+        number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Number'
+        },
+        konosament_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Konosament File Id'
+        },
+        waybill_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Waybill File Id'
+        },
+        date_arrive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        is_active: {
+            type: 'boolean',
+            title: 'Is Active'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        },
+        cargos: {
+            anyOf: [
+                {
+                    items: {
+                        '$ref': '#/components/schemas/ContainerCargo'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cargos'
+        }
+    },
+    type: 'object',
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
+    title: 'ContainerFull'
 } as const;
 
 export const ContainerUpdateSchema = {

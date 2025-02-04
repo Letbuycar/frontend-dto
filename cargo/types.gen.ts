@@ -825,7 +825,6 @@ export type Container = {
     is_active: boolean;
     updated_on: string;
     created_on: string;
-    cargos?: (Array<ContainerCargo> | null);
 };
 
 export type ContainerBase = {
@@ -847,6 +846,19 @@ export type ContainerCreate = {
     waybill_file_id?: (string | null);
     date_arrive?: (string | null);
     is_archived?: (boolean | null);
+};
+
+export type ContainerFull = {
+    number?: (string | null);
+    konosament_file_id?: (string | null);
+    waybill_file_id?: (string | null);
+    date_arrive?: (string | null);
+    is_archived?: (boolean | null);
+    id: number;
+    is_active: boolean;
+    updated_on: string;
+    created_on: string;
+    cargos?: (Array<ContainerCargo> | null);
 };
 
 export type ContainerUpdate = {
@@ -2186,7 +2198,7 @@ export type ReadContainerApiV1ContainerContainerIdGetData = {
     };
 };
 
-export type ReadContainerApiV1ContainerContainerIdGetResponse = (Container);
+export type ReadContainerApiV1ContainerContainerIdGetResponse = (ContainerFull);
 
 export type ReadContainerApiV1ContainerContainerIdGetError = (HTTPValidationError);
 
