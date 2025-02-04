@@ -7666,7 +7666,14 @@ export const CityUpdateSchema = {
 export const ContainerSchema = {
     properties: {
         number: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Number'
         },
         konosament_file_id: {
@@ -7735,14 +7742,21 @@ export const ContainerSchema = {
         }
     },
     type: 'object',
-    required: ['number', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'Container'
 } as const;
 
 export const ContainerCreateSchema = {
     properties: {
         number: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Number'
         },
         konosament_file_id: {
@@ -7793,14 +7807,20 @@ export const ContainerCreateSchema = {
         }
     },
     type: 'object',
-    required: ['number'],
     title: 'ContainerCreate'
 } as const;
 
 export const ContainerUpdateSchema = {
     properties: {
         number: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Number'
         },
         konosament_file_id: {
@@ -7863,7 +7883,6 @@ export const ContainerUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['number'],
     title: 'ContainerUpdate'
 } as const;
 

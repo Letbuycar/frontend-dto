@@ -816,7 +816,7 @@ export type CityUpdate = {
 };
 
 export type Container = {
-    number: string;
+    number?: (string | null);
     konosament_file_id?: (string | null);
     waybill_file_id?: (string | null);
     date_arrive?: (string | null);
@@ -828,7 +828,7 @@ export type Container = {
 };
 
 export type ContainerCreate = {
-    number: string;
+    number?: (string | null);
     konosament_file_id?: (string | null);
     waybill_file_id?: (string | null);
     date_arrive?: (string | null);
@@ -836,7 +836,7 @@ export type ContainerCreate = {
 };
 
 export type ContainerUpdate = {
-    number: string;
+    number?: (string | null);
     konosament_file_id?: (string | null);
     waybill_file_id?: (string | null);
     date_arrive?: (string | null);
