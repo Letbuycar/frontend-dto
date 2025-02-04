@@ -850,7 +850,7 @@ export type ContainerFull = {
     is_active: boolean;
     updated_on: string;
     created_on: string;
-    cargos?: (Array<ContainerCargo> | null);
+    cargo?: (Array<ContainerCargo> | null);
 };
 
 export type ContainerUpdate = {

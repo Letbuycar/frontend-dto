@@ -7910,7 +7910,7 @@ export const ContainerFullSchema = {
             format: 'date-time',
             title: 'Created On'
         },
-        cargos: {
+        cargo: {
             anyOf: [
                 {
                     items: {
@@ -7922,7 +7922,7 @@ export const ContainerFullSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Cargos'
+            title: 'Cargo'
         }
     },
     type: 'object',
