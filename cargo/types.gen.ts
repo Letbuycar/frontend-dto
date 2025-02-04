@@ -827,14 +827,6 @@ export type Container = {
     created_on: string;
 };
 
-export type ContainerBase = {
-    number?: (string | null);
-    konosament_file_id?: (string | null);
-    waybill_file_id?: (string | null);
-    date_arrive?: (string | null);
-    is_archived?: (boolean | null);
-};
-
 export type ContainerCargo = {
     id: number;
     vin_code?: (string | null);
@@ -1090,11 +1082,11 @@ export type PaginationSchema_City_ = {
     items: Array<City>;
 };
 
-export type PaginationSchema_ContainerBase_ = {
+export type PaginationSchema_Container_ = {
     total: number;
     page: number;
     total_pages: number;
-    items: Array<ContainerBase>;
+    items: Array<Container>;
 };
 
 export type PaginationSchema_Country_ = {
@@ -2180,7 +2172,7 @@ export type ReadContainersApiV1ContainerGetData = {
     };
 };
 
-export type ReadContainersApiV1ContainerGetResponse = (PaginationSchema_ContainerBase_);
+export type ReadContainersApiV1ContainerGetResponse = (PaginationSchema_Container_);
 
 export type ReadContainersApiV1ContainerGetError = (HTTPValidationError);
 

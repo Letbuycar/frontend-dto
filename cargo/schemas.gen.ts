@@ -7746,70 +7746,6 @@ export const ContainerSchema = {
     title: 'Container'
 } as const;
 
-export const ContainerBaseSchema = {
-    properties: {
-        number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Number'
-        },
-        konosament_file_id: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Konosament File Id'
-        },
-        waybill_file_id: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Waybill File Id'
-        },
-        date_arrive: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Arrive'
-        },
-        is_archived: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Archived',
-            default: false
-        }
-    },
-    type: 'object',
-    title: 'ContainerBase'
-} as const;
-
 export const ContainerCargoSchema = {
     properties: {
         id: {
@@ -9126,7 +9062,7 @@ export const PaginationSchema_City_Schema = {
     title: 'PaginationSchema[City]'
 } as const;
 
-export const PaginationSchema_ContainerBase_Schema = {
+export const PaginationSchema_Container_Schema = {
     properties: {
         total: {
             type: 'integer',
@@ -9142,7 +9078,7 @@ export const PaginationSchema_ContainerBase_Schema = {
         },
         items: {
             items: {
-                '$ref': '#/components/schemas/ContainerBase'
+                '$ref': '#/components/schemas/Container'
             },
             type: 'array',
             title: 'Items'
@@ -9150,7 +9086,7 @@ export const PaginationSchema_ContainerBase_Schema = {
     },
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
-    title: 'PaginationSchema[ContainerBase]'
+    title: 'PaginationSchema[Container]'
 } as const;
 
 export const PaginationSchema_Country_Schema = {
