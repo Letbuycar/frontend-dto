@@ -817,6 +817,10 @@ export type CityUpdate = {
 
 export type Container = {
     number: string;
+    konosament_file_id?: (string | null);
+    waybill_file_id?: (string | null);
+    date_arrive?: (string | null);
+    is_archived?: (boolean | null);
     id: number;
     is_active: boolean;
     updated_on: string;
@@ -825,10 +829,18 @@ export type Container = {
 
 export type ContainerCreate = {
     number: string;
+    konosament_file_id?: (string | null);
+    waybill_file_id?: (string | null);
+    date_arrive?: (string | null);
+    is_archived?: (boolean | null);
 };
 
 export type ContainerUpdate = {
     number: string;
+    konosament_file_id?: (string | null);
+    waybill_file_id?: (string | null);
+    date_arrive?: (string | null);
+    is_archived?: (boolean | null);
     is_active?: (boolean | null);
 };
 
@@ -850,7 +862,7 @@ export type CountryUpdate = {
     is_active?: (boolean | null);
 };
 
-export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment';
+export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment' | 'container';
 
 export type EngineVolume = {
     title: string;

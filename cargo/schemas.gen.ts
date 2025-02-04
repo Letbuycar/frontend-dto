@@ -7669,6 +7669,52 @@ export const ContainerSchema = {
             type: 'string',
             title: 'Number'
         },
+        konosament_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Konosament File Id'
+        },
+        waybill_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Waybill File Id'
+        },
+        date_arrive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -7698,6 +7744,52 @@ export const ContainerCreateSchema = {
         number: {
             type: 'string',
             title: 'Number'
+        },
+        konosament_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Konosament File Id'
+        },
+        waybill_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Waybill File Id'
+        },
+        date_arrive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         }
     },
     type: 'object',
@@ -7710,6 +7802,52 @@ export const ContainerUpdateSchema = {
         number: {
             type: 'string',
             title: 'Number'
+        },
+        konosament_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Konosament File Id'
+        },
+        waybill_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Waybill File Id'
+        },
+        date_arrive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arrive'
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         },
         is_active: {
             anyOf: [
@@ -7818,7 +7956,7 @@ export const CountryUpdateSchema = {
 
 export const DOCS_TYPESchema = {
     type: 'string',
-    enum: ['invoice', 'duty_receipt', 'cargo_docs', 'user_docs', 'payment'],
+    enum: ['invoice', 'duty_receipt', 'cargo_docs', 'user_docs', 'payment', 'container'],
     title: 'DOCS_TYPE'
 } as const;
 
