@@ -8,6 +8,10 @@ export type Body_upload_file_api_v1_images__vin_code___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_file_container_api_v1_containers__post = {
+    file: (Blob | File);
+};
+
 export type Body_upload_file_duty_api_v1_duties__cargo_id___post = {
     file: (Blob | File);
 };
@@ -77,6 +81,16 @@ export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostData = {
 export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostResponse = (MultiImageUploadResponse);
 
 export type UploadMultipleFilesApiV1ImagesVinCodeMultiplePostError = (HTTPValidationError);
+
+export type GetDownloadZipApiV1ImagesDownloadZipVinCodeGetData = {
+    path: {
+        vin_code: string;
+    };
+};
+
+export type GetDownloadZipApiV1ImagesDownloadZipVinCodeGetResponse = (unknown);
+
+export type GetDownloadZipApiV1ImagesDownloadZipVinCodeGetError = (HTTPValidationError);
 
 export type GetFileApiV1ImagesVinCodeFilenameGetData = {
     path: {
@@ -206,17 +220,6 @@ export type UploadFilePaymentApiV1PaymentsPostResponse = (ImageUploadResponse);
 
 export type UploadFilePaymentApiV1PaymentsPostError = (HTTPValidationError);
 
-export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetData = {
-    path: {
-        filename: string;
-        payment_id: number;
-    };
-};
-
-export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetResponse = (unknown);
-
-export type GetFilePaymentApiV1PaymentsPaymentIdFilenameGetError = (HTTPValidationError);
-
 export type GetFilePaymentApiV1PaymentsDealerFilenameGetData = {
     path: {
         filename: string;
@@ -237,6 +240,28 @@ export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetData = {
 export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetResponse = (unknown);
 
 export type GetFilePaymentApiV1PaymentsAccountantUserIdFilenameGetError = (HTTPValidationError);
+
+export type UploadFileContainerApiV1ContainersPostData = {
+    body: Body_upload_file_container_api_v1_containers__post;
+    path: {
+        cargo_id: string;
+    };
+};
+
+export type UploadFileContainerApiV1ContainersPostResponse = (ImageUploadResponse);
+
+export type UploadFileContainerApiV1ContainersPostError = (HTTPValidationError);
+
+export type GetFileContainerApiV1ContainersFilenameGetData = {
+    path: {
+        cargo_id: string;
+        filename: string;
+    };
+};
+
+export type GetFileContainerApiV1ContainersFilenameGetResponse = (unknown);
+
+export type GetFileContainerApiV1ContainersFilenameGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
