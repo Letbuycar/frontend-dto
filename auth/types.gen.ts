@@ -233,7 +233,7 @@ export type CreateUserApiV1UsersPostData = {
     body: UserCreate;
 };
 
-export type CreateUserApiV1UsersPostResponse = (UserResponse);
+export type CreateUserApiV1UsersPostResponse = (unknown);
 
 export type CreateUserApiV1UsersPostError = (HTTPValidationError);
 
@@ -243,7 +243,7 @@ export type AdminGetUserApiV1UsersUserIdGetData = {
     };
 };
 
-export type AdminGetUserApiV1UsersUserIdGetResponse = (AdminUserInfo);
+export type AdminGetUserApiV1UsersUserIdGetResponse = (UserFinanceResponse);
 
 export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
@@ -254,7 +254,7 @@ export type ChangeUserApiV1UsersChangeUserIdPatchData = {
     };
 };
 
-export type ChangeUserApiV1UsersChangeUserIdPatchResponse = (AdminUserInfo);
+export type ChangeUserApiV1UsersChangeUserIdPatchResponse = (UserResponse);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchError = (HTTPValidationError);
 
