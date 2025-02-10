@@ -48,27 +48,6 @@ export const AdminUserInfoSchema = {
             ],
             title: 'Last Name'
         },
-        phone_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Phone Number'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         phone: {
             anyOf: [
                 {
@@ -79,6 +58,16 @@ export const AdminUserInfoSchema = {
                 }
             ],
             title: 'Phone'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -515,6 +504,16 @@ export const UserCreateSchema = {
                 }
             ],
             default: 'Customer'
+        },
+        manager: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',
@@ -554,27 +553,6 @@ export const UserFinanceResponseSchema = {
             ],
             title: 'Last Name'
         },
-        phone_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Phone Number'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         phone: {
             anyOf: [
                 {
@@ -585,6 +563,16 @@ export const UserFinanceResponseSchema = {
                 }
             ],
             title: 'Phone'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         country_id: {
             anyOf: [
@@ -642,6 +630,16 @@ export const UserFinanceResponseSchema = {
             ],
             title: 'Manager Id'
         },
+        manager: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         email_verified: {
             anyOf: [
                 {
@@ -678,9 +676,9 @@ export const UserFinanceResponseSchema = {
             title: 'Cargo Count',
             default: 0
         },
-        archived_cargo_count: {
+        not_paid_cargo_count: {
             type: 'integer',
-            title: 'Archived Cargo Count',
+            title: 'Not Paid Cargo Count',
             default: 0
         },
         city: {
@@ -816,27 +814,6 @@ export const UserResponseSchema = {
             ],
             title: 'Last Name'
         },
-        phone_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Phone Number'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
         phone: {
             anyOf: [
                 {
@@ -847,6 +824,16 @@ export const UserResponseSchema = {
                 }
             ],
             title: 'Phone'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         country_id: {
             anyOf: [
@@ -903,6 +890,16 @@ export const UserResponseSchema = {
                 }
             ],
             title: 'Manager Id'
+        },
+        manager: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         email_verified: {
             anyOf: [
@@ -1170,6 +1167,16 @@ export const entities__users__schemas__UserUpdateSchema = {
                 }
             ],
             default: 'Customer'
+        },
+        manager: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         }
     },
     type: 'object',

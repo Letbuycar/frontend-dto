@@ -5,9 +5,8 @@ export type AdminUserInfo = {
     email?: (string | null);
     first_name?: (string | null);
     last_name?: (string | null);
-    phone_number?: (string | null);
-    role?: (UserRole | null);
     phone?: (string | null);
+    role?: (UserRole | null);
 };
 
 export type City = {
@@ -98,6 +97,7 @@ export type UserCreate = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (USER_ROLE_CREATE | null);
+    manager?: (AdminUserInfo | null);
 };
 
 export type UserFinanceResponse = {
@@ -105,21 +105,21 @@ export type UserFinanceResponse = {
     email?: string;
     first_name?: (string | null);
     last_name?: (string | null);
-    phone_number?: (string | null);
-    role?: (UserRole | null);
     phone?: (string | null);
+    role?: (UserRole | null);
     country_id?: (number | null);
     city_id?: (number | null);
     address?: (string | null);
     comment?: (string | null);
     manager_id?: (string | null);
+    manager?: (AdminUserInfo | null);
     email_verified?: (boolean | null);
     balance?: number;
     total_amount?: number;
     paid_amount?: number;
     left_to_pay_amount?: number;
     cargo_count?: number;
-    archived_cargo_count?: number;
+    not_paid_cargo_count?: number;
     city?: (City | null);
     country?: (Country | null);
 };
@@ -138,14 +138,14 @@ export type UserResponse = {
     email?: string;
     first_name?: (string | null);
     last_name?: (string | null);
-    phone_number?: (string | null);
-    role?: (UserRole | null);
     phone?: (string | null);
+    role?: (UserRole | null);
     country_id?: (number | null);
     city_id?: (number | null);
     address?: (string | null);
     comment?: (string | null);
     manager_id?: (string | null);
+    manager?: (AdminUserInfo | null);
     email_verified?: (boolean | null);
 };
 
@@ -187,6 +187,7 @@ export type entities__users__schemas__UserUpdate = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (USER_ROLE_CREATE | null);
+    manager?: (AdminUserInfo | null);
 };
 
 export type SignupUserApiV1AuthSignupPostData = {
