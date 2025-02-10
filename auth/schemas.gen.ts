@@ -59,6 +59,17 @@ export const AdminUserInfoSchema = {
             ],
             title: 'Phone'
         },
+        phone_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone Number'
+        },
         role: {
             anyOf: [
                 {
@@ -508,16 +519,6 @@ export const UserCreateSchema = {
             ],
             title: 'Role',
             default: 'Customer'
-        },
-        manager: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/AdminUserInfo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         }
     },
     type: 'object',
@@ -526,15 +527,6 @@ export const UserCreateSchema = {
 
 export const UserFinanceResponseSchema = {
     properties: {
-        id: {
-            type: 'string',
-            format: 'uuid',
-            title: 'Id'
-        },
-        email: {
-            type: 'string',
-            title: 'Email'
-        },
         first_name: {
             anyOf: [
                 {
@@ -557,6 +549,10 @@ export const UserFinanceResponseSchema = {
             ],
             title: 'Last Name'
         },
+        email: {
+            type: 'string',
+            title: 'Email'
+        },
         phone: {
             anyOf: [
                 {
@@ -567,16 +563,6 @@ export const UserFinanceResponseSchema = {
                 }
             ],
             title: 'Phone'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         },
         country_id: {
             anyOf: [
@@ -634,15 +620,20 @@ export const UserFinanceResponseSchema = {
             ],
             title: 'Manager Id'
         },
-        manager: {
+        role: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/AdminUserInfo'
+                    '$ref': '#/components/schemas/UserRole'
                 },
                 {
                     type: 'null'
                 }
             ]
+        },
+        id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Id'
         },
         email_verified: {
             anyOf: [
@@ -654,6 +645,16 @@ export const UserFinanceResponseSchema = {
                 }
             ],
             title: 'Email Verified'
+        },
+        manager: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         balance: {
             type: 'number',
@@ -783,143 +784,6 @@ export const UserInfoSchema = {
     },
     type: 'object',
     title: 'UserInfo'
-} as const;
-
-export const UserResponseSchema = {
-    properties: {
-        id: {
-            type: 'string',
-            format: 'uuid',
-            title: 'Id'
-        },
-        email: {
-            type: 'string',
-            title: 'Email'
-        },
-        first_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'First Name'
-        },
-        last_name: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Last Name'
-        },
-        phone: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Phone'
-        },
-        role: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/UserRole'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
-        country_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Country Id'
-        },
-        city_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'City Id'
-        },
-        address: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Address'
-        },
-        comment: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Comment'
-        },
-        manager_id: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'uuid'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Manager Id'
-        },
-        manager: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/AdminUserInfo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
-        },
-        email_verified: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Email Verified'
-        }
-    },
-    type: 'object',
-    required: ['id'],
-    title: 'UserResponse'
 } as const;
 
 export const UserRoleSchema = {
@@ -1175,16 +1039,6 @@ export const entities__users__schemas__UserUpdateSchema = {
             ],
             title: 'Role',
             default: 'Customer'
-        },
-        manager: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/AdminUserInfo'
-                },
-                {
-                    type: 'null'
-                }
-            ]
         }
     },
     type: 'object',
