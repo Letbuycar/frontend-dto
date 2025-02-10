@@ -96,7 +96,7 @@ export type UserCreate = {
     address?: (string | null);
     comment?: (string | null);
     manager_id?: (string | null);
-    role?: (USER_ROLE_CREATE | null);
+    role?: (USER_ROLE_CREATE | UserRole | null);
     manager?: (AdminUserInfo | null);
 };
 
@@ -186,7 +186,7 @@ export type entities__users__schemas__UserUpdate = {
     address?: (string | null);
     comment?: (string | null);
     manager_id?: (string | null);
-    role?: (USER_ROLE_CREATE | null);
+    role?: (USER_ROLE_CREATE | UserRole | null);
     manager?: (AdminUserInfo | null);
 };
 

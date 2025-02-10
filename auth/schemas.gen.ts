@@ -500,9 +500,13 @@ export const UserCreateSchema = {
                     '$ref': '#/components/schemas/USER_ROLE_CREATE'
                 },
                 {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
                     type: 'null'
                 }
             ],
+            title: 'Role',
             default: 'Customer'
         },
         manager: {
@@ -1163,9 +1167,13 @@ export const entities__users__schemas__UserUpdateSchema = {
                     '$ref': '#/components/schemas/USER_ROLE_CREATE'
                 },
                 {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
                     type: 'null'
                 }
             ],
+            title: 'Role',
             default: 'Customer'
         },
         manager: {
