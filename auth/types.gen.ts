@@ -7,8 +7,43 @@ export type AdminUserInfo = {
     last_name?: (string | null);
     phone_number?: (string | null);
     role?: (UserRole | null);
-    email_verified?: (boolean | null);
     phone?: (string | null);
+};
+
+export type City = {
+    title?: string;
+    is_active?: (boolean | null);
+    id: number;
+    updated_on: string;
+    created_on: string;
+};
+
+export type CityCreate = {
+    title?: string;
+    is_active?: (boolean | null);
+};
+
+export type CityUpdate = {
+    title?: string;
+    is_active?: (boolean | null);
+};
+
+export type Country = {
+    title?: string;
+    is_active?: (boolean | null);
+    id: number;
+    updated_on?: string;
+    created_on?: string;
+};
+
+export type CountryCreate = {
+    title?: string;
+    is_active?: (boolean | null);
+};
+
+export type CountryUpdate = {
+    title?: string;
+    is_active?: (boolean | null);
 };
 
 export type HTTPValidationError = {
@@ -22,11 +57,71 @@ export type PaginationSchema_AdminUserInfo_ = {
     items: Array<AdminUserInfo>;
 };
 
+export type PaginationSchema_City_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<City>;
+};
+
+export type PaginationSchema_Country_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<Country>;
+};
+
+export type PaginationSchema_UserFinanceResponse_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<UserFinanceResponse>;
+};
+
 export type SignInUserInfo = {
     access_token: string;
     refresh_token: string;
     id_token: string;
     user_info: UserInfo;
+};
+
+export type USER_ROLE_CREATE = 'Customer' | 'Dealer';
+
+export type UserCreate = {
+    first_name?: (string | null);
+    last_name?: (string | null);
+    email?: string;
+    phone?: (string | null);
+    country_id?: (number | null);
+    city_id?: (number | null);
+    address?: (string | null);
+    comment?: (string | null);
+    manager_id?: (string | null);
+    role?: (USER_ROLE_CREATE | null);
+};
+
+export type UserFinanceResponse = {
+    id: string;
+    email?: string;
+    first_name?: (string | null);
+    last_name?: (string | null);
+    phone_number?: (string | null);
+    role?: (UserRole | null);
+    phone?: (string | null);
+    country_id?: (number | null);
+    city_id?: (number | null);
+    address?: (string | null);
+    comment?: (string | null);
+    manager_id?: (string | null);
+    email_verified?: (boolean | null);
+    balance?: number;
+    total_amount?: number;
+    paid_amount?: number;
+    left_to_pay_amount?: number;
+    cargo_count?: number;
+    archived_cargo_count?: number;
+    city?: (City | null);
+    country?: (Country | null);
 };
 
 export type UserInfo = {
@@ -38,7 +133,23 @@ export type UserInfo = {
     role?: (UserRole | null);
 };
 
-export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer';
+export type UserResponse = {
+    id: string;
+    email?: string;
+    first_name?: (string | null);
+    last_name?: (string | null);
+    phone_number?: (string | null);
+    role?: (UserRole | null);
+    phone?: (string | null);
+    country_id?: (number | null);
+    city_id?: (number | null);
+    address?: (string | null);
+    comment?: (string | null);
+    manager_id?: (string | null);
+    email_verified?: (boolean | null);
+};
+
+export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer' | 'Robot';
 
 export type UserSignin = {
     email: string;
@@ -52,22 +163,31 @@ export type UserSignup = {
     last_name?: (string | null);
 };
 
-export type UserUpdate = {
-    email?: (string | null);
-    first_name?: (string | null);
-    last_name?: (string | null);
-    phone_number?: (string | null);
-};
-
 export type ValidationError = {
     loc: Array<(string | number)>;
     msg: string;
     type: string;
 };
 
-export type RegisterAccountApiV1AuthPostResponse = (unknown);
+export type entities__auth__schemas__UserUpdate = {
+    email?: (string | null);
+    first_name?: (string | null);
+    last_name?: (string | null);
+    phone_number?: (string | null);
+};
 
-export type RegisterAccountApiV1AuthPostError = unknown;
+export type entities__users__schemas__UserUpdate = {
+    first_name?: (string | null);
+    last_name?: (string | null);
+    email?: string;
+    phone?: (string | null);
+    country_id?: (number | null);
+    city_id?: (number | null);
+    address?: (string | null);
+    comment?: (string | null);
+    manager_id?: (string | null);
+    role?: (USER_ROLE_CREATE | null);
+};
 
 export type SignupUserApiV1AuthSignupPostData = {
     body: UserSignup;
@@ -86,7 +206,7 @@ export type SigninUserApiV1AuthSigninPostResponse = (unknown);
 export type SigninUserApiV1AuthSigninPostError = (HTTPValidationError);
 
 export type ChangeMeApiV1AuthChangePatchData = {
-    body: UserUpdate;
+    body: entities__auth__schemas__UserUpdate;
 };
 
 export type ChangeMeApiV1AuthChangePatchResponse = (unknown);
@@ -98,18 +218,24 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 export type GetMeApiV1AuthMeGetError = unknown;
 
 export type AdminGetUsersApiV1UsersGetData = {
-    headers?: {
-        Authorization?: string;
-    };
     query?: {
         page?: number;
+        roles?: Array<(string)>;
         search?: string;
     };
 };
 
-export type AdminGetUsersApiV1UsersGetResponse = (PaginationSchema_AdminUserInfo_);
+export type AdminGetUsersApiV1UsersGetResponse = (PaginationSchema_UserFinanceResponse_);
 
 export type AdminGetUsersApiV1UsersGetError = (HTTPValidationError);
+
+export type CreateUserApiV1UsersPostData = {
+    body: UserCreate;
+};
+
+export type CreateUserApiV1UsersPostResponse = (UserResponse);
+
+export type CreateUserApiV1UsersPostError = (HTTPValidationError);
 
 export type AdminGetUserApiV1UsersUserIdGetData = {
     path: {
@@ -122,10 +248,7 @@ export type AdminGetUserApiV1UsersUserIdGetResponse = (AdminUserInfo);
 export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchData = {
-    body?: (AdminUserInfo);
-    headers?: {
-        Authorization?: string;
-    };
+    body?: entities__users__schemas__UserUpdate;
     path: {
         user_id: string;
     };
@@ -135,19 +258,144 @@ export type ChangeUserApiV1UsersChangeUserIdPatchResponse = (AdminUserInfo);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchError = (HTTPValidationError);
 
-export type AdminGetUsersApiV1UsersBrokersGetData = {
-    headers?: {
-        Authorization?: string;
-    };
+export type GetBrokersApiV1UsersBrokersGetData = {
     query?: {
         page?: number;
         search?: string;
     };
 };
 
-export type AdminGetUsersApiV1UsersBrokersGetResponse = (PaginationSchema_AdminUserInfo_);
+export type GetBrokersApiV1UsersBrokersGetResponse = (PaginationSchema_AdminUserInfo_);
 
-export type AdminGetUsersApiV1UsersBrokersGetError = (HTTPValidationError);
+export type GetBrokersApiV1UsersBrokersGetError = (HTTPValidationError);
+
+export type ReadCountriesApiV1LocationCountriesGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    query?: {
+        page?: number;
+    };
+};
+
+export type ReadCountriesApiV1LocationCountriesGetResponse = (PaginationSchema_Country_);
+
+export type ReadCountriesApiV1LocationCountriesGetError = (HTTPValidationError);
+
+export type CreateCountryApiV1LocationCountriesPostData = {
+    body: CountryCreate;
+    headers?: {
+        'Content-Language'?: string;
+    };
+};
+
+export type CreateCountryApiV1LocationCountriesPostResponse = (Country);
+
+export type CreateCountryApiV1LocationCountriesPostError = (HTTPValidationError);
+
+export type ReadCountryApiV1LocationCountriesCountryIdGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        country_id: number;
+    };
+};
+
+export type ReadCountryApiV1LocationCountriesCountryIdGetResponse = (Country);
+
+export type ReadCountryApiV1LocationCountriesCountryIdGetError = (HTTPValidationError);
+
+export type UpdateCountryApiV1LocationCountriesCountryIdPutData = {
+    body: CountryUpdate;
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        country_id: number;
+    };
+};
+
+export type UpdateCountryApiV1LocationCountriesCountryIdPutResponse = (Country);
+
+export type UpdateCountryApiV1LocationCountriesCountryIdPutError = (HTTPValidationError);
+
+export type DeleteCountryApiV1LocationCountriesCountryIdDeleteData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        country_id: number;
+    };
+};
+
+export type DeleteCountryApiV1LocationCountriesCountryIdDeleteResponse = (Country);
+
+export type DeleteCountryApiV1LocationCountriesCountryIdDeleteError = (HTTPValidationError);
+
+export type ReadCitiesApiV1LocationCitiesGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    query?: {
+        page?: number;
+    };
+};
+
+export type ReadCitiesApiV1LocationCitiesGetResponse = (PaginationSchema_City_);
+
+export type ReadCitiesApiV1LocationCitiesGetError = (HTTPValidationError);
+
+export type CreateCityApiV1LocationCitiesPostData = {
+    body: CityCreate;
+    headers?: {
+        'Content-Language'?: string;
+    };
+};
+
+export type CreateCityApiV1LocationCitiesPostResponse = (City);
+
+export type CreateCityApiV1LocationCitiesPostError = (HTTPValidationError);
+
+export type ReadCityApiV1LocationCitiesCityIdGetData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        city_id: number;
+    };
+};
+
+export type ReadCityApiV1LocationCitiesCityIdGetResponse = (City);
+
+export type ReadCityApiV1LocationCitiesCityIdGetError = (HTTPValidationError);
+
+export type UpdateCityApiV1LocationCitiesCityIdPutData = {
+    body: CityUpdate;
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        city_id: number;
+    };
+};
+
+export type UpdateCityApiV1LocationCitiesCityIdPutResponse = (City);
+
+export type UpdateCityApiV1LocationCitiesCityIdPutError = (HTTPValidationError);
+
+export type DeleteCityApiV1LocationCitiesCityIdDeleteData = {
+    headers?: {
+        'Content-Language'?: string;
+    };
+    path: {
+        city_id: number;
+    };
+};
+
+export type DeleteCityApiV1LocationCitiesCityIdDeleteResponse = (City);
+
+export type DeleteCityApiV1LocationCitiesCityIdDeleteError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 

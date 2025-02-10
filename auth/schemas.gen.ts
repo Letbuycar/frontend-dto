@@ -69,17 +69,6 @@ export const AdminUserInfoSchema = {
                 }
             ]
         },
-        email_verified: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Email Verified'
-        },
         phone: {
             anyOf: [
                 {
@@ -94,6 +83,180 @@ export const AdminUserInfoSchema = {
     },
     type: 'object',
     title: 'AdminUserInfo'
+} as const;
+
+export const CitySchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        }
+    },
+    type: 'object',
+    required: ['id', 'updated_on', 'created_on'],
+    title: 'City'
+} as const;
+
+export const CityCreateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'CityCreate'
+} as const;
+
+export const CityUpdateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'CityUpdate'
+} as const;
+
+export const CountrySchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        updated_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Updated On'
+        },
+        created_on: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Created On'
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'Country'
+} as const;
+
+export const CountryCreateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'CountryCreate'
+} as const;
+
+export const CountryUpdateSchema = {
+    properties: {
+        title: {
+            type: 'string',
+            title: 'Title',
+            default: ''
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
+        }
+    },
+    type: 'object',
+    title: 'CountryUpdate'
 } as const;
 
 export const HTTPValidationErrorSchema = {
@@ -137,6 +300,87 @@ export const PaginationSchema_AdminUserInfo_Schema = {
     title: 'PaginationSchema[AdminUserInfo]'
 } as const;
 
+export const PaginationSchema_City_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/City'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[City]'
+} as const;
+
+export const PaginationSchema_Country_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/Country'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[Country]'
+} as const;
+
+export const PaginationSchema_UserFinanceResponse_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/UserFinanceResponse'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[UserFinanceResponse]'
+} as const;
+
 export const SignInUserInfoSchema = {
     properties: {
         access_token: {
@@ -158,6 +402,311 @@ export const SignInUserInfoSchema = {
     type: 'object',
     required: ['access_token', 'refresh_token', 'id_token', 'user_info'],
     title: 'SignInUserInfo'
+} as const;
+
+export const USER_ROLE_CREATESchema = {
+    type: 'string',
+    enum: ['Customer', 'Dealer'],
+    title: 'USER_ROLE_CREATE'
+} as const;
+
+export const UserCreateSchema = {
+    properties: {
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
+        },
+        email: {
+            type: 'string',
+            title: 'Email'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone'
+        },
+        country_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Country Id'
+        },
+        city_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'City Id'
+        },
+        address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Address'
+        },
+        comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Comment'
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/USER_ROLE_CREATE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'Customer'
+        }
+    },
+    type: 'object',
+    title: 'UserCreate'
+} as const;
+
+export const UserFinanceResponseSchema = {
+    properties: {
+        id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Id'
+        },
+        email: {
+            type: 'string',
+            title: 'Email'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
+        },
+        phone_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone Number'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone'
+        },
+        country_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Country Id'
+        },
+        city_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'City Id'
+        },
+        address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Address'
+        },
+        comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Comment'
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        email_verified: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Email Verified'
+        },
+        balance: {
+            type: 'number',
+            title: 'Balance',
+            default: 0
+        },
+        total_amount: {
+            type: 'number',
+            title: 'Total Amount',
+            default: 0
+        },
+        paid_amount: {
+            type: 'number',
+            title: 'Paid Amount',
+            default: 0
+        },
+        left_to_pay_amount: {
+            type: 'number',
+            title: 'Left To Pay Amount',
+            default: 0
+        },
+        cargo_count: {
+            type: 'integer',
+            title: 'Cargo Count',
+            default: 0
+        },
+        archived_cargo_count: {
+            type: 'integer',
+            title: 'Archived Cargo Count',
+            default: 0
+        },
+        city: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/City'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        country: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/Country'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'UserFinanceResponse'
 } as const;
 
 export const UserInfoSchema = {
@@ -234,9 +783,147 @@ export const UserInfoSchema = {
     title: 'UserInfo'
 } as const;
 
+export const UserResponseSchema = {
+    properties: {
+        id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Id'
+        },
+        email: {
+            type: 'string',
+            title: 'Email'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
+        },
+        phone_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone Number'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone'
+        },
+        country_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Country Id'
+        },
+        city_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'City Id'
+        },
+        address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Address'
+        },
+        comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Comment'
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        email_verified: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Email Verified'
+        }
+    },
+    type: 'object',
+    required: ['id'],
+    title: 'UserResponse'
+} as const;
+
 export const UserRoleSchema = {
     type: 'string',
-    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer'],
+    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer', 'Robot'],
     title: 'UserRole'
 } as const;
 
@@ -296,7 +983,37 @@ export const UserSignupSchema = {
     title: 'UserSignup'
 } as const;
 
-export const UserUpdateSchema = {
+export const ValidationErrorSchema = {
+    properties: {
+        loc: {
+            items: {
+                anyOf: [
+                    {
+                        type: 'string'
+                    },
+                    {
+                        type: 'integer'
+                    }
+                ]
+            },
+            type: 'array',
+            title: 'Location'
+        },
+        msg: {
+            type: 'string',
+            title: 'Message'
+        },
+        type: {
+            type: 'string',
+            title: 'Error Type'
+        }
+    },
+    type: 'object',
+    required: ['loc', 'msg', 'type'],
+    title: 'ValidationError'
+} as const;
+
+export const entities__auth__schemas__UserUpdateSchema = {
     properties: {
         email: {
             anyOf: [
@@ -348,32 +1065,113 @@ export const UserUpdateSchema = {
     title: 'UserUpdate'
 } as const;
 
-export const ValidationErrorSchema = {
+export const entities__users__schemas__UserUpdateSchema = {
     properties: {
-        loc: {
-            items: {
-                anyOf: [
-                    {
-                        type: 'string'
-                    },
-                    {
-                        type: 'integer'
-                    }
-                ]
-            },
-            type: 'array',
-            title: 'Location'
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
         },
-        msg: {
-            type: 'string',
-            title: 'Message'
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
         },
-        type: {
+        email: {
             type: 'string',
-            title: 'Error Type'
+            title: 'Email'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone'
+        },
+        country_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Country Id'
+        },
+        city_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'City Id'
+        },
+        address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Address'
+        },
+        comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Comment'
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        role: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/USER_ROLE_CREATE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'Customer'
         }
     },
     type: 'object',
-    required: ['loc', 'msg', 'type'],
-    title: 'ValidationError'
+    title: 'UserUpdate'
 } as const;
