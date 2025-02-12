@@ -203,6 +203,7 @@ export type GetMeApiV1AuthMeGetError = unknown;
 
 export type AdminGetUsersApiV1UsersGetData = {
     query?: {
+        is_debt?: boolean;
         page?: number;
         roles?: Array<(string)>;
         search?: string;
