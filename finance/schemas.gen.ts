@@ -655,6 +655,27 @@ export const CargoUpdateSchemaSchema = {
     title: 'CargoUpdateSchema'
 } as const;
 
+export const DealerInfoSchema = {
+    properties: {
+        id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'Id'
+        },
+        first_name: {
+            type: 'string',
+            title: 'First Name'
+        },
+        last_name: {
+            type: 'string',
+            title: 'Last Name'
+        }
+    },
+    type: 'object',
+    required: ['id', 'first_name', 'last_name'],
+    title: 'DealerInfo'
+} as const;
+
 export const HTTPValidationErrorSchema = {
     properties: {
         detail: {
@@ -886,6 +907,16 @@ export const PaymentSchema = {
         is_active: {
             type: 'boolean',
             title: 'Is Active'
+        },
+        dealer: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/DealerInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         updated_on: {
             type: 'string',

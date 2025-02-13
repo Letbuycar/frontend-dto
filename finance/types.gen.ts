@@ -91,6 +91,12 @@ export type CargoUpdateSchema = {
     is_archived?: (boolean | null);
 };
 
+export type DealerInfo = {
+    id: string;
+    first_name: string;
+    last_name: string;
+};
+
 export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
@@ -138,6 +144,7 @@ export type Payment = {
     status: string;
     cargo?: (CargoForPaymentSchema | null);
     is_active: boolean;
+    dealer?: (DealerInfo | null);
     updated_on: string;
     created_on: string;
 };
