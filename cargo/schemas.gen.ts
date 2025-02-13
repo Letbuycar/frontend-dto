@@ -3,7 +3,14 @@
 export const AuctionSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         payment_account: {
@@ -37,14 +44,21 @@ export const AuctionSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'Auction'
 } as const;
 
 export const AuctionCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         payment_account: {
@@ -60,7 +74,6 @@ export const AuctionCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'AuctionCreate'
 } as const;
 
@@ -69,7 +82,7 @@ export const AuctionFeeSchema = {
         fee_type: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/FEE_TYPE'
+                    '$ref': '#/components/schemas/FEE_TYPE_ENUM'
                 },
                 {
                     type: 'null'
@@ -160,7 +173,7 @@ export const AuctionFeeCreateSchema = {
         fee_type: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/FEE_TYPE'
+                    '$ref': '#/components/schemas/FEE_TYPE_ENUM'
                 },
                 {
                     type: 'null'
@@ -236,7 +249,7 @@ export const AuctionFeeUpdateSchema = {
         fee_type: {
             anyOf: [
                 {
-                    '$ref': '#/components/schemas/FEE_TYPE'
+                    '$ref': '#/components/schemas/FEE_TYPE_ENUM'
                 },
                 {
                     type: 'null'
@@ -310,7 +323,14 @@ export const AuctionFeeUpdateSchema = {
 export const AuctionUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         payment_account: {
@@ -338,14 +358,20 @@ export const AuctionUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'AuctionUpdate'
 } as const;
 
 export const BoatTypeSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -376,14 +402,21 @@ export const BoatTypeSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'BoatType'
 } as const;
 
 export const BoatTypeCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -400,14 +433,20 @@ export const BoatTypeCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'BoatTypeCreate'
 } as const;
 
 export const BoatTypeUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -424,14 +463,20 @@ export const BoatTypeUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'BoatTypeUpdate'
 } as const;
 
 export const BodyTypeSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -462,14 +507,21 @@ export const BodyTypeSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'BodyType'
 } as const;
 
 export const BodyTypeCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -486,14 +538,20 @@ export const BodyTypeCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'BodyTypeCreate'
 } as const;
 
 export const BodyTypeUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -510,7 +568,6 @@ export const BodyTypeUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'BodyTypeUpdate'
 } as const;
 
@@ -553,7 +610,14 @@ export const CARGO_TYPESchema = {
 export const CarBrandSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         id: {
@@ -576,26 +640,39 @@ export const CarBrandSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'CarBrand'
 } as const;
 
 export const CarBrandCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CarBrandCreate'
 } as const;
 
 export const CarBrandUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -612,14 +689,20 @@ export const CarBrandUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CarBrandUpdate'
 } as const;
 
 export const CarModelSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         brand_id: {
@@ -663,14 +746,21 @@ export const CarModelSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'CarModel'
 } as const;
 
 export const CarModelCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         brand_id: {
@@ -686,14 +776,20 @@ export const CarModelCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CarModelCreate'
 } as const;
 
 export const CarModelUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         brand_id: {
@@ -721,7 +817,6 @@ export const CarModelUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CarModelUpdate'
 } as const;
 
@@ -1225,6 +1320,10 @@ export const CargoSchema = {
 
 export const CargoAccountantSchema = {
     properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -1235,6 +1334,30 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Vin Code'
+        },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
+        },
+        sublot: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sublot',
+            default: 0
         },
         year: {
             anyOf: [
@@ -1375,18 +1498,6 @@ export const CargoAccountantSchema = {
             ],
             title: 'Is Photos',
             default: false
-        },
-        dealer_id: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'uuid'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Dealer Id'
         },
         car_brand_id: {
             anyOf: [
@@ -1543,22 +1654,6 @@ export const CargoAccountantSchema = {
             ],
             title: 'Is Archived',
             default: false
-        },
-        id: {
-            type: 'integer',
-            title: 'Id'
-        },
-        sublot: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Sublot',
-            default: 0
         },
         is_active: {
             anyOf: [
@@ -1763,6 +1858,18 @@ export const CargoAccountantSchema = {
             title: 'Left To Pay Amount',
             default: 0
         },
+        is_auction_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Auction Paid',
+            default: false
+        },
         status_list: {
             anyOf: [
                 {
@@ -1785,314 +1892,18 @@ export const CargoAccountantSchema = {
 
 export const CargoAccountantUpdateSchema = {
     properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
         vin_code: {
             type: 'string',
             title: 'Vin Code'
-        },
-        year: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Year',
-            default: 2024
-        },
-        carrier_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Carrier Title'
-        },
-        ship_title: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Ship Title'
-        },
-        booking_number: {
-            anyOf: [
-                {
-                    type: 'string'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Booking Number'
-        },
-        date_to_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date To Shipment'
-        },
-        date_arrive_shipment: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Arrive Shipment'
-        },
-        is_closed_location: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Closed Location',
-            default: false
-        },
-        is_doc_change: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Doc Change',
-            default: false
-        },
-        cargo_type: {
-            anyOf: [
-                {
-                    '$ref': '#/components/schemas/CARGO_TYPE'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            default: 'car'
-        },
-        participent_number: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Participent Number',
-            default: 0
-        },
-        lot_number: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Lot Number',
-            default: 0
-        },
-        is_photos: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Photos',
-            default: false
         },
         dealer_id: {
             type: 'string',
             format: 'uuid',
             title: 'Dealer Id'
-        },
-        car_brand_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Car Brand Id'
-        },
-        car_model_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Car Model Id'
-        },
-        container_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Container Id'
-        },
-        port_from_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port From Id'
-        },
-        port_to_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Port To Id'
-        },
-        fuel_type_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Fuel Type Id'
-        },
-        engine_volume_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Engine Volume Id'
-        },
-        body_type_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Body Type Id'
-        },
-        country_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Country Id'
-        },
-        auction_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Auction Id'
-        },
-        transmission_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Transmission Id'
-        },
-        location_id: {
-            anyOf: [
-                {
-                    type: 'integer'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Location Id'
-        },
-        date_buy: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'date-time'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Date Buy'
-        },
-        is_archived: {
-            anyOf: [
-                {
-                    type: 'boolean'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Is Archived',
-            default: false
-        },
-        id: {
-            type: 'integer',
-            title: 'Id'
         },
         sublot: {
             anyOf: [
@@ -2105,6 +1916,18 @@ export const CargoAccountantUpdateSchema = {
             ],
             title: 'Sublot',
             default: 0
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         }
     },
     type: 'object',
@@ -6405,6 +6228,10 @@ export const CargoManagerSchema = {
                 }
             ]
         },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -6415,6 +6242,30 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Vin Code'
+        },
+        dealer_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Dealer Id'
+        },
+        sublot: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sublot',
+            default: 0
         },
         year: {
             anyOf: [
@@ -6498,18 +6349,6 @@ export const CargoManagerSchema = {
             ],
             title: 'Is Photos',
             default: false
-        },
-        dealer_id: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'uuid'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Dealer Id'
         },
         car_brand_id: {
             anyOf: [
@@ -6633,22 +6472,6 @@ export const CargoManagerSchema = {
             ],
             title: 'Is Archived',
             default: false
-        },
-        id: {
-            type: 'integer',
-            title: 'Id'
-        },
-        sublot: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Sublot',
-            default: 0
         },
         is_active: {
             anyOf: [
@@ -6852,6 +6675,18 @@ export const CargoManagerSchema = {
             ],
             title: 'Left To Pay Amount',
             default: 0
+        },
+        is_auction_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Auction Paid',
+            default: false
         }
     },
     type: 'object',
@@ -7180,6 +7015,18 @@ export const CargoManagerCreateSchema = {
             title: 'Is Archived',
             default: false
         },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
         sublot: {
             anyOf: [
                 {
@@ -7190,42 +7037,6 @@ export const CargoManagerCreateSchema = {
                 }
             ],
             title: 'Sublot',
-            default: 0
-        },
-        total_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Total Amount',
-            default: 0
-        },
-        paid_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Paid Amount',
-            default: 0
-        },
-        left_to_pay_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Left To Pay Amount',
             default: 0
         }
     },
@@ -7566,42 +7377,6 @@ export const CargoManagerUpdateSchema = {
             title: 'Sublot',
             default: 0
         },
-        total_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Total Amount',
-            default: 0
-        },
-        paid_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Paid Amount',
-            default: 0
-        },
-        left_to_pay_amount: {
-            anyOf: [
-                {
-                    type: 'number'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Left To Pay Amount',
-            default: 0
-        },
         status: {
             anyOf: [
                 {
@@ -7671,7 +7446,14 @@ export const CargoSetIsPhotosSchema = {
 export const CitySchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -7702,14 +7484,21 @@ export const CitySchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'City'
 } as const;
 
 export const CityCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -7726,14 +7515,20 @@ export const CityCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CityCreate'
 } as const;
 
 export const CityUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -7750,7 +7545,6 @@ export const CityUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'CityUpdate'
 } as const;
 
@@ -8100,9 +7894,15 @@ export const ContainerUpdateSchema = {
 export const CountrySchema = {
     properties: {
         title: {
-            type: 'string',
-            title: 'Title',
-            default: ''
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
         },
         is_active: {
             anyOf: [
@@ -8139,9 +7939,15 @@ export const CountrySchema = {
 export const CountryCreateSchema = {
     properties: {
         title: {
-            type: 'string',
-            title: 'Title',
-            default: ''
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
         },
         is_active: {
             anyOf: [
@@ -8163,9 +7969,15 @@ export const CountryCreateSchema = {
 export const CountryUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
-            title: 'Title',
-            default: ''
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
         },
         is_active: {
             anyOf: [
@@ -8193,12 +8005,30 @@ export const DOCS_TYPESchema = {
 export const EngineVolumeSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         id: {
             type: 'integer',
             title: 'Id'
+        },
+        volume: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Volume'
         },
         is_active: {
             type: 'boolean',
@@ -8216,26 +8046,39 @@ export const EngineVolumeSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'EngineVolume'
 } as const;
 
 export const EngineVolumeCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'EngineVolumeCreate'
 } as const;
 
 export const EngineVolumeUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -8252,14 +8095,13 @@ export const EngineVolumeUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'EngineVolumeUpdate'
 } as const;
 
-export const FEE_TYPESchema = {
+export const FEE_TYPE_ENUMSchema = {
     type: 'string',
     enum: ['standart', 'virtual', 'service'],
-    title: 'FEE_TYPE'
+    title: 'FEE_TYPE_ENUM'
 } as const;
 
 export const FUEL_TYPESchema = {
@@ -8271,7 +8113,14 @@ export const FUEL_TYPESchema = {
 export const FuelTypeSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -8319,7 +8168,14 @@ export const FuelTypeSchema = {
 export const FuelTypeCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -8352,7 +8208,14 @@ export const FuelTypeCreateSchema = {
 export const FuelTypeUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -8399,7 +8262,14 @@ export const HTTPValidationErrorSchema = {
 export const LocationFromSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         port_ids: {
@@ -8435,14 +8305,21 @@ export const LocationFromSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'LocationFrom'
 } as const;
 
 export const LocationFromCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         port_ids: {
@@ -8460,14 +8337,20 @@ export const LocationFromCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'LocationFromCreate'
 } as const;
 
 export const LocationFromUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         port_ids: {
@@ -8497,7 +8380,6 @@ export const LocationFromUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'LocationFromUpdate'
 } as const;
 
@@ -9426,7 +9308,14 @@ export const PaginationSchema_Transmission_Schema = {
 export const PortFromSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         address: {
@@ -9471,14 +9360,21 @@ export const PortFromSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'is_active', 'updated_on', 'created_on'],
+    required: ['id', 'is_active', 'updated_on', 'created_on'],
     title: 'PortFrom'
 } as const;
 
 export const PortFromCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         address: {
@@ -9505,14 +9401,20 @@ export const PortFromCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'PortFromCreate'
 } as const;
 
 export const PortFromUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         address: {
@@ -9551,14 +9453,20 @@ export const PortFromUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'PortFromUpdate'
 } as const;
 
 export const PortToSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         country_id: {
@@ -9610,14 +9518,20 @@ export const PortToSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'PortTo'
 } as const;
 
 export const PortToCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         country_id: {
@@ -9645,14 +9559,20 @@ export const PortToCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'PortToCreate'
 } as const;
 
 export const PortToUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         country_id: {
@@ -9680,7 +9600,6 @@ export const PortToUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'PortToUpdate'
 } as const;
 
@@ -9871,7 +9790,14 @@ export const TariffTotalSchema = {
 export const TransmissionSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -9902,14 +9828,21 @@ export const TransmissionSchema = {
         }
     },
     type: 'object',
-    required: ['title', 'id', 'updated_on', 'created_on'],
+    required: ['id', 'updated_on', 'created_on'],
     title: 'Transmission'
 } as const;
 
 export const TransmissionCreateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -9926,14 +9859,20 @@ export const TransmissionCreateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'TransmissionCreate'
 } as const;
 
 export const TransmissionUpdateSchema = {
     properties: {
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         is_active: {
@@ -9950,7 +9889,6 @@ export const TransmissionUpdateSchema = {
         }
     },
     type: 'object',
-    required: ['title'],
     title: 'TransmissionUpdate'
 } as const;
 
