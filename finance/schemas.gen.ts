@@ -47,6 +47,51 @@ export const CARGO_STATUS_ACCOUNTANTSchema = {
     title: 'CARGO_STATUS_ACCOUNTANT'
 } as const;
 
+export const CalculatedUserDataSchema = {
+    properties: {
+        user_id: {
+            type: 'string',
+            format: 'uuid',
+            title: 'User Id'
+        },
+        balance: {
+            type: 'number',
+            title: 'Balance'
+        },
+        total_amount: {
+            type: 'number',
+            title: 'Total Amount'
+        },
+        paid_amount: {
+            type: 'number',
+            title: 'Paid Amount'
+        },
+        cargo_count: {
+            type: 'integer',
+            title: 'Cargo Count'
+        },
+        not_paid_cargo_count: {
+            type: 'integer',
+            title: 'Not Paid Cargo Count'
+        },
+        left_to_pay_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Left To Pay Amount',
+            default: '0.00'
+        }
+    },
+    type: 'object',
+    required: ['user_id', 'balance', 'total_amount', 'paid_amount', 'cargo_count', 'not_paid_cargo_count'],
+    title: 'CalculatedUserData'
+} as const;
+
 export const CarBrandSchemaSchema = {
     properties: {
         id: {
@@ -342,6 +387,18 @@ export const CargoSchemaSchema = {
                 }
             ]
         },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -369,6 +426,18 @@ export const CargoSchemaSchema = {
             ],
             title: 'Left To Pay Amount',
             default: '0.00'
+        },
+        is_auction_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Auction Paid',
+            default: false
         },
         status_list: {
             anyOf: [
@@ -568,6 +637,18 @@ export const CargoUpdateSchemaSchema = {
                     type: 'null'
                 }
             ]
+        },
+        is_archived: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Archived',
+            default: false
         }
     },
     type: 'object',

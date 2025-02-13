@@ -15,6 +15,16 @@ export type CARGO_STATUS = 'accountant_tariff_approved' | 'payment_auction_succe
 
 export type CARGO_STATUS_ACCOUNTANT = 'accountant_payment_approved';
 
+export type CalculatedUserData = {
+    user_id: string;
+    balance: number;
+    total_amount: number;
+    paid_amount: number;
+    cargo_count: number;
+    not_paid_cargo_count: number;
+    left_to_pay_amount?: (number | null);
+};
+
 export type CarBrandSchema = {
     id: number;
     title: string;
@@ -54,9 +64,11 @@ export type CargoSchema = {
     total_amount?: (number | null);
     paid_amount?: (number | null);
     status?: (CARGO_STATUS_ACCOUNTANT | null);
+    is_archived?: (boolean | null);
     id: number;
     dealer_id?: (string | null);
     left_to_pay_amount?: (number | null);
+    is_auction_paid?: (boolean | null);
     status_list?: (Array<CARGO_STATUS> | null);
 };
 
@@ -76,6 +88,7 @@ export type CargoUpdateSchema = {
     total_amount?: (number | null);
     paid_amount?: (number | null);
     status?: (CARGO_STATUS_ACCOUNTANT | null);
+    is_archived?: (boolean | null);
 };
 
 export type HTTPValidationError = {
@@ -183,15 +196,15 @@ export type GetUserBalanceApiV1UserBalanceGetResponse = (UserBalance);
 
 export type GetUserBalanceApiV1UserBalanceGetError = (HTTPValidationError);
 
-export type GetUserBalanceApiV1UserBalanceUsersBalancesGetData = {
+export type GetUserBalanceApiV1UserBalanceBalancesGetData = {
     query?: {
         user_ids?: Array<(string)>;
     };
 };
 
-export type GetUserBalanceApiV1UserBalanceUsersBalancesGetResponse = (Array<UserBalance>);
+export type GetUserBalanceApiV1UserBalanceBalancesGetResponse = (Array<CalculatedUserData>);
 
-export type GetUserBalanceApiV1UserBalanceUsersBalancesGetError = (HTTPValidationError);
+export type GetUserBalanceApiV1UserBalanceBalancesGetError = (HTTPValidationError);
 
 export type GetUserBalanceApiV1UserBalanceUserIdGetData = {
     path: {
@@ -276,6 +289,7 @@ export type GetSingleTransactionApiV1TransactionsTransactionIdGetError = (HTTPVa
 
 export type GetAllPaymentsApiV1PaymentsAccountantGetData = {
     query?: {
+        page?: number;
         status?: PAYMENT_STATUS;
         user_id?: string;
     };
