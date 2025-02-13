@@ -85,6 +85,39 @@ export const AdminUserInfoSchema = {
     title: 'AdminUserInfo'
 } as const;
 
+export const AuthChangePasswordSchema = {
+    properties: {
+        old_password: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Old Password'
+        },
+        new_password: {
+            type: 'string',
+            title: 'New Password'
+        },
+        confirm_password: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Confirm Password'
+        }
+    },
+    type: 'object',
+    title: 'AuthChangePassword'
+} as const;
+
 export const CitySchema = {
     properties: {
         title: {
@@ -379,6 +412,18 @@ export const PaginationSchema_UserFinanceResponse_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[UserFinanceResponse]'
+} as const;
+
+export const RefreshTokenRequestSchema = {
+    properties: {
+        refresh_token: {
+            type: 'string',
+            title: 'Refresh Token'
+        }
+    },
+    type: 'object',
+    required: ['refresh_token'],
+    title: 'RefreshTokenRequest'
 } as const;
 
 export const SignInUserInfoSchema = {

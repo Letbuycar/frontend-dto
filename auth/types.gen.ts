@@ -10,6 +10,12 @@ export type AdminUserInfo = {
     role?: (UserRole | null);
 };
 
+export type AuthChangePassword = {
+    old_password?: (string | null);
+    new_password?: string;
+    confirm_password?: (string | null);
+};
+
 export type City = {
     title?: string;
     is_active?: (boolean | null);
@@ -76,6 +82,10 @@ export type PaginationSchema_UserFinanceResponse_ = {
     page: number;
     total_pages: number;
     items: Array<UserFinanceResponse>;
+};
+
+export type RefreshTokenRequest = {
+    refresh_token: string;
 };
 
 export type SignInUserInfo = {
@@ -201,6 +211,22 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 
 export type GetMeApiV1AuthMeGetError = unknown;
 
+export type SigninUserApiV1AuthRefreshTokenPostData = {
+    body: RefreshTokenRequest;
+};
+
+export type SigninUserApiV1AuthRefreshTokenPostResponse = (unknown);
+
+export type SigninUserApiV1AuthRefreshTokenPostError = (HTTPValidationError);
+
+export type GetBrokersApiV1AuthChangePasswordGetData = {
+    body: AuthChangePassword;
+};
+
+export type GetBrokersApiV1AuthChangePasswordGetResponse = (unknown);
+
+export type GetBrokersApiV1AuthChangePasswordGetError = (HTTPValidationError);
+
 export type AdminGetUsersApiV1UsersGetData = {
     query?: {
         is_debt?: boolean;
@@ -221,16 +247,6 @@ export type CreateUserApiV1UsersPostData = {
 export type CreateUserApiV1UsersPostResponse = (unknown);
 
 export type CreateUserApiV1UsersPostError = (HTTPValidationError);
-
-export type AdminGetUserApiV1UsersUserIdGetData = {
-    path: {
-        user_id: string;
-    };
-};
-
-export type AdminGetUserApiV1UsersUserIdGetResponse = (UserFinanceResponse);
-
-export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
 export type ChangeUserApiV1UsersChangeUserIdPatchData = {
     body?: entities__users__schemas__UserUpdate;
@@ -253,6 +269,31 @@ export type GetBrokersApiV1UsersBrokersGetData = {
 export type GetBrokersApiV1UsersBrokersGetResponse = (PaginationSchema_AdminUserInfo_);
 
 export type GetBrokersApiV1UsersBrokersGetError = (HTTPValidationError);
+
+export type GetRandomStaffApiV1UsersRandomStaffGetResponse = (unknown);
+
+export type GetRandomStaffApiV1UsersRandomStaffGetError = unknown;
+
+export type AdminGetUserApiV1UsersUserIdGetData = {
+    path: {
+        user_id: string;
+    };
+};
+
+export type AdminGetUserApiV1UsersUserIdGetResponse = (UserFinanceResponse);
+
+export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
+
+export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostData = {
+    body: AuthChangePassword;
+    path: {
+        user_id: string;
+    };
+};
+
+export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostResponse = (unknown);
+
+export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostError = (HTTPValidationError);
 
 export type ReadCountriesApiV1LocationCountriesGetData = {
     headers?: {
