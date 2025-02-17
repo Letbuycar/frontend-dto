@@ -342,7 +342,7 @@ export type GetMyPaymentsApiV1PaymentsDealerGetData = {
     };
 };
 
-export type GetMyPaymentsApiV1PaymentsDealerGetResponse = (Payment);
+export type GetMyPaymentsApiV1PaymentsDealerGetResponse = (PaginationSchema_Payment_);
 
 export type GetMyPaymentsApiV1PaymentsDealerGetError = (HTTPValidationError);
 
