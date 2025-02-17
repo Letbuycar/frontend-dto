@@ -182,6 +182,7 @@ export type Cargo = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
 };
 
 export type CargoAccountant = {
@@ -232,6 +233,7 @@ export type CargoAccountant = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);
@@ -299,6 +301,7 @@ export type CargoAdmin = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
 };
 
 export type CargoAdminCreate = {
@@ -569,6 +572,7 @@ export type CargoForInvoiceSchema = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
     cost_dealer_add_buy?: (number | null);
     cost_dealer_add_service?: (number | null);
     invoice_name?: (string | null);
@@ -628,6 +632,7 @@ export type CargoLogistician = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
     container_number?: (string | null);
@@ -704,6 +709,7 @@ export type CargoManager = {
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
     duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
     total_amount?: (number | null);
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);

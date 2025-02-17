@@ -1322,6 +1322,17 @@ export const CargoSchema = {
                 }
             ],
             title: 'Duties Invoice File Id'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         }
     },
     type: 'object',
@@ -1843,6 +1854,17 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Duties Invoice File Id'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         },
         total_amount: {
             anyOf: [
@@ -2518,6 +2540,17 @@ export const CargoAdminSchema = {
                 }
             ],
             title: 'Duties Invoice File Id'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         }
     },
     type: 'object',
@@ -5292,6 +5325,17 @@ export const CargoForInvoiceSchemaSchema = {
             ],
             title: 'Duties Invoice File Id'
         },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
+        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -5916,6 +5960,17 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Duties Invoice File Id'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         },
         date_arived_to_storage: {
             anyOf: [
@@ -6705,6 +6760,17 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Duties Invoice File Id'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
         },
         total_amount: {
             anyOf: [
