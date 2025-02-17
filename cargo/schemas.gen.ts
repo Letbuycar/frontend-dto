@@ -1311,6 +1311,17 @@ export const CargoSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
         }
     },
     type: 'object',
@@ -1821,6 +1832,17 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
         },
         total_amount: {
             anyOf: [
@@ -2485,6 +2507,17 @@ export const CargoAdminSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
         }
     },
     type: 'object',
@@ -5248,6 +5281,17 @@ export const CargoForInvoiceSchemaSchema = {
             ],
             title: 'Port Photos Link'
         },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
+        },
         cost_dealer_add_buy: {
             anyOf: [
                 {
@@ -5861,6 +5905,17 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
         },
         date_arived_to_storage: {
             anyOf: [
@@ -6639,6 +6694,17 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Port Photos Link'
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
         },
         total_amount: {
             anyOf: [
