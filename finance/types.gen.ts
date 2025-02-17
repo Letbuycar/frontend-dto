@@ -336,8 +336,9 @@ export type CreatePaymentApiV1PaymentsDealerPostResponse = (Payment);
 export type CreatePaymentApiV1PaymentsDealerPostError = (HTTPValidationError);
 
 export type GetMyPaymentsApiV1PaymentsDealerGetData = {
-    query: {
-        token: string;
+    query?: {
+        page?: number;
+        status?: PAYMENT_STATUS;
     };
 };
 

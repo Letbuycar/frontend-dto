@@ -148,7 +148,7 @@ export const createPaymentApiV1PaymentsDealerPost = <ThrowOnError extends boolea
 /**
  * Get My Payments
  */
-export const getMyPaymentsApiV1PaymentsDealerGet = <ThrowOnError extends boolean = false>(options: Options<GetMyPaymentsApiV1PaymentsDealerGetData, ThrowOnError>) => {
+export const getMyPaymentsApiV1PaymentsDealerGet = <ThrowOnError extends boolean = false>(options?: Options<GetMyPaymentsApiV1PaymentsDealerGetData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetMyPaymentsApiV1PaymentsDealerGetResponse, GetMyPaymentsApiV1PaymentsDealerGetError, ThrowOnError>({
         ...options,
         url: '/api/v1/payments/dealer/'
