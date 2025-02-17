@@ -1333,6 +1333,30 @@ export const CargoSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
         }
     },
     type: 'object',
@@ -1865,6 +1889,30 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
         },
         total_amount: {
             anyOf: [
@@ -3874,6 +3922,30 @@ export const CargoBrokerSchema = {
                     type: 'null'
                 }
             ]
+        },
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
         }
     },
     type: 'object',
@@ -4629,6 +4701,30 @@ export const CargoDealerSchema = {
             ],
             title: 'Port Photos Link'
         },
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
         duties_amount: {
             anyOf: [
                 {
@@ -5335,6 +5431,30 @@ export const CargoForInvoiceSchemaSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        date_arived_to_storage: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
         },
         cost_dealer_add_buy: {
             anyOf: [
