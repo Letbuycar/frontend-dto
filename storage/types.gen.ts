@@ -8,6 +8,10 @@ export type Body_upload_file_api_v1_images__vin_code___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_file_api_v1_port_images__cargo_id___post = {
+    file: (Blob | File);
+};
+
 export type Body_upload_file_container_api_v1_containers__post = {
     file: (Blob | File);
 };
@@ -29,6 +33,10 @@ export type Body_upload_multiple_files_api_v1_cargo_docs__cargo_id__multiple__po
 };
 
 export type Body_upload_multiple_files_api_v1_images__vin_code__multiple__post = {
+    files: Array<((Blob | File))>;
+};
+
+export type Body_upload_multiple_files_api_v1_port_images__cargo_id__multiple__post = {
     files: Array<((Blob | File))>;
 };
 
@@ -258,6 +266,70 @@ export type GetFileContainerApiV1ContainersFilenameGetData = {
 export type GetFileContainerApiV1ContainersFilenameGetResponse = (unknown);
 
 export type GetFileContainerApiV1ContainersFilenameGetError = (HTTPValidationError);
+
+export type UploadFileApiV1PortImagesCargoIdPostData = {
+    body: Body_upload_file_api_v1_port_images__cargo_id___post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadFileApiV1PortImagesCargoIdPostResponse = (ImageUploadResponse);
+
+export type UploadFileApiV1PortImagesCargoIdPostError = (HTTPValidationError);
+
+export type GetFilesApiV1PortImagesCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetFilesApiV1PortImagesCargoIdGetResponse = (Array<(string)>);
+
+export type GetFilesApiV1PortImagesCargoIdGetError = (HTTPValidationError);
+
+export type UploadMultipleFilesApiV1PortImagesCargoIdMultiplePostData = {
+    body: Body_upload_multiple_files_api_v1_port_images__cargo_id__multiple__post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadMultipleFilesApiV1PortImagesCargoIdMultiplePostResponse = (MultiImageUploadResponse);
+
+export type UploadMultipleFilesApiV1PortImagesCargoIdMultiplePostError = (HTTPValidationError);
+
+export type GetDownloadZipApiV1PortImagesDownloadZipCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetDownloadZipApiV1PortImagesDownloadZipCargoIdGetResponse = (unknown);
+
+export type GetDownloadZipApiV1PortImagesDownloadZipCargoIdGetError = (HTTPValidationError);
+
+export type GetFileApiV1PortImagesCargoIdFilenameGetData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type GetFileApiV1PortImagesCargoIdFilenameGetResponse = (unknown);
+
+export type GetFileApiV1PortImagesCargoIdFilenameGetError = (HTTPValidationError);
+
+export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteResponse = (unknown);
+
+export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
