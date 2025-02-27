@@ -540,6 +540,64 @@ export type CargoDocsAccess = {
     doc_type: DOCS_TYPE;
 };
 
+export type CargoExpeditor = {
+    transfer_certificate?: (string | null);
+    vin_code?: (string | null);
+    year?: (number | null);
+    carrier_title?: (string | null);
+    ship_title?: (string | null);
+    booking_number?: (string | null);
+    date_to_shipment?: (string | null);
+    date_arrive_shipment?: (string | null);
+    is_closed_location?: (boolean | null);
+    is_doc_change?: (boolean | null);
+    cargo_type?: (CARGO_TYPE | null);
+    participent_number?: (number | null);
+    lot_number?: (number | null);
+    is_photos?: (boolean | null);
+    dealer_id?: (string | null);
+    car_brand_id?: (number | null);
+    car_model_id?: (number | null);
+    container_id?: (number | null);
+    port_from_id?: (number | null);
+    port_to_id?: (number | null);
+    fuel_type_id?: (number | null);
+    engine_volume_id?: (number | null);
+    body_type_id?: (number | null);
+    country_id?: (number | null);
+    auction_id?: (number | null);
+    transmission_id?: (number | null);
+    location_id?: (number | null);
+    date_buy?: (string | null);
+    is_archived?: (boolean | null);
+    id: number;
+    is_active?: (boolean | null);
+    updated_on?: (string | null);
+    created_on?: (string | null);
+    car_brand?: (CarBrand | null);
+    car_model?: (CarModel | null);
+    container?: (Container | null);
+    port_from?: (PortFrom | null);
+    port_to?: (PortTo | null);
+    fuel_type?: (FuelType | null);
+    engine_volume?: (EngineVolume | null);
+    body_type?: (BodyType | null);
+    country?: (Country | null);
+    auction?: (Auction | null);
+    transmission?: (Transmission | null);
+    location?: (LocationFrom | null);
+    port_photos_link?: (string | null);
+    duties_invoice_file_id?: (string | null);
+    duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+};
+
+export type CargoExpeditorUpdate = {
+    transfer_certificate?: (string | null);
+};
+
 export type CargoForInvoiceSchema = {
     vin_code?: (string | null);
     year?: (number | null);
@@ -892,7 +950,7 @@ export type CountryUpdate = {
     is_active?: (boolean | null);
 };
 
-export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment' | 'container';
+export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment' | 'container' | 'port-images';
 
 export type EngineVolume = {
     title?: (string | null);
@@ -1072,6 +1130,13 @@ export type PaginationSchema_CargoDealer_ = {
     page: number;
     total_pages: number;
     items: Array<CargoDealer>;
+};
+
+export type PaginationSchema_CargoExpeditor_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<CargoExpeditor>;
 };
 
 export type PaginationSchema_CargoLogistician_ = {
@@ -2581,6 +2646,54 @@ export type UpdateExistingCargoRobotApiV1CargoRobotCargoCargoIdGetError = (HTTPV
 export type SendNotificaitonApiV1CargoRobotNotificationGetResponse = (unknown);
 
 export type SendNotificaitonApiV1CargoRobotNotificationGetError = unknown;
+
+export type ReadCargosExpeditorApiV1CargoExpeditorGetData = {
+    query?: {
+        car_brand_id?: number;
+        dealer_id?: string;
+        is_archived?: boolean;
+        page?: number;
+        search?: string;
+        sort?: string;
+        sort_by?: string;
+        status?: CARGO_STATUS;
+    };
+};
+
+export type ReadCargosExpeditorApiV1CargoExpeditorGetResponse = (PaginationSchema_CargoExpeditor_);
+
+export type ReadCargosExpeditorApiV1CargoExpeditorGetError = (HTTPValidationError);
+
+export type ReadCargoExpeditorApiV1CargoExpeditorCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type ReadCargoExpeditorApiV1CargoExpeditorCargoIdGetResponse = (CargoExpeditor);
+
+export type ReadCargoExpeditorApiV1CargoExpeditorCargoIdGetError = (HTTPValidationError);
+
+export type UpdateExistingCargoExpeditorApiV1CargoExpeditorCargoIdPutData = {
+    body: CargoExpeditorUpdate;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UpdateExistingCargoExpeditorApiV1CargoExpeditorCargoIdPutResponse = (CargoExpeditor);
+
+export type UpdateExistingCargoExpeditorApiV1CargoExpeditorCargoIdPutError = (HTTPValidationError);
+
+export type ReadCargoByVinExpeditorApiV1CargoExpeditorVinCargoVinGetData = {
+    path: {
+        cargo_vin: string;
+    };
+};
+
+export type ReadCargoByVinExpeditorApiV1CargoExpeditorVinCargoVinGetResponse = (CargoExpeditor);
+
+export type ReadCargoByVinExpeditorApiV1CargoExpeditorVinCargoVinGetError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
