@@ -1334,6 +1334,21 @@ export const CargoSchema = {
             ],
             title: 'Duties Receipt File Id'
         },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
+        },
         date_arived_to_storage: {
             anyOf: [
                 {
@@ -1889,6 +1904,21 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         },
         date_arived_to_storage: {
             anyOf: [
@@ -2599,6 +2629,21 @@ export const CargoAdminSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         }
     },
     type: 'object',
@@ -5492,6 +5537,21 @@ export const CargoForInvoiceSchemaSchema = {
             ],
             title: 'Duties Receipt File Id'
         },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
+        },
         date_arived_to_storage: {
             anyOf: [
                 {
@@ -6151,6 +6211,21 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         },
         date_arived_to_storage: {
             anyOf: [
@@ -6951,6 +7026,21 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         },
         total_amount: {
             anyOf: [
