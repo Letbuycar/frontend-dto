@@ -4,6 +4,14 @@ export type Body_upload_file_api_v1_cargo_docs__cargo_id___post = {
     file: (Blob | File);
 };
 
+export type Body_upload_file_api_v1_certificates__cargo_id___post = {
+    file: (Blob | File);
+};
+
+export type Body_upload_file_api_v1_delivery__cargo_id___post = {
+    file: (Blob | File);
+};
+
 export type Body_upload_file_api_v1_images__vin_code___post = {
     file: (Blob | File);
 };
@@ -29,6 +37,14 @@ export type Body_upload_file_payment_api_v1_payments__post = {
 };
 
 export type Body_upload_multiple_files_api_v1_cargo_docs__cargo_id__multiple__post = {
+    files: Array<((Blob | File))>;
+};
+
+export type Body_upload_multiple_files_api_v1_certificates__cargo_id__multiple__post = {
+    files: Array<((Blob | File))>;
+};
+
+export type Body_upload_multiple_files_api_v1_delivery__cargo_id__multiple__post = {
     files: Array<((Blob | File))>;
 };
 
@@ -330,6 +346,114 @@ export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteData = {
 export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteResponse = (unknown);
 
 export type DeleteFileApiV1PortImagesCargoIdFilenameDeleteError = (HTTPValidationError);
+
+export type UploadFileApiV1CertificatesCargoIdPostData = {
+    body: Body_upload_file_api_v1_certificates__cargo_id___post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadFileApiV1CertificatesCargoIdPostResponse = (ImageUploadResponse);
+
+export type UploadFileApiV1CertificatesCargoIdPostError = (HTTPValidationError);
+
+export type GetFilesApiV1CertificatesCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetFilesApiV1CertificatesCargoIdGetResponse = (Array<(string)>);
+
+export type GetFilesApiV1CertificatesCargoIdGetError = (HTTPValidationError);
+
+export type UploadMultipleFilesApiV1CertificatesCargoIdMultiplePostData = {
+    body: Body_upload_multiple_files_api_v1_certificates__cargo_id__multiple__post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadMultipleFilesApiV1CertificatesCargoIdMultiplePostResponse = (MultiImageUploadResponse);
+
+export type UploadMultipleFilesApiV1CertificatesCargoIdMultiplePostError = (HTTPValidationError);
+
+export type GetFileApiV1CertificatesCargoIdFilenameGetData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type GetFileApiV1CertificatesCargoIdFilenameGetResponse = (unknown);
+
+export type GetFileApiV1CertificatesCargoIdFilenameGetError = (HTTPValidationError);
+
+export type DeleteFileApiV1CertificatesCargoIdFilenameDeleteData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type DeleteFileApiV1CertificatesCargoIdFilenameDeleteResponse = (unknown);
+
+export type DeleteFileApiV1CertificatesCargoIdFilenameDeleteError = (HTTPValidationError);
+
+export type UploadFileApiV1DeliveryCargoIdPostData = {
+    body: Body_upload_file_api_v1_delivery__cargo_id___post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadFileApiV1DeliveryCargoIdPostResponse = (ImageUploadResponse);
+
+export type UploadFileApiV1DeliveryCargoIdPostError = (HTTPValidationError);
+
+export type GetFilesApiV1DeliveryCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetFilesApiV1DeliveryCargoIdGetResponse = (Array<(string)>);
+
+export type GetFilesApiV1DeliveryCargoIdGetError = (HTTPValidationError);
+
+export type UploadMultipleFilesApiV1DeliveryCargoIdMultiplePostData = {
+    body: Body_upload_multiple_files_api_v1_delivery__cargo_id__multiple__post;
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type UploadMultipleFilesApiV1DeliveryCargoIdMultiplePostResponse = (MultiImageUploadResponse);
+
+export type UploadMultipleFilesApiV1DeliveryCargoIdMultiplePostError = (HTTPValidationError);
+
+export type GetFileApiV1DeliveryCargoIdFilenameGetData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type GetFileApiV1DeliveryCargoIdFilenameGetResponse = (unknown);
+
+export type GetFileApiV1DeliveryCargoIdFilenameGetError = (HTTPValidationError);
+
+export type DeleteFileApiV1DeliveryCargoIdFilenameDeleteData = {
+    path: {
+        cargo_id: number;
+        filename: string;
+    };
+};
+
+export type DeleteFileApiV1DeliveryCargoIdFilenameDeleteResponse = (unknown);
+
+export type DeleteFileApiV1DeliveryCargoIdFilenameDeleteError = (HTTPValidationError);
 
 export type RootGetResponse = (unknown);
 
