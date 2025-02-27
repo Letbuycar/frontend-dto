@@ -14,18 +14,6 @@ export const AdminUserInfoSchema = {
             ],
             title: 'Id'
         },
-        email: {
-            anyOf: [
-                {
-                    type: 'string',
-                    format: 'email'
-                },
-                {
-                    type: 'null'
-                }
-            ],
-            title: 'Email'
-        },
         first_name: {
             anyOf: [
                 {
@@ -47,6 +35,18 @@ export const AdminUserInfoSchema = {
                 }
             ],
             title: 'Last Name'
+        },
+        email: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'email'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Email'
         },
         phone: {
             anyOf: [
@@ -416,14 +416,59 @@ export const PaginationSchema_UserFinanceResponse_Schema = {
 
 export const RefreshTokenRequestSchema = {
     properties: {
+        email: {
+            type: 'string',
+            title: 'Email'
+        },
         refresh_token: {
             type: 'string',
             title: 'Refresh Token'
         }
     },
     type: 'object',
-    required: ['refresh_token'],
+    required: ['email', 'refresh_token'],
     title: 'RefreshTokenRequest'
+} as const;
+
+export const ShortUserInfoSchema = {
+    properties: {
+        id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'string',
+                    format: 'uuid'
+                }
+            ],
+            title: 'Id'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name'
+        }
+    },
+    type: 'object',
+    title: 'ShortUserInfo'
 } as const;
 
 export const SignInUserInfoSchema = {
@@ -833,7 +878,7 @@ export const UserInfoSchema = {
 
 export const UserRoleSchema = {
     type: 'string',
-    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer', 'Robot'],
+    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Expeditor', 'Customer', 'Robot'],
     title: 'UserRole'
 } as const;
 

@@ -2,9 +2,9 @@
 
 export type AdminUserInfo = {
     id?: (string);
-    email?: (string | null);
     first_name?: (string | null);
     last_name?: (string | null);
+    email?: (string | null);
     phone?: (string | null);
     phone_number?: (string | null);
     role?: (UserRole | null);
@@ -85,7 +85,14 @@ export type PaginationSchema_UserFinanceResponse_ = {
 };
 
 export type RefreshTokenRequest = {
+    email: string;
     refresh_token: string;
+};
+
+export type ShortUserInfo = {
+    id?: (string);
+    first_name?: (string | null);
+    last_name?: (string | null);
 };
 
 export type SignInUserInfo = {
@@ -143,7 +150,7 @@ export type UserInfo = {
     role?: (UserRole | null);
 };
 
-export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer' | 'Robot';
+export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Expeditor' | 'Customer' | 'Robot';
 
 export type UserSignin = {
     email: string;
@@ -211,13 +218,13 @@ export type GetMeApiV1AuthMeGetResponse = (UserInfo);
 
 export type GetMeApiV1AuthMeGetError = unknown;
 
-export type SigninUserApiV1AuthRefreshTokenPostData = {
+export type RefreshTokenApiV1AuthRefreshTokenPostData = {
     body: RefreshTokenRequest;
 };
 
-export type SigninUserApiV1AuthRefreshTokenPostResponse = (unknown);
+export type RefreshTokenApiV1AuthRefreshTokenPostResponse = (unknown);
 
-export type SigninUserApiV1AuthRefreshTokenPostError = (HTTPValidationError);
+export type RefreshTokenApiV1AuthRefreshTokenPostError = (HTTPValidationError);
 
 export type GetBrokersApiV1AuthChangePasswordGetData = {
     body: AuthChangePassword;
@@ -273,6 +280,16 @@ export type GetBrokersApiV1UsersBrokersGetError = (HTTPValidationError);
 export type GetRandomStaffApiV1UsersRandomStaffGetResponse = (unknown);
 
 export type GetRandomStaffApiV1UsersRandomStaffGetError = unknown;
+
+export type GetDealersApiV1UsersDealersGetData = {
+    query?: {
+        user_ids?: Array<(string)>;
+    };
+};
+
+export type GetDealersApiV1UsersDealersGetResponse = (Array<ShortUserInfo>);
+
+export type GetDealersApiV1UsersDealersGetError = (HTTPValidationError);
 
 export type AdminGetUserApiV1UsersUserIdGetData = {
     path: {
