@@ -380,6 +380,7 @@ export type CargoAdminUpdate = {
 export type CargoBroker = {
     duties_amount?: (number | null);
     duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
     duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
@@ -438,6 +439,7 @@ export type CargoBroker = {
 export type CargoBrokerUpdate = {
     duties_amount?: (number | null);
     duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
     duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
@@ -456,6 +458,7 @@ export type CargoDealer = {
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
     duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
     duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
@@ -520,6 +523,7 @@ export type CargoDealerUpdate = {
     invoice_address?: (string | null);
     invoice_passport?: (string | null);
     duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
     duties_invoice_file_id?: (string | null);
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);

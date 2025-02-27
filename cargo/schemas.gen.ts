@@ -3366,6 +3366,21 @@ export const CargoBrokerSchema = {
             ],
             title: 'Duties Receipt File Id'
         },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
+        },
         duties_invoice_file_id: {
             anyOf: [
                 {
@@ -3978,6 +3993,21 @@ export const CargoBrokerUpdateSchema = {
             ],
             title: 'Duties Receipt File Id'
         },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
+        },
         duties_invoice_file_id: {
             anyOf: [
                 {
@@ -4153,6 +4183,21 @@ export const CargoDealerSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         },
         duties_invoice_file_id: {
             anyOf: [
@@ -4835,6 +4880,21 @@ export const CargoDealerUpdateSchema = {
                 }
             ],
             title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
         },
         duties_invoice_file_id: {
             anyOf: [
