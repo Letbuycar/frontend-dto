@@ -5653,7 +5653,7 @@ export const CargoExpeditorSchema = {
             ],
             title: 'Final Receiver Name'
         },
-        date_received: {
+        date_receive: {
             anyOf: [
                 {
                     type: 'string',
@@ -5663,7 +5663,7 @@ export const CargoExpeditorSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Date Received'
+            title: 'Date Receive'
         },
         delivery_comment: {
             anyOf: [

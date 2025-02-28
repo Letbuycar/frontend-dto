@@ -598,7 +598,7 @@ export type CargoExpeditor = {
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
     final_receiver_name?: (string | null);
-    date_received?: (string | null);
+    date_receive?: (string | null);
     delivery_comment?: (string | null);
     delivery_document_file_id?: (string | null);
 };
