@@ -3482,6 +3482,17 @@ export const CargoBrokerSchema = {
             ],
             title: 'Delivery Comment'
         },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
+        },
         date_receive: {
             anyOf: [
                 {
@@ -4109,6 +4120,17 @@ export const CargoBrokerUpdateSchema = {
             ],
             title: 'Delivery Comment'
         },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
+        },
         date_receive: {
             anyOf: [
                 {
@@ -4299,6 +4321,17 @@ export const CargoDealerSchema = {
                 }
             ],
             title: 'Delivery Comment'
+        },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
         },
         date_receive: {
             anyOf: [
@@ -4997,6 +5030,17 @@ export const CargoDealerUpdateSchema = {
             ],
             title: 'Delivery Comment'
         },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
+        },
         date_receive: {
             anyOf: [
                 {
@@ -5597,6 +5641,51 @@ export const CargoExpeditorSchema = {
                 }
             ],
             title: 'Date To Container'
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        date_received: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Received'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
         }
     },
     type: 'object',

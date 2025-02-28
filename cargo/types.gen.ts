@@ -389,6 +389,7 @@ export type CargoBroker = {
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
     status?: (CARGO_STATUS_BROKER_GET | null);
@@ -448,6 +449,7 @@ export type CargoBrokerUpdate = {
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
     port_photos_link?: (string | null);
     status?: (CARGO_STATUS_BROKER_UPDATE | null);
@@ -467,6 +469,7 @@ export type CargoDealer = {
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
@@ -532,6 +535,7 @@ export type CargoDealerUpdate = {
     is_duties_paid?: (boolean | null);
     final_receiver_name?: (string | null);
     delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
 };
 
@@ -593,6 +597,10 @@ export type CargoExpeditor = {
     duties_receipt_file_ids?: (Array<(string)> | null);
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
+    final_receiver_name?: (string | null);
+    date_received?: (string | null);
+    delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
 };
 
 export type CargoExpeditorUpdate = {
