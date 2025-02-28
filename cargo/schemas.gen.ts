@@ -2005,6 +2005,17 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Status List'
+        },
+        transfer_certificate_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Transfer Certificate File Id'
         }
     },
     type: 'object',
@@ -5025,7 +5036,7 @@ export const CargoDocsAccessSchema = {
 
 export const CargoExpeditorSchema = {
     properties: {
-        transfer_certificate: {
+        transfer_certificate_file_id: {
             anyOf: [
                 {
                     type: 'string'
@@ -5034,7 +5045,7 @@ export const CargoExpeditorSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Transfer Certificate'
+            title: 'Transfer Certificate File Id'
         },
         vin_code: {
             anyOf: [
@@ -5595,7 +5606,7 @@ export const CargoExpeditorSchema = {
 
 export const CargoExpeditorUpdateSchema = {
     properties: {
-        transfer_certificate: {
+        transfer_certificate_file_id: {
             anyOf: [
                 {
                     type: 'string'
@@ -5604,7 +5615,7 @@ export const CargoExpeditorUpdateSchema = {
                     type: 'null'
                 }
             ],
-            title: 'Transfer Certificate'
+            title: 'Transfer Certificate File Id'
         }
     },
     type: 'object',
@@ -7677,6 +7688,17 @@ export const CargoManagerSchema = {
             ],
             title: 'Is Auction Paid',
             default: false
+        },
+        transfer_certificate_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Transfer Certificate File Id'
         }
     },
     type: 'object',
@@ -8988,7 +9010,7 @@ export const CountryUpdateSchema = {
 
 export const DOCS_TYPESchema = {
     type: 'string',
-    enum: ['invoice', 'duty_receipt', 'cargo_docs', 'user_docs', 'payment', 'container', 'port-images'],
+    enum: ['invoice', 'duty_receipt', 'cargo_docs', 'user_docs', 'payment', 'container', 'port-images', 'certificate', 'delivery'],
     title: 'DOCS_TYPE'
 } as const;
 

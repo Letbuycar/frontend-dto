@@ -245,6 +245,7 @@ export type CargoAccountant = {
     left_to_pay_amount?: (number | null);
     is_auction_paid?: (boolean | null);
     status_list?: (Array<(string)> | null);
+    transfer_certificate_file_id?: (string | null);
 };
 
 export type CargoAccountantUpdate = {
@@ -541,7 +542,7 @@ export type CargoDocsAccess = {
 };
 
 export type CargoExpeditor = {
-    transfer_certificate?: (string | null);
+    transfer_certificate_file_id?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -595,7 +596,7 @@ export type CargoExpeditor = {
 };
 
 export type CargoExpeditorUpdate = {
-    transfer_certificate?: (string | null);
+    transfer_certificate_file_id?: (string | null);
 };
 
 export type CargoForInvoiceSchema = {
@@ -792,6 +793,7 @@ export type CargoManager = {
     paid_amount?: (number | null);
     left_to_pay_amount?: (number | null);
     is_auction_paid?: (boolean | null);
+    transfer_certificate_file_id?: (string | null);
 };
 
 export type CargoManagerCreate = {
@@ -950,7 +952,7 @@ export type CountryUpdate = {
     is_active?: (boolean | null);
 };
 
-export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment' | 'container' | 'port-images';
+export type DOCS_TYPE = 'invoice' | 'duty_receipt' | 'cargo_docs' | 'user_docs' | 'payment' | 'container' | 'port-images' | 'certificate' | 'delivery';
 
 export type EngineVolume = {
     title?: (string | null);
