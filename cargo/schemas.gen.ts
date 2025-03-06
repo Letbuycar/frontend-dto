@@ -926,6 +926,18 @@ export const CargoSchema = {
             title: 'Is Doc Change',
             default: false
         },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
+            default: false
+        },
         cargo_type: {
             anyOf: [
                 {
@@ -1511,6 +1523,18 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -2174,6 +2198,18 @@ export const CargoAdminSchema = {
             title: 'Is Doc Change',
             default: false
         },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
+            default: false
+        },
         cargo_type: {
             anyOf: [
                 {
@@ -2768,6 +2804,18 @@ export const CargoAdminCreateSchema = {
             title: 'Is Doc Change',
             default: false
         },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
+            default: false
+        },
         cargo_type: {
             anyOf: [
                 {
@@ -3151,6 +3199,18 @@ export const CargoAdminUpdateSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -3640,6 +3700,18 @@ export const CargoBrokerSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -4345,6 +4417,17 @@ export const CargoDealerSchema = {
             ],
             title: 'Date Receive'
         },
+        complaint_text: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Complaint Text'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -4447,6 +4530,18 @@ export const CargoDealerSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -5052,6 +5147,17 @@ export const CargoDealerUpdateSchema = {
                 }
             ],
             title: 'Date Receive'
+        },
+        complaint_text: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Complaint Text'
         }
     },
     type: 'object',
@@ -5193,6 +5299,18 @@ export const CargoExpeditorSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -5815,6 +5933,18 @@ export const CargoForInvoiceSchemaSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -6490,6 +6620,18 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -7356,6 +7498,18 @@ export const CargoManagerSchema = {
             title: 'Is Doc Change',
             default: false
         },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
+            default: false
+        },
         cargo_type: {
             anyOf: [
                 {
@@ -7788,6 +7942,17 @@ export const CargoManagerSchema = {
                 }
             ],
             title: 'Transfer Certificate File Id'
+        },
+        complaint_text: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Complaint Text'
         }
     },
     type: 'object',
@@ -7899,6 +8064,18 @@ export const CargoManagerCreateSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {
@@ -8249,6 +8426,18 @@ export const CargoManagerUpdateSchema = {
                 }
             ],
             title: 'Is Doc Change',
+            default: false
+        },
+        is_insured: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Insured',
             default: false
         },
         cargo_type: {

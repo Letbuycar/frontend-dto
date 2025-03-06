@@ -145,6 +145,7 @@ export type Cargo = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -201,6 +202,7 @@ export type CargoAccountant = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -266,6 +268,7 @@ export type CargoAdmin = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -322,6 +325,7 @@ export type CargoAdminCreate = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -358,6 +362,7 @@ export type CargoAdminUpdate = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -403,6 +408,7 @@ export type CargoBroker = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -471,6 +477,7 @@ export type CargoDealer = {
     delivery_comment?: (string | null);
     delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
+    complaint_text?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -480,6 +487,7 @@ export type CargoDealer = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -537,6 +545,7 @@ export type CargoDealerUpdate = {
     delivery_comment?: (string | null);
     delivery_document_file_id?: (string | null);
     date_receive?: (string | null);
+    complaint_text?: (string | null);
 };
 
 export type CargoDocsAccess = {
@@ -556,6 +565,7 @@ export type CargoExpeditor = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -617,6 +627,7 @@ export type CargoForInvoiceSchema = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -680,6 +691,7 @@ export type CargoLogistician = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -763,6 +775,7 @@ export type CargoManager = {
     year?: (number | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -802,6 +815,7 @@ export type CargoManager = {
     left_to_pay_amount?: (number | null);
     is_auction_paid?: (boolean | null);
     transfer_certificate_file_id?: (string | null);
+    complaint_text?: (string | null);
 };
 
 export type CargoManagerCreate = {
@@ -814,6 +828,7 @@ export type CargoManagerCreate = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
@@ -847,6 +862,7 @@ export type CargoManagerUpdate = {
     date_arrive_shipment?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
+    is_insured?: (boolean | null);
     cargo_type?: (CARGO_TYPE | null);
     participent_number?: (number | null);
     lot_number?: (number | null);
