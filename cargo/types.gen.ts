@@ -85,7 +85,7 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
-export type CARGO_STATUS = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'success';
+export type CARGO_STATUS = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'delivered_to_customer' | 'success';
 
 export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc' | 'success';
 
