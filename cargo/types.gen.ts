@@ -195,6 +195,7 @@ export type CargoAccountant = {
     vin_code?: (string | null);
     dealer_id?: (string | null);
     sublot?: (number | null);
+    cost?: (number | null);
     year?: (number | null);
     carrier_title?: (string | null);
     ship_title?: (string | null);
@@ -257,6 +258,7 @@ export type CargoAccountantUpdate = {
     vin_code?: string;
     dealer_id?: string;
     sublot?: (number | null);
+    cost?: (number | null);
     is_archived?: (boolean | null);
 };
 
@@ -782,6 +784,7 @@ export type CargoManager = {
     vin_code?: (string | null);
     dealer_id?: (string | null);
     sublot?: (number | null);
+    cost?: (number | null);
     year?: (number | null);
     date_success?: (string | null);
     is_closed_location?: (boolean | null);
@@ -862,6 +865,7 @@ export type CargoManagerCreate = {
     is_archived?: (boolean | null);
     manager_id?: (string | null);
     sublot?: (number | null);
+    cost?: (number | null);
 };
 
 export type CargoManagerUpdate = {
@@ -896,6 +900,7 @@ export type CargoManagerUpdate = {
     date_buy?: (string | null);
     is_archived?: (boolean | null);
     sublot?: (number | null);
+    cost?: (number | null);
     status?: (CARGO_STATUS_MANAGER | null);
 };
 

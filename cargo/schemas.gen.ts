@@ -1444,6 +1444,18 @@ export const CargoAccountantSchema = {
             title: 'Sublot',
             default: 0
         },
+        cost: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost',
+            default: 0
+        },
         year: {
             anyOf: [
                 {
@@ -2096,6 +2108,18 @@ export const CargoAccountantUpdateSchema = {
                 }
             ],
             title: 'Sublot',
+            default: 0
+        },
+        cost: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost',
             default: 0
         },
         is_archived: {
@@ -7582,6 +7606,18 @@ export const CargoManagerSchema = {
             title: 'Sublot',
             default: 0
         },
+        cost: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost',
+            default: 0
+        },
         year: {
             anyOf: [
                 {
@@ -8460,6 +8496,18 @@ export const CargoManagerCreateSchema = {
             ],
             title: 'Sublot',
             default: 0
+        },
+        cost: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost',
+            default: 0
         }
     },
     type: 'object',
@@ -8821,6 +8869,18 @@ export const CargoManagerUpdateSchema = {
                 }
             ],
             title: 'Sublot',
+            default: 0
+        },
+        cost: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost',
             default: 0
         },
         status: {
