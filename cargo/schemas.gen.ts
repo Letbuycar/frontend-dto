@@ -902,6 +902,18 @@ export const CargoSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -1500,6 +1512,18 @@ export const CargoAccountantSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [
@@ -2174,6 +2198,18 @@ export const CargoAdminSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -2780,6 +2816,18 @@ export const CargoAdminCreateSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -3176,6 +3224,18 @@ export const CargoAdminUpdateSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [
@@ -3677,6 +3737,18 @@ export const CargoBrokerSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [
@@ -4508,6 +4580,18 @@ export const CargoDealerSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -5277,6 +5361,18 @@ export const CargoExpeditorSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -5910,6 +6006,18 @@ export const CargoForInvoiceSchemaSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [
@@ -6597,6 +6705,18 @@ export const CargoLogisticianSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [
@@ -7474,6 +7594,18 @@ export const CargoManagerSchema = {
             title: 'Year',
             default: 2024
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -8042,6 +8174,18 @@ export const CargoManagerCreateSchema = {
             ],
             title: 'Date Arrive Shipment'
         },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
+        },
         is_closed_location: {
             anyOf: [
                 {
@@ -8403,6 +8547,18 @@ export const CargoManagerUpdateSchema = {
                 }
             ],
             title: 'Date Arrive Shipment'
+        },
+        date_success: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Success'
         },
         is_closed_location: {
             anyOf: [

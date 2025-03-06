@@ -143,6 +143,7 @@ export type Cargo = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -200,6 +201,7 @@ export type CargoAccountant = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -266,6 +268,7 @@ export type CargoAdmin = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -323,6 +326,7 @@ export type CargoAdminCreate = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -360,6 +364,7 @@ export type CargoAdminUpdate = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -406,6 +411,7 @@ export type CargoBroker = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -485,6 +491,7 @@ export type CargoDealer = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -563,6 +570,7 @@ export type CargoExpeditor = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -625,6 +633,7 @@ export type CargoForInvoiceSchema = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -689,6 +698,7 @@ export type CargoLogistician = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -773,6 +783,7 @@ export type CargoManager = {
     dealer_id?: (string | null);
     sublot?: (number | null);
     year?: (number | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -826,6 +837,7 @@ export type CargoManagerCreate = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -860,6 +872,7 @@ export type CargoManagerUpdate = {
     booking_number?: (string | null);
     date_to_shipment?: (string | null);
     date_arrive_shipment?: (string | null);
+    date_success?: (string | null);
     is_closed_location?: (boolean | null);
     is_doc_change?: (boolean | null);
     is_insured?: (boolean | null);
@@ -2392,6 +2405,7 @@ export type ReadCargosManagerApiV1CargoManagerGetData = {
         car_brand_id?: number;
         dealer_id?: string;
         is_archived?: boolean;
+        is_complaint?: boolean;
         page?: number;
         search?: string;
         sort?: string;
