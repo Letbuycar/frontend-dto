@@ -222,7 +222,7 @@ export type RefreshTokenApiV1AuthRefreshTokenPostData = {
     body: RefreshTokenRequest;
 };
 
-export type RefreshTokenApiV1AuthRefreshTokenPostResponse = (unknown);
+export type RefreshTokenApiV1AuthRefreshTokenPostResponse = (UserInfo);
 
 export type RefreshTokenApiV1AuthRefreshTokenPostError = (HTTPValidationError);
 
