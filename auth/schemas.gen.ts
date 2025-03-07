@@ -416,9 +416,9 @@ export const PaginationSchema_UserFinanceResponse_Schema = {
 
 export const RefreshTokenRequestSchema = {
     properties: {
-        email: {
+        user_id: {
             type: 'string',
-            title: 'Email'
+            title: 'User Id'
         },
         refresh_token: {
             type: 'string',
@@ -426,7 +426,7 @@ export const RefreshTokenRequestSchema = {
         }
     },
     type: 'object',
-    required: ['email', 'refresh_token'],
+    required: ['user_id', 'refresh_token'],
     title: 'RefreshTokenRequest'
 } as const;
 

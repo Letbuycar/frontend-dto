@@ -85,7 +85,7 @@ export type PaginationSchema_UserFinanceResponse_ = {
 };
 
 export type RefreshTokenRequest = {
-    email: string;
+    user_id: string;
     refresh_token: string;
 };
 
