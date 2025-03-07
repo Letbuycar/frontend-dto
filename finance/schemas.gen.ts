@@ -1099,7 +1099,7 @@ export const UserBalanceSchema = {
 
 export const UserRoleSchema = {
     type: 'string',
-    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer', 'Robot'],
+    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Expeditor', 'Customer', 'Robot'],
     title: 'UserRole'
 } as const;
 

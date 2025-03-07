@@ -185,7 +185,7 @@ export type UserBalance = {
     balance: number;
 };
 
-export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer' | 'Robot';
+export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Expeditor' | 'Customer' | 'Robot';
 
 export type ValidationError = {
     loc: Array<(string | number)>;
@@ -193,15 +193,9 @@ export type ValidationError = {
     type: string;
 };
 
-export type GetUserBalanceApiV1UserBalanceGetData = {
-    query: {
-        token: string;
-    };
-};
-
 export type GetUserBalanceApiV1UserBalanceGetResponse = (UserBalance);
 
-export type GetUserBalanceApiV1UserBalanceGetError = (HTTPValidationError);
+export type GetUserBalanceApiV1UserBalanceGetError = unknown;
 
 export type GetUserBalanceApiV1UserBalanceBalancesGetData = {
     query?: {
