@@ -36,6 +36,7 @@ export type CarModelSchema = {
 };
 
 export type CargoForPaymentSchema = {
+    id?: (number | null);
     vin_code?: (string | null);
     car_brand?: (CarBrandSchema | null);
     car_model?: (CarModelSchema | null);

@@ -126,6 +126,17 @@ export const CarModelSchemaSchema = {
 
 export const CargoForPaymentSchemaSchema = {
     properties: {
+        id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Id'
+        },
         vin_code: {
             anyOf: [
                 {
