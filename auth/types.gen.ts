@@ -150,6 +150,22 @@ export type UserInfo = {
     role?: (UserRole | null);
 };
 
+export type UserResponse = {
+    first_name?: (string | null);
+    last_name?: (string | null);
+    email?: string;
+    phone?: (string | null);
+    country_id?: (number | null);
+    city_id?: (number | null);
+    address?: (string | null);
+    comment?: (string | null);
+    manager_id?: (string | null);
+    role?: (UserRole | null);
+    id: string;
+    email_verified?: (boolean | null);
+    manager?: (AdminUserInfo | null);
+};
+
 export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Expeditor' | 'Customer' | 'Robot';
 
 export type UserSignin = {
@@ -251,7 +267,7 @@ export type CreateUserApiV1UsersPostData = {
     body: UserCreate;
 };
 
-export type CreateUserApiV1UsersPostResponse = (unknown);
+export type CreateUserApiV1UsersPostResponse = (UserResponse);
 
 export type CreateUserApiV1UsersPostError = (HTTPValidationError);
 
