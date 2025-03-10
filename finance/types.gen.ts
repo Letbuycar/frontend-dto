@@ -168,6 +168,8 @@ export type SettingsSchema = {
     payment_storage_account: string;
 };
 
+export type TRANSACTION_TYPE = 'payment' | 'cargo_payment' | 'refund';
+
 export type Transaction = {
     created_by_user_id: string;
     created_by_user_role: UserRole;
@@ -177,6 +179,7 @@ export type Transaction = {
     balance_after: number;
     cargo_id: (number | null);
     cargo: (CargoSchema | null);
+    transaction_type: (TRANSACTION_TYPE | null);
     updated_on: string;
     created_on: string;
 };

@@ -1027,6 +1027,12 @@ export const SettingsSchemaSchema = {
     title: 'SettingsSchema'
 } as const;
 
+export const TRANSACTION_TYPESchema = {
+    type: 'string',
+    enum: ['payment', 'cargo_payment', 'refund'],
+    title: 'TRANSACTION_TYPE'
+} as const;
+
 export const TransactionSchema = {
     properties: {
         created_by_user_id: {
@@ -1075,6 +1081,16 @@ export const TransactionSchema = {
                 }
             ]
         },
+        transaction_type: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/TRANSACTION_TYPE'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
         updated_on: {
             type: 'string',
             format: 'date-time',
@@ -1087,7 +1103,7 @@ export const TransactionSchema = {
         }
     },
     type: 'object',
-    required: ['created_by_user_id', 'created_by_user_role', 'user_id', 'amount', 'balance_before', 'balance_after', 'cargo_id', 'cargo', 'updated_on', 'created_on'],
+    required: ['created_by_user_id', 'created_by_user_role', 'user_id', 'amount', 'balance_before', 'balance_after', 'cargo_id', 'cargo', 'transaction_type', 'updated_on', 'created_on'],
     title: 'Transaction'
 } as const;
 
