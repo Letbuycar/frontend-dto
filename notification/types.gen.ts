@@ -19,7 +19,7 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
-export type NOTIFICATION_EVENT = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'no_delivery_info' | 'success';
+export type NOTIFICATION_EVENT = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'no_delivery_info' | 'delivered_to_customer' | 'success' | 'got_complaint' | 'complaint_resolved' | 'complaint_not_resolved';
 
 export type NOTIFICATION_EVENT_ACCOUNTANT = 'company_invoice_not_paid';
 
@@ -29,14 +29,21 @@ export type NOTIFICATION_SERVICE = 'cargo' | 'finance' | 'storage' | 'pdf' | 'no
 
 export type NotificationCreate = {
     cargo_id: number;
-    notification_event: NOTIFICATION_EVENT;
-    notification_service?: NOTIFICATION_SERVICE;
-    user_role: UserRole;
+    notification_event: (NOTIFICATION_EVENT | null);
+    notification_service?: (NOTIFICATION_SERVICE | null);
+    user_role?: (UserRole | null);
 };
 
 export type NotificationCreateAccountant = {
     cargo_id: number;
     notification_event: NOTIFICATION_EVENT_ACCOUNTANT;
+};
+
+export type NotificationCreateAuth = {
+    email?: (string | null);
+    title?: (string | null);
+    message?: (string | null);
+    code?: (string | null);
 };
 
 export type NotificationCreateBroker = {
@@ -46,17 +53,17 @@ export type NotificationCreateBroker = {
 
 export type NotificationSchema = {
     cargo_id: number;
-    notification_event: NOTIFICATION_EVENT;
-    notification_service?: NOTIFICATION_SERVICE;
-    user_role: UserRole;
-    id: number;
-    user_id: string;
-    email: string;
-    title: string;
-    message: string;
-    url: string;
-    is_email_sent: boolean;
-    is_active: boolean;
+    notification_event: (NOTIFICATION_EVENT | null);
+    notification_service?: (NOTIFICATION_SERVICE | null);
+    user_role?: (UserRole | null);
+    id?: (number | null);
+    user_id?: (string | null);
+    email?: (string | null);
+    title?: (string | null);
+    message?: (string | null);
+    url?: (string | null);
+    is_email_sent?: (boolean | null);
+    is_active?: (boolean | null);
     updated_on: string;
     created_on: string;
 };
@@ -75,7 +82,7 @@ export type PaginationSchema_NotificationSchema_ = {
     items: Array<NotificationSchema>;
 };
 
-export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Customer' | 'Robot';
+export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Expeditor' | 'Customer' | 'Robot';
 
 export type ValidationError = {
     loc: Array<(string | number)>;
@@ -117,6 +124,14 @@ export type CreateNotificationByBrokerApiV1NotificationBrokerPostResponse = (Not
 
 export type CreateNotificationByBrokerApiV1NotificationBrokerPostError = (HTTPValidationError);
 
+export type CreateNotificationAuthApiV1NotificationAuthPostData = {
+    body: NotificationCreateAuth;
+};
+
+export type CreateNotificationAuthApiV1NotificationAuthPostResponse = (unknown);
+
+export type CreateNotificationAuthApiV1NotificationAuthPostError = (HTTPValidationError);
+
 export type GetSingleNotificationApiV1NotificationNotificationIdGetData = {
     path: {
         notification_id: number;
@@ -139,6 +154,7 @@ export type DeleteNotificationApiV1NotificationNotificationIdDeleteError = (HTTP
 
 export type GetNotificationsAllApiV1NotificationAllGetData = {
     query?: {
+        cargo_id?: string;
         page?: number;
         user_id?: string;
     };

@@ -123,7 +123,7 @@ export const HTTPValidationErrorSchema = {
 
 export const NOTIFICATION_EVENTSchema = {
     type: 'string',
-    enum: ['created_by_manager', 'accountant_tariff_approved', 'logist_ports_approved', 'payment_auction_success', 'payment_success', 'accountant_payment_approved', 'logist_car_arived_to_storage', 'logist_added_car_photo', 'logist_car_to_shipment', 'company_invoice_not_paid', 'logist_gives_delivary_info', 'no_cargo_doc', 'have_cargo_doc', 'broker_check_doc', 'broker_create_duties_fee', 'dealer_paid_duties_fee', 'dealer_put_date', 'no_delivery_info', 'success'],
+    enum: ['created_by_manager', 'accountant_tariff_approved', 'logist_ports_approved', 'payment_auction_success', 'payment_success', 'accountant_payment_approved', 'logist_car_arived_to_storage', 'logist_added_car_photo', 'logist_car_to_shipment', 'company_invoice_not_paid', 'logist_gives_delivary_info', 'no_cargo_doc', 'have_cargo_doc', 'broker_check_doc', 'broker_create_duties_fee', 'dealer_paid_duties_fee', 'dealer_put_date', 'no_delivery_info', 'delivered_to_customer', 'success', 'got_complaint', 'complaint_resolved', 'complaint_not_resolved'],
     title: 'NOTIFICATION_EVENT'
 } as const;
 
@@ -152,18 +152,40 @@ export const NotificationCreateSchema = {
             title: 'Cargo Id'
         },
         notification_event: {
-            '$ref': '#/components/schemas/NOTIFICATION_EVENT'
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/NOTIFICATION_EVENT'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         notification_service: {
-            '$ref': '#/components/schemas/NOTIFICATION_SERVICE',
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/NOTIFICATION_SERVICE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             default: 'notification'
         },
         user_role: {
-            '$ref': '#/components/schemas/UserRole'
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'Dealer'
         }
     },
     type: 'object',
-    required: ['cargo_id', 'notification_event', 'user_role'],
+    required: ['cargo_id', 'notification_event'],
     title: 'NotificationCreate'
 } as const;
 
@@ -180,6 +202,57 @@ export const NotificationCreateAccountantSchema = {
     type: 'object',
     required: ['cargo_id', 'notification_event'],
     title: 'NotificationCreateAccountant'
+} as const;
+
+export const NotificationCreateAuthSchema = {
+    properties: {
+        email: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Email'
+        },
+        title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
+        },
+        message: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Message'
+        },
+        code: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Code'
+        }
+    },
+    type: 'object',
+    title: 'NotificationCreateAuth'
 } as const;
 
 export const NotificationCreateBrokerSchema = {
@@ -204,46 +277,127 @@ export const NotificationSchemaSchema = {
             title: 'Cargo Id'
         },
         notification_event: {
-            '$ref': '#/components/schemas/NOTIFICATION_EVENT'
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/NOTIFICATION_EVENT'
+                },
+                {
+                    type: 'null'
+                }
+            ]
         },
         notification_service: {
-            '$ref': '#/components/schemas/NOTIFICATION_SERVICE',
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/NOTIFICATION_SERVICE'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             default: 'notification'
         },
         user_role: {
-            '$ref': '#/components/schemas/UserRole'
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/UserRole'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            default: 'Dealer'
         },
         id: {
-            type: 'integer',
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Id'
         },
         user_id: {
-            type: 'string',
-            format: 'uuid',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'User Id'
         },
         email: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Email'
         },
         title: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Title'
         },
         message: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Message'
         },
         url: {
-            type: 'string',
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Url'
         },
         is_email_sent: {
-            type: 'boolean',
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Is Email Sent'
         },
         is_active: {
-            type: 'boolean',
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
             title: 'Is Active'
         },
         updated_on: {
@@ -258,7 +412,7 @@ export const NotificationSchemaSchema = {
         }
     },
     type: 'object',
-    required: ['cargo_id', 'notification_event', 'user_role', 'id', 'user_id', 'email', 'title', 'message', 'url', 'is_email_sent', 'is_active', 'updated_on', 'created_on'],
+    required: ['cargo_id', 'notification_event', 'updated_on', 'created_on'],
     title: 'NotificationSchema'
 } as const;
 
@@ -318,7 +472,7 @@ export const PaginationSchema_NotificationSchema_Schema = {
 
 export const UserRoleSchema = {
     type: 'string',
-    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Customer', 'Robot'],
+    enum: ['Admin', 'Manager', 'Accountant', 'Dealer', 'Logistician', 'Broker', 'Expeditor', 'Customer', 'Robot'],
     title: 'UserRole'
 } as const;
 
