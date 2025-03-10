@@ -132,6 +132,18 @@ export type CreateNotificationAuthApiV1NotificationAuthPostResponse = (unknown);
 
 export type CreateNotificationAuthApiV1NotificationAuthPostError = (HTTPValidationError);
 
+export type GetNotificationsAllApiV1NotificationAllGetData = {
+    query?: {
+        cargo_id?: number;
+        page?: number;
+        user_id?: string;
+    };
+};
+
+export type GetNotificationsAllApiV1NotificationAllGetResponse = (PaginationSchema_NotificationSchema_);
+
+export type GetNotificationsAllApiV1NotificationAllGetError = (HTTPValidationError);
+
 export type GetSingleNotificationApiV1NotificationNotificationIdGetData = {
     path: {
         notification_id: number;
@@ -151,18 +163,6 @@ export type DeleteNotificationApiV1NotificationNotificationIdDeleteData = {
 export type DeleteNotificationApiV1NotificationNotificationIdDeleteResponse = (PaginationSchema_NotificationSchema_);
 
 export type DeleteNotificationApiV1NotificationNotificationIdDeleteError = (HTTPValidationError);
-
-export type GetNotificationsAllApiV1NotificationAllGetData = {
-    query?: {
-        cargo_id?: string;
-        page?: number;
-        user_id?: string;
-    };
-};
-
-export type GetNotificationsAllApiV1NotificationAllGetResponse = (PaginationSchema_NotificationSchema_);
-
-export type GetNotificationsAllApiV1NotificationAllGetError = (HTTPValidationError);
 
 export type CreateContactApiV1ContactPostData = {
     body: ContactCreate;
