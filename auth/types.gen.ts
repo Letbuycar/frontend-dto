@@ -318,7 +318,6 @@ export type AdminGetUserApiV1UsersUserIdGetResponse = (UserFinanceResponse);
 export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
 export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostData = {
-    body: AuthChangePassword;
     path: {
         user_id: string;
     };
