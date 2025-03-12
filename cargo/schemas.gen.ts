@@ -2142,6 +2142,179 @@ export const CargoAccountantUpdateSchema = {
 
 export const CargoAdminSchema = {
     properties: {
+        cost_dealer_add_buy: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost Dealer Add Buy',
+            default: 0
+        },
+        cost_dealer_add_service: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Cost Dealer Add Service',
+            default: 0
+        },
+        invoice_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Name'
+        },
+        invoice_company: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Company'
+        },
+        invoice_address: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Address'
+        },
+        invoice_passport: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Invoice Passport'
+        },
+        duties_receipt_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Id'
+        },
+        duties_receipt_file_ids: {
+            anyOf: [
+                {
+                    items: {
+                        type: 'string'
+                    },
+                    type: 'array'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Receipt File Ids',
+            default: []
+        },
+        duties_invoice_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Duties Invoice File Id'
+        },
+        is_duties_paid: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Duties Paid',
+            default: false
+        },
+        final_receiver_name: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Final Receiver Name'
+        },
+        delivery_comment: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Comment'
+        },
+        delivery_document_file_id: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Delivery Document File Id'
+        },
+        date_receive: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date Receive'
+        },
+        complaint_text: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Complaint Text'
+        },
         vin_code: {
             anyOf: [
                 {
@@ -2715,42 +2888,65 @@ export const CargoAdminSchema = {
             ],
             title: 'Port Photos Link'
         },
-        duties_invoice_file_id: {
+        duties_amount: {
             anyOf: [
                 {
-                    type: 'string'
+                    type: 'number'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Duties Invoice File Id'
+            title: 'Duties Amount',
+            default: 0
         },
-        duties_receipt_file_id: {
+        duties_receipt_file_path: {
             anyOf: [
                 {
-                    type: 'string'
+                    type: 'number'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Duties Receipt File Id'
+            title: 'Duties Receipt File Path',
+            default: ''
         },
-        duties_receipt_file_ids: {
+        total_amount: {
             anyOf: [
                 {
-                    items: {
-                        type: 'string'
-                    },
-                    type: 'array'
+                    type: 'number'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Duties Receipt File Ids',
-            default: []
+            title: 'Total Amount',
+            default: 0
+        },
+        paid_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Paid Amount',
+            default: 0
+        },
+        left_to_pay_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Left To Pay Amount',
+            default: 0
         }
     },
     type: 'object',

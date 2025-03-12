@@ -263,6 +263,21 @@ export type CargoAccountantUpdate = {
 };
 
 export type CargoAdmin = {
+    cost_dealer_add_buy?: (number | null);
+    cost_dealer_add_service?: (number | null);
+    invoice_name?: (string | null);
+    invoice_company?: (string | null);
+    invoice_address?: (string | null);
+    invoice_passport?: (string | null);
+    duties_receipt_file_id?: (string | null);
+    duties_receipt_file_ids?: (Array<(string)> | null);
+    duties_invoice_file_id?: (string | null);
+    is_duties_paid?: (boolean | null);
+    final_receiver_name?: (string | null);
+    delivery_comment?: (string | null);
+    delivery_document_file_id?: (string | null);
+    date_receive?: (string | null);
+    complaint_text?: (string | null);
     vin_code?: (string | null);
     year?: (number | null);
     carrier_title?: (string | null);
@@ -315,9 +330,11 @@ export type CargoAdmin = {
     transmission?: (Transmission | null);
     location?: (LocationFrom | null);
     port_photos_link?: (string | null);
-    duties_invoice_file_id?: (string | null);
-    duties_receipt_file_id?: (string | null);
-    duties_receipt_file_ids?: (Array<(string)> | null);
+    duties_amount?: (number | null);
+    duties_receipt_file_path?: (number | null);
+    total_amount?: (number | null);
+    paid_amount?: (number | null);
+    left_to_pay_amount?: (number | null);
 };
 
 export type CargoAdminCreate = {
