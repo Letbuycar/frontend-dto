@@ -85,7 +85,7 @@ export type BodyTypeUpdate = {
     is_active?: (boolean | null);
 };
 
-export type CARGO_STATUS = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'delivered_to_customer' | 'success';
+export type CARGO_STATUS = 'created_by_manager' | 'accountant_tariff_approved' | 'logist_ports_approved' | 'payment_auction_success' | 'payment_success' | 'accountant_payment_approved' | 'logist_car_arived_to_storage' | 'logist_added_car_photo' | 'logist_car_to_shipment' | 'company_invoice_not_paid' | 'logist_gives_delivary_info' | 'no_cargo_doc' | 'have_cargo_doc' | 'broker_check_doc' | 'broker_create_duties_fee' | 'dealer_paid_duties_fee' | 'dealer_put_date' | 'delivered_to_customer' | 'success' | 'got_complaint' | 'complaint_resolved' | 'complaint_not_resolved';
 
 export type CARGO_STATUS_BROKER_GET = 'no_cargo_doc' | 'broker_check_doc' | 'have_cargo_doc' | 'success';
 
@@ -537,6 +537,9 @@ export type CargoDealer = {
     date_to_container?: (string | null);
     duties_amount?: (number | null);
     duties_receipt_file_path?: (number | null);
+    total_amount?: (number | null);
+    paid_amount?: (number | null);
+    left_to_pay_amount?: (number | null);
 };
 
 export type CargoDealerUpdate = {
@@ -909,6 +912,12 @@ export type CargoSetIsPhotos = {
     vin_code?: (string | null);
     is_photos?: (boolean | null);
     is_docs_uploaded?: (boolean | null);
+};
+
+export type CargoStatus = {
+    status?: (CARGO_STATUS | null);
+    date: string;
+    cargo_id: number;
 };
 
 export type City = {
@@ -2404,6 +2413,16 @@ export type DeleteExistingCargoAdminApiV1CargoAdminCargoIdDeleteData = {
 export type DeleteExistingCargoAdminApiV1CargoAdminCargoIdDeleteResponse = (CargoAdmin);
 
 export type DeleteExistingCargoAdminApiV1CargoAdminCargoIdDeleteError = (HTTPValidationError);
+
+export type GetCargoStatusHistoryApiV1CargoAdminStatusHistoryCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetCargoStatusHistoryApiV1CargoAdminStatusHistoryCargoIdGetResponse = (Array<CargoStatus>);
+
+export type GetCargoStatusHistoryApiV1CargoAdminStatusHistoryCargoIdGetError = (HTTPValidationError);
 
 export type ReadCargosManagerApiV1CargoManagerGetData = {
     query?: {

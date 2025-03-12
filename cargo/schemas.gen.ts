@@ -573,7 +573,7 @@ export const BodyTypeUpdateSchema = {
 
 export const CARGO_STATUSSchema = {
     type: 'string',
-    enum: ['created_by_manager', 'accountant_tariff_approved', 'logist_ports_approved', 'payment_auction_success', 'payment_success', 'accountant_payment_approved', 'logist_car_arived_to_storage', 'logist_added_car_photo', 'logist_car_to_shipment', 'company_invoice_not_paid', 'logist_gives_delivary_info', 'no_cargo_doc', 'have_cargo_doc', 'broker_check_doc', 'broker_create_duties_fee', 'dealer_paid_duties_fee', 'dealer_put_date', 'delivered_to_customer', 'success'],
+    enum: ['created_by_manager', 'accountant_tariff_approved', 'logist_ports_approved', 'payment_auction_success', 'payment_success', 'accountant_payment_approved', 'logist_car_arived_to_storage', 'logist_added_car_photo', 'logist_car_to_shipment', 'company_invoice_not_paid', 'logist_gives_delivary_info', 'no_cargo_doc', 'have_cargo_doc', 'broker_check_doc', 'broker_create_duties_fee', 'dealer_paid_duties_fee', 'dealer_put_date', 'delivered_to_customer', 'success', 'got_complaint', 'complaint_resolved', 'complaint_not_resolved'],
     title: 'CARGO_STATUS'
 } as const;
 
@@ -5085,6 +5085,42 @@ export const CargoDealerSchema = {
             ],
             title: 'Duties Receipt File Path',
             default: ''
+        },
+        total_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Total Amount',
+            default: 0
+        },
+        paid_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Paid Amount',
+            default: 0
+        },
+        left_to_pay_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Left To Pay Amount',
+            default: 0
         }
     },
     type: 'object',
@@ -8947,6 +8983,33 @@ export const CargoSetIsPhotosSchema = {
     },
     type: 'object',
     title: 'CargoSetIsPhotos'
+} as const;
+
+export const CargoStatusSchema = {
+    properties: {
+        status: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CARGO_STATUS'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        date: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Date'
+        },
+        cargo_id: {
+            type: 'integer',
+            title: 'Cargo Id'
+        }
+    },
+    type: 'object',
+    required: ['date', 'cargo_id'],
+    title: 'CargoStatus'
 } as const;
 
 export const CitySchema = {
