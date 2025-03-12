@@ -73,6 +73,13 @@ export type CargoSchema = {
     status_list?: (Array<CARGO_STATUS> | null);
 };
 
+export type CargoStatus = {
+    id: number;
+    cargo_id: number;
+    status: CARGO_STATUS;
+    date: string;
+};
+
 export type CargoUpdateSchema = {
     vin_code?: (string | null);
     cost?: (number | null);
@@ -270,6 +277,16 @@ export type PayForCargoApiV1CargoPayCargoIdPostData = {
 export type PayForCargoApiV1CargoPayCargoIdPostResponse = (PayCargoResponse);
 
 export type PayForCargoApiV1CargoPayCargoIdPostError = (HTTPValidationError);
+
+export type GetCargoStatusHistoryApiV1CargoStatusHistoryCargoIdGetData = {
+    path: {
+        cargo_id: number;
+    };
+};
+
+export type GetCargoStatusHistoryApiV1CargoStatusHistoryCargoIdGetResponse = (Array<CargoStatus>);
+
+export type GetCargoStatusHistoryApiV1CargoStatusHistoryCargoIdGetError = (HTTPValidationError);
 
 export type GetTransactionsApiV1TransactionsGetData = {
     query?: {

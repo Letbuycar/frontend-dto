@@ -470,6 +470,30 @@ export const CargoSchemaSchema = {
     title: 'CargoSchema'
 } as const;
 
+export const CargoStatusSchema = {
+    properties: {
+        id: {
+            type: 'integer',
+            title: 'Id'
+        },
+        cargo_id: {
+            type: 'integer',
+            title: 'Cargo Id'
+        },
+        status: {
+            '$ref': '#/components/schemas/CARGO_STATUS'
+        },
+        date: {
+            type: 'string',
+            format: 'date-time',
+            title: 'Date'
+        }
+    },
+    type: 'object',
+    required: ['id', 'cargo_id', 'status', 'date'],
+    title: 'CargoStatus'
+} as const;
+
 export const CargoUpdateSchemaSchema = {
     properties: {
         vin_code: {
