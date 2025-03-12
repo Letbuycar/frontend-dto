@@ -317,16 +317,16 @@ export type AdminGetUserApiV1UsersUserIdGetResponse = (UserFinanceResponse);
 
 export type AdminGetUserApiV1UsersUserIdGetError = (HTTPValidationError);
 
-export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostData = {
+export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostData = {
     body: AuthChangePassword;
     path: {
         user_id: string;
     };
 };
 
-export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostResponse = (unknown);
+export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostResponse = (unknown);
 
-export type AdminChangePasswordApiV1UsersUserIdChangePasswordPostError = (HTTPValidationError);
+export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostError = (HTTPValidationError);
 
 export type ReadCountriesApiV1LocationCountriesGetData = {
     headers?: {
