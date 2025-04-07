@@ -311,8 +311,11 @@ export type CargoAdmin = {
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
     container_number?: (string | null);
-    broker_id?: (string | null);
     sublot?: (number | null);
+    manager_id?: (string | null);
+    broker_id?: (string | null);
+    logistician_id?: (string | null);
+    accountant_id?: (string | null);
     id: number;
     is_active?: (boolean | null);
     updated_on?: (string | null);
@@ -371,8 +374,11 @@ export type CargoAdminCreate = {
     date_arived_to_storage?: (string | null);
     date_to_container?: (string | null);
     container_number?: (string | null);
-    broker_id?: (string | null);
     sublot?: (number | null);
+    manager_id?: (string | null);
+    broker_id?: (string | null);
+    logistician_id?: (string | null);
+    accountant_id?: (string | null);
 };
 
 export type CargoAdminUpdate = {
@@ -406,8 +412,15 @@ export type CargoAdminUpdate = {
     location_id?: (number | null);
     date_buy?: (string | null);
     is_archived?: (boolean | null);
-    is_active?: (boolean | null);
+    date_arived_to_storage?: (string | null);
+    date_to_container?: (string | null);
+    container_number?: (string | null);
     sublot?: (number | null);
+    manager_id?: (string | null);
+    broker_id?: (string | null);
+    logistician_id?: (string | null);
+    accountant_id?: (string | null);
+    is_active?: (boolean | null);
 };
 
 export type CargoBroker = {

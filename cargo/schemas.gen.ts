@@ -2693,6 +2693,30 @@ export const CargoAdminSchema = {
             ],
             title: 'Container Number'
         },
+        sublot: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sublot',
+            default: 0
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
         broker_id: {
             anyOf: [
                 {
@@ -2705,17 +2729,29 @@ export const CargoAdminSchema = {
             ],
             title: 'Broker Id'
         },
-        sublot: {
+        logistician_id: {
             anyOf: [
                 {
-                    type: 'number'
+                    type: 'string',
+                    format: 'uuid'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Sublot',
-            default: 0
+            title: 'Logistician Id'
+        },
+        accountant_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Accountant Id'
         },
         id: {
             type: 'integer',
@@ -3334,6 +3370,30 @@ export const CargoAdminCreateSchema = {
             ],
             title: 'Container Number'
         },
+        sublot: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Sublot',
+            default: 0
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
         broker_id: {
             anyOf: [
                 {
@@ -3346,17 +3406,29 @@ export const CargoAdminCreateSchema = {
             ],
             title: 'Broker Id'
         },
-        sublot: {
+        logistician_id: {
             anyOf: [
                 {
-                    type: 'number'
+                    type: 'string',
+                    format: 'uuid'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Sublot',
-            default: 0
+            title: 'Logistician Id'
+        },
+        accountant_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Accountant Id'
         }
     },
     type: 'object',
@@ -3708,17 +3780,40 @@ export const CargoAdminUpdateSchema = {
             title: 'Is Archived',
             default: false
         },
-        is_active: {
+        date_arived_to_storage: {
             anyOf: [
                 {
-                    type: 'boolean'
+                    type: 'string',
+                    format: 'date-time'
                 },
                 {
                     type: 'null'
                 }
             ],
-            title: 'Is Active',
-            default: true
+            title: 'Date Arived To Storage'
+        },
+        date_to_container: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'date-time'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Date To Container'
+        },
+        container_number: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Container Number'
         },
         sublot: {
             anyOf: [
@@ -3731,6 +3826,66 @@ export const CargoAdminUpdateSchema = {
             ],
             title: 'Sublot',
             default: 0
+        },
+        manager_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager Id'
+        },
+        broker_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Broker Id'
+        },
+        logistician_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Logistician Id'
+        },
+        accountant_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Accountant Id'
+        },
+        is_active: {
+            anyOf: [
+                {
+                    type: 'boolean'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Is Active',
+            default: true
         }
     },
     type: 'object',
