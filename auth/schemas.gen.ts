@@ -292,6 +292,90 @@ export const CountryUpdateSchema = {
     title: 'CountryUpdate'
 } as const;
 
+export const CustomerGroupCreateSchema = {
+    properties: {
+        title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
+        },
+        oversea_discount_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Oversea Discount Amount'
+        },
+        overland_discount_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Overland Discount Amount'
+        }
+    },
+    type: 'object',
+    title: 'CustomerGroupCreate'
+} as const;
+
+export const CustomerGroupSchemeSchema = {
+    properties: {
+        title: {
+            anyOf: [
+                {
+                    type: 'string'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Title'
+        },
+        oversea_discount_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Oversea Discount Amount'
+        },
+        overland_discount_amount: {
+            anyOf: [
+                {
+                    type: 'number'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Overland Discount Amount'
+        },
+        id: {
+            type: 'integer',
+            title: 'Id'
+        }
+    },
+    type: 'object',
+    title: 'CustomerGroupScheme'
+} as const;
+
 export const HTTPValidationErrorSchema = {
     properties: {
         detail: {
@@ -385,6 +469,33 @@ export const PaginationSchema_Country_Schema = {
     type: 'object',
     required: ['total', 'page', 'total_pages', 'items'],
     title: 'PaginationSchema[Country]'
+} as const;
+
+export const PaginationSchema_CustomerGroupScheme_Schema = {
+    properties: {
+        total: {
+            type: 'integer',
+            title: 'Total'
+        },
+        page: {
+            type: 'integer',
+            title: 'Page'
+        },
+        total_pages: {
+            type: 'integer',
+            title: 'Total Pages'
+        },
+        items: {
+            items: {
+                '$ref': '#/components/schemas/CustomerGroupScheme'
+            },
+            type: 'array',
+            title: 'Items'
+        }
+    },
+    type: 'object',
+    required: ['total', 'page', 'total_pages', 'items'],
+    title: 'PaginationSchema[CustomerGroupScheme]'
 } as const;
 
 export const PaginationSchema_UserFinanceResponse_Schema = {
@@ -609,6 +720,17 @@ export const UserCreateSchema = {
             ],
             title: 'Role',
             default: 'Customer'
+        },
+        group_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Group Id'
         }
     },
     type: 'object',
@@ -720,6 +842,17 @@ export const UserFinanceResponseSchema = {
                 }
             ]
         },
+        group_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Group Id'
+        },
         id: {
             type: 'string',
             format: 'uuid',
@@ -740,6 +873,16 @@ export const UserFinanceResponseSchema = {
             anyOf: [
                 {
                     '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        group: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CustomerGroupScheme'
                 },
                 {
                     type: 'null'
@@ -981,6 +1124,17 @@ export const UserResponseSchema = {
                 }
             ]
         },
+        group_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Group Id'
+        },
         id: {
             type: 'string',
             format: 'uuid',
@@ -1001,6 +1155,16 @@ export const UserResponseSchema = {
             anyOf: [
                 {
                     '$ref': '#/components/schemas/AdminUserInfo'
+                },
+                {
+                    type: 'null'
+                }
+            ]
+        },
+        group: {
+            anyOf: [
+                {
+                    '$ref': '#/components/schemas/CustomerGroupScheme'
                 },
                 {
                     type: 'null'
@@ -1266,6 +1430,17 @@ export const entities__users__schemas__UserUpdateSchema = {
             ],
             title: 'Role',
             default: 'Customer'
+        },
+        group_id: {
+            anyOf: [
+                {
+                    type: 'integer'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Group Id'
         }
     },
     type: 'object',

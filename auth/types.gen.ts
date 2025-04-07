@@ -52,6 +52,19 @@ export type CountryUpdate = {
     is_active?: (boolean | null);
 };
 
+export type CustomerGroupCreate = {
+    title?: (string | null);
+    oversea_discount_amount?: (number | null);
+    overland_discount_amount?: (number | null);
+};
+
+export type CustomerGroupScheme = {
+    title?: (string | null);
+    oversea_discount_amount?: (number | null);
+    overland_discount_amount?: (number | null);
+    id?: number;
+};
+
 export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
@@ -75,6 +88,13 @@ export type PaginationSchema_Country_ = {
     page: number;
     total_pages: number;
     items: Array<Country>;
+};
+
+export type PaginationSchema_CustomerGroupScheme_ = {
+    total: number;
+    page: number;
+    total_pages: number;
+    items: Array<CustomerGroupScheme>;
 };
 
 export type PaginationSchema_UserFinanceResponse_ = {
@@ -115,6 +135,7 @@ export type UserCreate = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (USER_ROLE_CREATE | UserRole | null);
+    group_id?: (number | null);
 };
 
 export type UserFinanceResponse = {
@@ -128,9 +149,11 @@ export type UserFinanceResponse = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (UserRole | null);
+    group_id?: (number | null);
     id: string;
     email_verified?: (boolean | null);
     manager?: (AdminUserInfo | null);
+    group?: (CustomerGroupScheme | null);
     balance?: number;
     total_amount?: number;
     paid_amount?: number;
@@ -161,9 +184,11 @@ export type UserResponse = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (UserRole | null);
+    group_id?: (number | null);
     id: string;
     email_verified?: (boolean | null);
     manager?: (AdminUserInfo | null);
+    group?: (CustomerGroupScheme | null);
 };
 
 export type UserRole = 'Admin' | 'Manager' | 'Accountant' | 'Dealer' | 'Logistician' | 'Broker' | 'Expeditor' | 'Customer' | 'Robot';
@@ -204,6 +229,7 @@ export type entities__users__schemas__UserUpdate = {
     comment?: (string | null);
     manager_id?: (string | null);
     role?: (USER_ROLE_CREATE | UserRole | null);
+    group_id?: (number | null);
 };
 
 export type SignupUserApiV1AuthSignupPostData = {
@@ -242,19 +268,19 @@ export type RefreshTokenApiV1AuthRefreshTokenPostResponse = (SignInUserInfo);
 
 export type RefreshTokenApiV1AuthRefreshTokenPostError = (HTTPValidationError);
 
-export type GetBrokersApiV1AuthChangePasswordGetData = {
+export type ChangePasswordApiV1AuthChangePasswordPostData = {
     body: AuthChangePassword;
 };
 
-export type GetBrokersApiV1AuthChangePasswordGetResponse = (unknown);
+export type ChangePasswordApiV1AuthChangePasswordPostResponse = (unknown);
 
-export type GetBrokersApiV1AuthChangePasswordGetError = (HTTPValidationError);
+export type ChangePasswordApiV1AuthChangePasswordPostError = (HTTPValidationError);
 
 export type AdminGetUsersApiV1UsersGetData = {
     query?: {
         is_debt?: boolean;
         page?: number;
-        roles?: Array<(string)>;
+        'roles[]'?: Array<(string)>;
         search?: string;
     };
 };
@@ -326,6 +352,58 @@ export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostData = {
 export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostResponse = (unknown);
 
 export type AdminResetPasswordApiV1UsersUserIdChangePasswordPostError = (HTTPValidationError);
+
+export type ReadCustomerGroupsApiV1CustomerGroupsGetData = {
+    query?: {
+        is_active?: boolean;
+        page?: number;
+        sort?: string;
+        sort_by?: string;
+    };
+};
+
+export type ReadCustomerGroupsApiV1CustomerGroupsGetResponse = (PaginationSchema_CustomerGroupScheme_);
+
+export type ReadCustomerGroupsApiV1CustomerGroupsGetError = (HTTPValidationError);
+
+export type CreateNewCustomerGroupApiV1CustomerGroupsPostData = {
+    body: CustomerGroupCreate;
+};
+
+export type CreateNewCustomerGroupApiV1CustomerGroupsPostResponse = (CustomerGroupScheme);
+
+export type CreateNewCustomerGroupApiV1CustomerGroupsPostError = (HTTPValidationError);
+
+export type ReadCustomerGroupApiV1CustomerGroupsGroupIdGetData = {
+    path: {
+        group_id: number;
+    };
+};
+
+export type ReadCustomerGroupApiV1CustomerGroupsGroupIdGetResponse = (CustomerGroupScheme);
+
+export type ReadCustomerGroupApiV1CustomerGroupsGroupIdGetError = (HTTPValidationError);
+
+export type UpdateExistingCustomerGroupApiV1CustomerGroupsGroupIdPutData = {
+    body: CustomerGroupScheme;
+    path: {
+        group_id: number;
+    };
+};
+
+export type UpdateExistingCustomerGroupApiV1CustomerGroupsGroupIdPutResponse = (CustomerGroupScheme);
+
+export type UpdateExistingCustomerGroupApiV1CustomerGroupsGroupIdPutError = (HTTPValidationError);
+
+export type DeleteExistingCustomerGroupApiV1CustomerGroupsGroupIdDeleteData = {
+    path: {
+        group_id: number;
+    };
+};
+
+export type DeleteExistingCustomerGroupApiV1CustomerGroupsGroupIdDeleteResponse = (CustomerGroupScheme);
+
+export type DeleteExistingCustomerGroupApiV1CustomerGroupsGroupIdDeleteError = (HTTPValidationError);
 
 export type ReadCountriesApiV1LocationCountriesGetData = {
     headers?: {
