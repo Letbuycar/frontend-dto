@@ -2753,6 +2753,18 @@ export const CargoAdminSchema = {
             ],
             title: 'Accountant Id'
         },
+        expeditor_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Expeditor Id'
+        },
         id: {
             type: 'integer',
             title: 'Id'
@@ -3429,6 +3441,18 @@ export const CargoAdminCreateSchema = {
                 }
             ],
             title: 'Accountant Id'
+        },
+        expeditor_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Expeditor Id'
         }
     },
     type: 'object',
@@ -3874,6 +3898,18 @@ export const CargoAdminUpdateSchema = {
                 }
             ],
             title: 'Accountant Id'
+        },
+        expeditor_id: {
+            anyOf: [
+                {
+                    type: 'string',
+                    format: 'uuid'
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Expeditor Id'
         },
         is_active: {
             anyOf: [

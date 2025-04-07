@@ -316,6 +316,7 @@ export type CargoAdmin = {
     broker_id?: (string | null);
     logistician_id?: (string | null);
     accountant_id?: (string | null);
+    expeditor_id?: (string | null);
     id: number;
     is_active?: (boolean | null);
     updated_on?: (string | null);
@@ -379,6 +380,7 @@ export type CargoAdminCreate = {
     broker_id?: (string | null);
     logistician_id?: (string | null);
     accountant_id?: (string | null);
+    expeditor_id?: (string | null);
 };
 
 export type CargoAdminUpdate = {
@@ -420,6 +422,7 @@ export type CargoAdminUpdate = {
     broker_id?: (string | null);
     logistician_id?: (string | null);
     accountant_id?: (string | null);
+    expeditor_id?: (string | null);
     is_active?: (boolean | null);
 };
 
